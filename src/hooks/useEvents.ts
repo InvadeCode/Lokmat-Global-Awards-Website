@@ -1,20 +1,35 @@
 import { useEffect, useState } from "react";
 import { LokmatEvent } from "@/src/types";
+import { staticEvents } from "@/src/eventsData";
 
 export function useEvents() {
   const [events, setEvents] = useState<LokmatEvent[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchEvents = async () => {
+  const fetchEvents = () => {
     setLoading(true);
     try {
-      const response = await fetch("/api/events");
-      if (!response.ok) throw new Error("Failed to fetch events");
-      const data = await response.json();
-      setEvents(data);
+      // Load user-added events from localStorage
+      const localData = localStorage.getItem("lokmat_custom_events");
+      const customEvents: LokmatEvent[] = localData ? JSON.parse(localData) : [];
+      
+      // Combine static events and user-added custom events
+      // Avoid duplicate IDs if any
+      const customIds = new Set(customEvents.map(e => e.id));
+      const filteredStatic = staticEvents.filter(e => !customIds.has(e.id));
+      
+      const allEvents = [...customEvents, ...filteredStatic];
+      
+      // Sort by creation date or custom date logic (newest first)
+      const sortedEvents = allEvents.sort((a, b) => {
+        return b.createdAt - a.createdAt;
+      });
+
+      setEvents(sortedEvents);
+      setError(null);
     } catch (err: any) {
-      setError(err.message || "An error occurred");
+      setError(err.message || "An error occurred while loading events");
     } finally {
       setLoading(false);
     }
@@ -26,15 +41,18 @@ export function useEvents() {
 
   const addEvent = async (eventData: Omit<LokmatEvent, "id" | "createdAt">) => {
     try {
-      const response = await fetch("/api/events", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(eventData),
-      });
-      if (!response.ok) throw new Error("Failed to add event");
-      const newEvent = await response.json();
+      const newEvent: LokmatEvent = {
+        ...eventData,
+        id: "custom-" + Math.random().toString(36).substring(2, 9),
+        createdAt: Date.now(),
+      };
+      
+      const localData = localStorage.getItem("lokmat_custom_events");
+      const customEvents: LokmatEvent[] = localData ? JSON.parse(localData) : [];
+      
+      const updatedCustom = [newEvent, ...customEvents];
+      localStorage.setItem("lokmat_custom_events", JSON.stringify(updatedCustom));
+      
       setEvents((prev) => [newEvent, ...prev]);
       return true;
     } catch (err: any) {

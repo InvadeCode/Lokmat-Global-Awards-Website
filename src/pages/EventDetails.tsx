@@ -105,6 +105,8 @@ export default function EventDetails() {
                 <img 
                   src={event.imageUrl} 
                   alt={event.title} 
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                 />
               )}
@@ -169,7 +171,7 @@ export default function EventDetails() {
                             "https://static.wixstatic.com/media/548938_8e1a682b5aeb4f79b98b882fa070c4f4~mv2.jpg",
                             "https://static.wixstatic.com/media/548938_67cac5d58a9e41628c58f9bf88989ffe~mv2.jpg"
                           ]).map((img, idx) => (
-                            <img key={idx} src={img} alt={`Gallery ${idx + 1}`} className="w-full aspect-[4/3] object-cover rounded-xl shadow-sm hover:opacity-90 transition-opacity cursor-pointer bg-gray-100" />
+                            <img key={idx} src={img} alt={`Gallery ${idx + 1}`} loading="lazy" referrerPolicy="no-referrer" className="w-full aspect-[4/3] object-cover rounded-xl shadow-sm hover:opacity-90 transition-opacity cursor-pointer bg-gray-100" />
                           ))}
                         </div>
                      </div>

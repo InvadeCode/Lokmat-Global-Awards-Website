@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-[3%] py-6 border-b border-gray-200 bg-white/80 backdrop-blur-md w-[100vw]">
       <Link to="/" className="flex items-center gap-3">
-        <img src={logoImg} alt="Lokmat Logo" className="h-8 md:h-10 w-auto object-contain mix-blend-multiply" />
+        <img src={logoImg} alt="Lokmat Logo" referrerPolicy="no-referrer" className="h-8 md:h-10 w-auto object-contain mix-blend-multiply" />
       </Link>
 
       {/* Desktop Menu */}

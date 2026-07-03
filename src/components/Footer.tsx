@@ -47,6 +47,8 @@ export default function Footer() {
             <img 
               src={footerLogo} 
               alt="Lokmat Events Logo" 
+              loading="lazy"
+              referrerPolicy="no-referrer"
               className="w-[300px] h-[100px] object-contain mb-6"
             />
             <p className="text-red-100 leading-relaxed mb-8 text-lg">

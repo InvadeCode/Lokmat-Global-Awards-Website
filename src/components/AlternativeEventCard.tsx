@@ -24,6 +24,8 @@ const AlternativeEventCard: React.FC<Props> = ({ event }) => {
           <img 
             src={event.imageUrl} 
             alt={event.title}
+            loading="lazy"
+            referrerPolicy="no-referrer"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute bottom-4 left-4 z-20 flex gap-2 flex-wrap">

@@ -30,6 +30,8 @@ const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
           viewport={{ once: true }}
           src={event.imageUrl} 
           alt={event.title}
+          loading="lazy"
+          referrerPolicy="no-referrer"
           className="absolute inset-0 object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
         />
         <div className="absolute top-4 left-4 z-20">

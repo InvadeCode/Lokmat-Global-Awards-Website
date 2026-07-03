@@ -22,6 +22,8 @@ export default function AboutSection() {
               <img 
                 src={aboutImg} 
                 alt="About Lokmat Events" 
+                loading="lazy"
+                referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover rounded-[12px] grayscale group-hover:grayscale-0 transition-all duration-700 shadow-xl group-hover:-translate-x-2 group-hover:-translate-y-2"
               />
               {/* Overlay Text */}

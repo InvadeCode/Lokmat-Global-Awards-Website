@@ -31,7 +31,7 @@ export default function Articles() {
                     return (
                     <div key={i} className="group border border-gray-200 rounded-xl p-6 flex flex-col transition-colors duration-300 hover:border-red-200 hover:bg-neutral-50 h-full cursor-pointer">
                          <div className="h-48 rounded-lg mb-6 w-full overflow-hidden">
-                             <img src={imgUrl} alt={`Article ${i}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                             <img src={imgUrl} alt={`Article ${i}`} loading="lazy" referrerPolicy="no-referrer" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                          </div>
                          <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">Category</h3>
                          <h2 className="text-xl font-bold leading-tight transition-colors duration-300 group-hover:text-red-600 mb-4">
