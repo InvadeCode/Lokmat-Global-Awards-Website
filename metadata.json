@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Lokmat Events Showcase",
+  "description": "A premium, high-performance platform showcasing Lokmat\u0027s exclusive events, awards, and summits.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
