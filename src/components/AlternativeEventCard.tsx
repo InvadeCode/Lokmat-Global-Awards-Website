@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { LokmatEvent } from "@/src/types";
 import { formatDate } from "@/src/lib/utils";
+import OptimizedImage from "@/src/components/OptimizedImage";
 
 interface Props {
   event: LokmatEvent;
@@ -21,11 +22,9 @@ const AlternativeEventCard: React.FC<Props> = ({ event }) => {
       >
         <div className="relative h-56 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
-          <img 
+          <OptimizedImage 
             src={event.imageUrl} 
             alt={event.title}
-            loading="lazy"
-            referrerPolicy="no-referrer"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute bottom-4 left-4 z-20 flex gap-2 flex-wrap">

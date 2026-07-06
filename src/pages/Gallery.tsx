@@ -1,5 +1,5 @@
 import Navbar from "@/src/components/Navbar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "@/src/components/Footer";
 import { motion } from "motion/react";
@@ -55,6 +55,14 @@ const GALLERY_IMAGES = [
 
 export default function Gallery() {
   const [visibleCount, setVisibleCount] = useState(12);
+
+  useEffect(() => {
+    document.title = "Official Photo Gallery & Event Portfolios | Lokmat Events";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Browse historical photo portfolios and media coverage from Lokmat's flagship award nights, international conclaves, and summits.");
+    }
+  }, []);
 
   const loadMore = () => {
     setVisibleCount(prev => Math.min(prev + 12, GALLERY_IMAGES.length));

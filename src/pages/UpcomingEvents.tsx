@@ -1,12 +1,25 @@
+import React, { useEffect } from "react";
 import Navbar from "@/src/components/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "@/src/components/Footer";
 import { useEvents } from "@/src/hooks/useEvents";
 import { formatDate } from "@/src/lib/utils";
+import OptimizedImage from "@/src/components/OptimizedImage";
 
 export default function UpcomingEvents() {
   const { events, loading, error } = useEvents();
   const upcomingEventsList = events.filter((e) => e.category.includes("Upcoming"));
+
+  // AIO, GEO, and SEO Best Practices: Dynamic Title and Description Updates
+  useEffect(() => {
+    document.title = "Upcoming Elite Summits & Conclaves | Lokmat Events";
+    
+    // Update Meta Description dynamically for SEO/AIO scrapers
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Explore the official schedules, locations, and details of upcoming Lokmat Premium Events, Conclaves, and prestigious National Awards ceremonies.");
+    }
+  }, []);
 
   return (
     <div className="w-[100vw] overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
@@ -24,8 +37,8 @@ export default function UpcomingEvents() {
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
               {loading ? (
                 <div className="animate-pulse col-span-1 md:col-span-2 flex flex-col gap-8 w-full">
-                    <div className="h-48 bg-gray-100 rounded-2xl w-full"></div>
-                    <div className="h-48 bg-gray-100 rounded-2xl w-full"></div>
+                    <div className="h-48 bg-gray-100 rounded-2xl w-full animate-pulse"></div>
+                    <div className="h-48 bg-gray-100 rounded-2xl w-full animate-pulse"></div>
                 </div>
               ) : error ? (
                 <div className="text-center text-red-600 py-10 col-span-1 md:col-span-2">Failed to load events.</div>
@@ -36,7 +49,7 @@ export default function UpcomingEvents() {
                     <div key={event.id} className="group border border-gray-200 bg-white rounded-2xl p-6 flex flex-col gap-8 transition-colors duration-300 hover:border-red-200 hover:shadow-xl w-full">
                        <Link to={`/event/${event.id}`} className="w-full aspect-video bg-gray-100 rounded-xl flex items-center justify-center text-gray-300 font-mono text-sm relative overflow-hidden">
                           <div className="absolute top-4 left-4 z-10 bg-red-600 text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-widest shadow-md animate-pulse">Open</div>
-                          <img src={event.imageUrl} alt={event.title} loading="lazy" referrerPolicy="no-referrer" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                          <OptimizedImage src={event.imageUrl} alt={event.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                        </Link>
                        
                        <div className="flex-1 flex flex-col justify-start gap-4">

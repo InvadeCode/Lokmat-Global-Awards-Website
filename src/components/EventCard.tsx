@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Calendar, MapPin, ArrowUpRight } from "lucide-react";
 import { LokmatEvent } from "@/src/types";
 import { formatDate } from "@/src/lib/utils";
+import OptimizedImage from "@/src/components/OptimizedImage";
 
 interface EventCardProps {
   event: LokmatEvent;
@@ -23,17 +24,19 @@ const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
       {/* Visual Anchor */}
       <div className="w-full xl:w-[45%] overflow-hidden rounded-[14px] bg-gray-50 relative border border-gray-100 shadow-sm flex-shrink-0 min-h-[200px]">
         <div className="absolute inset-0 bg-gradient-to-t from-[black]/30 to-transparent z-10" />
-        <motion.img 
+        <motion.div 
           initial={{ scale: 1.2 }}
           whileInView={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
           viewport={{ once: true }}
-          src={event.imageUrl} 
-          alt={event.title}
-          loading="lazy"
-          referrerPolicy="no-referrer"
-          className="absolute inset-0 object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
-        />
+          className="absolute inset-0 w-full h-full"
+        >
+          <OptimizedImage 
+            src={event.imageUrl} 
+            alt={event.title}
+            className="absolute inset-0 object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
+          />
+        </motion.div>
         <div className="absolute top-4 left-4 z-20">
           <span className={`px-3 py-1 rounded-sm text-[10px] font-bold tracking-widest uppercase bg-white/95 backdrop-blur-md shadow-sm ${event.category.includes('Upcoming') ? 'text-red-600 animate-pulse' : 'text-[#111111]'}`}>
             {event.category}

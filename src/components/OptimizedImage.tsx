@@ -1,0 +1,35 @@
+import React, { useState } from "react";
+
+interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+export default function OptimizedImage({ src, alt, className = "", ...props }: OptimizedImageProps) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className={`relative overflow-hidden bg-gray-100 ${className}`}>
+      {/* Shimmer skeleton using pulse animation */}
+      {!loaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
+          <div className="w-full h-full bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 bg-[length:200%_100%] animate-[pulse_1.5s_infinite] absolute inset-0" />
+          <div className="w-8 h-8 border-2 border-red-600/15 border-t-red-600 rounded-full animate-spin relative z-10" />
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        referrerPolicy="no-referrer"
+        onLoad={() => setLoaded(true)}
+        className={`w-full h-full object-cover transition-opacity duration-700 ease-out ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+        {...props}
+      />
+    </div>
+  );
+}

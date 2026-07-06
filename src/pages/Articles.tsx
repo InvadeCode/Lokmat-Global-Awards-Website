@@ -1,9 +1,22 @@
+import React, { useEffect } from "react";
 import Navbar from "@/src/components/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "@/src/components/Footer";
 import { motion } from "motion/react";
+import OptimizedImage from "@/src/components/OptimizedImage";
 
 export default function Articles() {
+  // AIO, GEO, and SEO Best Practices: Dynamic Title and Description Updates
+  useEffect(() => {
+    document.title = "Insights & Press Articles | Lokmat Events";
+    
+    // Update Meta Description dynamically for SEO/AIO scrapers
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Browse the latest press coverage, editorial articles, and cultural insights from Lokmat's events and national awards conclaves.");
+    }
+  }, []);
+
   return (
     <div className="w-[100vw] overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
@@ -30,19 +43,19 @@ export default function Articles() {
                     const i = idx + 1;
                     return (
                     <div key={i} className="group border border-gray-200 rounded-xl p-6 flex flex-col transition-colors duration-300 hover:border-red-200 hover:bg-neutral-50 h-full cursor-pointer">
-                         <div className="h-48 rounded-lg mb-6 w-full overflow-hidden">
-                             <img src={imgUrl} alt={`Article ${i}`} loading="lazy" referrerPolicy="no-referrer" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                         </div>
-                         <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">Category</h3>
-                         <h2 className="text-xl font-bold leading-tight transition-colors duration-300 group-hover:text-red-600 mb-4">
-                             How Lokmat is Shaping the Future of Regional Journalism {i}
-                         </h2>
-                         <p className="text-gray-500 text-sm font-light leading-relaxed mb-6 flex-1">
-                             An exploration into the evolution of news media and how regional stories are finding a global platform through innovative content strategies.
-                         </p>
-                         <div className="mt-auto text-sm font-medium text-gray-500">
-                             Oct 24, 2026 • 5 min read
-                         </div>
+                          <div className="h-48 rounded-lg mb-6 w-full overflow-hidden">
+                              <OptimizedImage src={imgUrl} alt={`Article ${i}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                          </div>
+                          <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">Category</h3>
+                          <h2 className="text-xl font-bold leading-tight transition-colors duration-300 group-hover:text-red-600 mb-4">
+                              How Lokmat is Shaping the Future of Regional Journalism {i}
+                          </h2>
+                          <p className="text-gray-500 text-sm font-light leading-relaxed mb-6 flex-1">
+                              An exploration into the evolution of news media and how regional stories are finding a global platform through innovative content strategies.
+                          </p>
+                          <div className="mt-auto text-sm font-medium text-gray-500">
+                              Oct 24, 2026 • 5 min read
+                          </div>
                     </div>
                 )})}
             </div>

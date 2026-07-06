@@ -1,6 +1,6 @@
 import Navbar from "@/src/components/Navbar";
 import { useParams, Link } from "react-router-dom";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useEvents } from "@/src/hooks/useEvents";
 import { ArrowLeft, Calendar, MapPin, Share2, Clock, Users, ArrowUpRight, Volume2, VolumeX } from "lucide-react";
 import Footer from "@/src/components/Footer";
@@ -14,6 +14,18 @@ export default function EventDetails() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  const event = events.find((e) => e.id === id);
+
+  useEffect(() => {
+    if (event) {
+      document.title = `${event.title} | Lokmat Premium Events`;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute("content", `${event.description.substring(0, 155)}... Discover summits hosted by Lokmat.`);
+      }
+    }
+  }, [event]);
+
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !isMuted;
@@ -21,7 +33,6 @@ export default function EventDetails() {
     }
   };
 
-  const event = events.find((e) => e.id === id);
   const otherEventsList = events.filter((e) => e.id !== id && e.category.toLowerCase().includes("upcoming")).slice(0, 2);
 
   return (
