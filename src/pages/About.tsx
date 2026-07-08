@@ -81,28 +81,28 @@ export default function About() {
 
   const leaders = [
     {
-      name: "Vijay Darda",
-      role: "Chairman, Lokmat Media Group",
-      desc: "Visionary leader and former Member of Parliament (Rajya Sabha), driving the editorial integrity and strategic expansion of Lokmat's global footprint.",
-      initials: "VD",
+      name: "John Doe",
+      role: "Chairman",
+      desc: "Visionary leader driving the editorial integrity and strategic expansion of our global footprint.",
+      initials: "JD",
     },
     {
-      name: "Rajendra Darda",
-      role: "Editor-in-Chief, Lokmat Media",
-      desc: "Renowned journalist, public figure, and former Minister in Maharashtra Government, steering Lokmat's intellectual direction and community connections.",
-      initials: "RD",
+      name: "Jane Smith",
+      role: "Editor-in-Chief",
+      desc: "Renowned journalist and public figure, steering our intellectual direction and community connections.",
+      initials: "JS",
     },
     {
-      name: "Rishi Darda",
+      name: "Michael Johnson",
       role: "Joint Managing Director",
-      desc: "Chief architect of Lokmat's modern experience platforms, organizing international conclaves and integrating digital-first content platforms.",
-      initials: "RD",
+      desc: "Chief architect of our modern experience platforms, organizing international conclaves and integrating digital-first content platforms.",
+      initials: "MJ",
     },
     {
-      name: "Devendra Darda",
+      name: "Emily Davis",
       role: "Managing Director",
       desc: "Pioneering business operations, industrial alignments, and corporate partnerships across all global and national summit chapters.",
-      initials: "DD",
+      initials: "ED",
     }
   ];
 
@@ -153,7 +153,7 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6, delay: idx * 0.1 }}
-                    className="p-8 rounded-2xl border border-gray-150 bg-[#FAFAFA] hover:bg-white hover:border-red-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                    className="p-8 rounded-2xl border border-gray-200 bg-[#FAFAFA] hover:bg-white hover:border-red-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
                   >
                     <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-600 mb-6 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
                       <IconComponent className="w-6 h-6" />
@@ -253,7 +253,7 @@ export default function About() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.05 }}
-                  className="bg-[#FAFAFA] border border-gray-150 p-8 rounded-2xl flex flex-col justify-between hover:border-red-200 hover:shadow-lg transition-all duration-300"
+                  className="bg-[#FAFAFA] border border-gray-200 p-8 rounded-2xl flex flex-col justify-between hover:border-red-200 hover:shadow-lg transition-all duration-300"
                 >
                   <div>
                     {/* Visual avatar badge */}
