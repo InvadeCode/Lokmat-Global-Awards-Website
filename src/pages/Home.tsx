@@ -7,7 +7,6 @@ import AboutSection from "@/src/components/AboutSection";
 import PartnerLogos from "@/src/components/PartnerLogos";
 import ImpactSection from "@/src/components/ImpactSection";
 import PartnersCtaSection from "@/src/components/PartnersCtaSection";
-import NewsUpdatesSection from "@/src/components/NewsUpdatesSection";
 import Footer from "@/src/components/Footer";
 import { Link } from "react-router-dom";
 import { useEvents } from "@/src/hooks/useEvents";
@@ -118,8 +117,6 @@ export default function Home() {
       <ImpactSection />
       
       <PartnersCtaSection />
-      
-      <NewsUpdatesSection />
       
       <Footer />
     </div>
