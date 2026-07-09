@@ -4,8 +4,8 @@ import HeroSection from "@/src/components/HeroSection";
 import EventCard from "@/src/components/EventCard";
 import AlternativeEventCard from "@/src/components/AlternativeEventCard";
 import AboutSection from "@/src/components/AboutSection";
+import PartnerLogos from "@/src/components/PartnerLogos";
 import ImpactSection from "@/src/components/ImpactSection";
-import GallerySection from "@/src/components/GallerySection";
 import PartnersCtaSection from "@/src/components/PartnersCtaSection";
 import NewsUpdatesSection from "@/src/components/NewsUpdatesSection";
 import Footer from "@/src/components/Footer";
@@ -21,6 +21,8 @@ export default function Home() {
       <HeroSection />
       
       <AboutSection />
+      
+      <PartnerLogos />
       
       <main className="bg-white w-[100vw] px-[3%] py-24 md:py-32">
         <div className="flex flex-col md:flex-row items-baseline justify-between mb-20 gap-8">
@@ -114,8 +116,6 @@ export default function Home() {
       </main>
 
       <ImpactSection />
-      
-      <GallerySection />
       
       <PartnersCtaSection />
       
