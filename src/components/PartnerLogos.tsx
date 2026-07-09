@@ -26,7 +26,7 @@ export default function PartnerLogos() {
   return (
     <section className="bg-white py-[77px] lg:py-[115px] border-b border-gray-100">
       <div className="w-[100vw] px-[3%]">
-        <div className="text-center mb-[82px]">
+        <div className="text-center mb-[42px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export default function PartnerLogos() {
               {partners.map((partner, index) => (
                 <div 
                   key={index} 
-                  className="flex-[0_0_auto] min-w-[140px] md:min-w-[200px] px-2 md:px-3 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 flex items-center justify-center"
+                  className="flex-[0_0_auto] min-w-[62px] md:min-w-[90px] px-[2px] md:px-[5px] opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 flex items-center justify-center"
                 >
                   <img 
                     src={partner.url} 
@@ -65,7 +65,7 @@ export default function PartnerLogos() {
               {partners.map((partner, index) => (
                 <div 
                   key={`dup-${index}`} 
-                  className="flex-[0_0_auto] min-w-[140px] md:min-w-[200px] px-2 md:px-3 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 flex items-center justify-center"
+                  className="flex-[0_0_auto] min-w-[62px] md:min-w-[90px] px-[2px] md:px-[5px] opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 flex items-center justify-center"
                 >
                   <img 
                     src={partner.url} 
