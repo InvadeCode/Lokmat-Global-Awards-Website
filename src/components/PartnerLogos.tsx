@@ -3,14 +3,19 @@ import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 
 const partners = [
-  { name: "Partner 1", url: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-  { name: "Partner 2", url: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-  { name: "Partner 3", url: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" },
-  { name: "Partner 4", url: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" },
-  { name: "Partner 5", url: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
-  { name: "Partner 6", url: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
-  { name: "Partner 7", url: "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" },
-  { name: "Partner 8", url: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lenovo_logo_2015.svg" },
+  { name: "Partner 1", url: "https://static.wixstatic.com/media/548938_e5bc3898a4bd4aa1af88fd1c02565ae9~mv2.png" },
+  { name: "Partner 2", url: "https://static.wixstatic.com/media/548938_c2dfb610190f4c27875b3fe277f64816~mv2.png" },
+  { name: "Partner 3", url: "https://static.wixstatic.com/media/548938_73c476cde17344c09345682b855b9633~mv2.png" },
+  { name: "Partner 4", url: "https://static.wixstatic.com/media/548938_31c29b44426542be941d9bda4d512253~mv2.png" },
+  { name: "Partner 5", url: "https://static.wixstatic.com/media/548938_eacc13f8c5494f6b82d0a293131f6354~mv2.png" },
+  { name: "Partner 6", url: "https://static.wixstatic.com/media/548938_af0dcb328c2b4a19ad2f6bcbebf8ee82~mv2.png" },
+  { name: "Partner 7", url: "https://static.wixstatic.com/media/548938_e564d9ef32294059889e62037116b2a4~mv2.png" },
+  { name: "Partner 8", url: "https://static.wixstatic.com/media/548938_bb886bd6531143f0a03f24808a2fbe19~mv2.png" },
+  { name: "Partner 9", url: "https://static.wixstatic.com/media/548938_0260c4471e42458a97008f7678c51a17~mv2.png" },
+  { name: "Partner 10", url: "https://static.wixstatic.com/media/548938_be353438d08f41e19f7cc83cecb79b87~mv2.png" },
+  { name: "Partner 11", url: "https://static.wixstatic.com/media/548938_5bdbf6089a31412a8fac0159ef9f0382~mv2.png" },
+  { name: "Partner 12", url: "https://static.wixstatic.com/media/548938_809220904ab642b1ad8d691fe1af1006~mv2.png" },
+  { name: "Partner 13", url: "https://static.wixstatic.com/media/548938_9bcc7ca48d474849a624a5218ba45f2c~mv2.png" },
 ];
 
 export default function PartnerLogos() {
@@ -46,12 +51,12 @@ export default function PartnerLogos() {
               {partners.map((partner, index) => (
                 <div 
                   key={index} 
-                  className="flex-[0_0_auto] min-w-[150px] md:min-w-[200px] px-6 md:px-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 flex items-center justify-center"
+                  className="flex-[0_0_auto] min-w-[140px] md:min-w-[200px] px-2 md:px-3 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 flex items-center justify-center"
                 >
                   <img 
                     src={partner.url} 
                     alt={partner.name} 
-                    className="h-8 md:h-12 w-auto object-contain pointer-events-none" 
+                    className="h-[133px] md:h-[200px] w-auto object-contain pointer-events-none" 
                     loading="lazy" 
                   />
                 </div>
@@ -60,12 +65,12 @@ export default function PartnerLogos() {
               {partners.map((partner, index) => (
                 <div 
                   key={`dup-${index}`} 
-                  className="flex-[0_0_auto] min-w-[150px] md:min-w-[200px] px-6 md:px-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 flex items-center justify-center"
+                  className="flex-[0_0_auto] min-w-[140px] md:min-w-[200px] px-2 md:px-3 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 flex items-center justify-center"
                 >
                   <img 
                     src={partner.url} 
                     alt={partner.name} 
-                    className="h-8 md:h-12 w-auto object-contain pointer-events-none" 
+                    className="h-[133px] md:h-[200px] w-auto object-contain pointer-events-none" 
                     loading="lazy" 
                   />
                 </div>
