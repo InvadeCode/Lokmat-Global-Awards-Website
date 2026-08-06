@@ -57,17 +57,22 @@ export default function LGEC() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="max-w-3xl text-left"
+              className="flex-1 max-w-7xl text-left"
             >
               <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold tracking-[0.25em] uppercase bg-red-50 text-red-600 border border-red-100 mb-4">
                 LGEC
               </span>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-[#111111]">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[54px] font-extrabold tracking-tight mb-4 text-[#111111] whitespace-nowrap">
                 Lokmat Global Economic Convention
               </h1>
-              <p className="text-base sm:text-lg text-gray-600 font-light leading-relaxed">
-                An international platform connecting business leaders, policy architects, and global diaspora across major financial capitals.
-              </p>
+              <div className="space-y-4 text-base sm:text-lg text-gray-600 font-light leading-relaxed">
+                <p>
+                  LGEC is Lokmat’s international business and economic platform, taking conversations on India, global markets, enterprise and leadership beyond national borders. It brings together policymakers, business leaders, entrepreneurs, investors, innovators and cultural voices to exchange perspectives and explore opportunities across markets.
+                </p>
+                <p>
+                  Through keynotes, panels, leadership conversations, networking and awards, LGEC examines economic trends, entrepreneurship, innovation, policy and international business. From Singapore to London, each edition connects India with the world and brings together those shaping tomorrow’s economy.
+                </p>
+              </div>
             </motion.div>
 
             {/* Right Logo Placeholder */}
@@ -75,7 +80,7 @@ export default function LGEC() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex-shrink-0 w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-2xl bg-white border border-gray-100 shadow-sm p-2 sm:p-2.5 flex items-center justify-center overflow-hidden"
+              className="flex-shrink-0 w-44 h-44 sm:w-52 sm:h-52 md:w-68 md:h-68 lg:w-[270px] lg:h-[270px] rounded-2xl bg-white border border-gray-100 shadow-sm p-2 sm:p-2.5 flex items-center justify-center overflow-hidden"
             >
               <img
                 src="https://static.wixstatic.com/media/548938_01de16ecda2648ee8f744a76a35e1a11~mv2.jpg"
@@ -86,28 +91,8 @@ export default function LGEC() {
           </div>
         </section>
 
-        {/* Minimal Pillars Section */}
-        <section className="w-full px-[3%] mb-16">
-          <div className="w-full bg-white border border-gray-100 rounded-3xl p-6 sm:p-8 shadow-sm">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {pillars.map((pillar, idx) => {
-                const Icon = pillar.icon;
-                return (
-                  <div key={idx} className="flex flex-col items-start space-y-2">
-                    <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center mb-1">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <h3 className="font-bold text-base text-[#111111]">{pillar.title}</h3>
-                    <p className="text-gray-500 text-xs font-light leading-relaxed">{pillar.description}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         {/* Editions & Cards Section */}
-        <section className="w-full px-[3%]">
+        <section className="w-full px-[3%] mb-16">
           <div className="mb-8">
             <span className="text-red-600 font-bold tracking-[0.25em] uppercase text-xs block mb-1">Chapters</span>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111111]">Convention Editions</h2>
@@ -124,6 +109,26 @@ export default function LGEC() {
               ))}
             </div>
           )}
+        </section>
+
+        {/* Minimal Pillars Section */}
+        <section className="w-full px-[3%]">
+          <div className="w-full bg-white border border-gray-100 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {pillars.map((pillar, idx) => {
+                const Icon = pillar.icon;
+                return (
+                  <div key={idx} className="flex flex-col items-start space-y-2">
+                    <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center mb-1">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-bold text-base text-[#111111]">{pillar.title}</h3>
+                    <p className="text-gray-500 text-xs font-light leading-relaxed">{pillar.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </section>
       </main>
 

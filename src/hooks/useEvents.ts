@@ -19,7 +19,9 @@ export function useEvents() {
       const customIds = new Set(customEvents.map(e => e.id));
       const filteredStatic = staticEvents.filter(e => !customIds.has(e.id));
       
-      const allEvents = [...customEvents, ...filteredStatic];
+      const allEvents = [...customEvents, ...filteredStatic].filter(
+        e => !e.category.toLowerCase().includes("upcoming")
+      );
       
       // Sort by creation date or custom date logic (newest first)
       const sortedEvents = allEvents.sort((a, b) => {

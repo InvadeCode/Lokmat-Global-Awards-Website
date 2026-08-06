@@ -19,8 +19,8 @@ export default function HeroSection() {
   });
 
   const { events } = useEvents();
-  // Filter out dummy upcoming events for the latest events section
-  const latestEvents = events.filter(e => !e.title.includes("Digital Transformation") && !e.title.includes("Youth Conclave")).slice(0, 6);
+  // Latest events section
+  const latestEvents = events.slice(0, 6);
   const [, setHoveredEventId] = useState<string | null>(null);
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);

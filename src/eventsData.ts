@@ -2,26 +2,6 @@ import { LokmatEvent } from "@/src/types";
 
 export const staticEvents: LokmatEvent[] = [
   {
-    id: "7",
-    title: "Lokmat Digital Transformation Summit",
-    date: "2026-09-10",
-    location: "Bangalore, Karnataka",
-    description: "A premier summit bringing together tech leaders, innovators, and policymakers to discuss the roadmap for India's digital future.",
-    category: "Upcoming Summit",
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80",
-    createdAt: Date.now() - 5000,
-  },
-  {
-    id: "4",
-    title: "Lokmat Global Youth Conclave",
-    date: "2026-11-15",
-    location: "New Delhi, India",
-    description: "An interactive platform for the youth to engage with global leaders and discuss the future of technology, entrepreneurship, and sustainable growth.",
-    category: "Upcoming Conclave",
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80",
-    createdAt: Date.now() - 10000,
-  },
-  {
     id: "1",
     title: "Lokmat Global Economic Convention – Singapore, 2024",
     date: "2024",

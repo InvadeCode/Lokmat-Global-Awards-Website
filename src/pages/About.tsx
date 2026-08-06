@@ -3,8 +3,10 @@ import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
 import VisionMissionSection from "@/src/components/VisionMissionSection";
 import AboutBrandSection from "@/src/components/AboutBrandSection";
+import GlobalEconomicFootprintsSection from "@/src/components/GlobalEconomicFootprintsSection";
+import GlobalMapSection from "@/src/components/GlobalMapSection";
 import { motion } from "motion/react";
-import { Award, Shield, Target, Globe, Milestone, Users, Star, ArrowUpRight, Sparkles, Linkedin } from "lucide-react";
+import { Award, Shield, Target, Globe, Users, Star, ArrowUpRight, Sparkles, Linkedin } from "lucide-react";
 
 export default function About() {
   // AIO, GEO, and SEO Best Practices: Dynamic Title and Description Updates
@@ -47,68 +49,35 @@ export default function About() {
     }
   ];
 
-  const milestones = [
-    {
-      year: "1971",
-      title: "Founding Legacy",
-      desc: "Inception of Lokmat as a primary publication, building the foundational trust and deep regional connection with millions.",
-    },
-    {
-      year: "2010",
-      title: "Lokmat Maharashtrian of the Year",
-      desc: "Launched India's largest regional awards property, celebrating remarkable individuals across public service, science, art, and sport.",
-    },
-    {
-      year: "2023",
-      title: "International Debut in Dubai",
-      desc: "The Lokmat International Awards debuted at Grand Hyatt, Dubai, celebrating cross-border excellence and international trade ties.",
-    },
-    {
-      year: "2024",
-      title: "Singapore Economic Convention & Baku",
-      desc: "Evolved into global economic dialogue platforms at Shangri-La Hotel, Singapore and Flame Towers, Baku, convening high-level trade networks.",
-    },
-    {
-      year: "2025",
-      title: "London Savoy & Hong Kong Chapters",
-      desc: "Hosted the prestigious Global Economic Convention at The Savoy, London, and strategic corridors in Hong Kong & Macau, recognizing Global Sakhis & Kohinoors.",
-    },
-    {
-      year: "2026 & Beyond",
-      title: "One World Vision & Cairo",
-      desc: "Strengthened collaborative global leadership ties in Cairo, Egypt, paving the path for the upcoming highly anticipated Mauritius chapter.",
-    }
-  ];
-
   const leaders = [
     {
-      name: "John Doe",
+      name: "Vijay Darda",
       role: "Chairman",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800",
+      image: "https://static.wixstatic.com/media/548938_ef75f912b1584b51abead72fa116b3d8~mv2.png",
       linkedin: "https://www.linkedin.com",
     },
     {
-      name: "Jane Smith",
-      role: "Editor-in-Chief",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
+      name: "Rajendra Darda",
+      role: "Editor-in-Chief, Lokmat Group",
+      image: "https://static.wixstatic.com/media/548938_40f79978f3b74c4da7155ad39d1d92c5~mv2.png",
       linkedin: "https://www.linkedin.com",
     },
     {
-      name: "Michael Johnson",
-      role: "Joint Managing Director",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800",
-      linkedin: "https://www.linkedin.com",
-    },
-    {
-      name: "Emily Davis",
+      name: "Devendra Darda",
       role: "Managing Director",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800",
+      image: "https://static.wixstatic.com/media/548938_a1749081fb1b4ce9a1be889262c70f80~mv2.png",
       linkedin: "https://www.linkedin.com",
     },
     {
-      name: "David Wilson",
-      role: "Executive Director",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+      name: "Rishi Darda",
+      role: "Editorial & Jt. Managing Director",
+      image: "https://static.wixstatic.com/media/548938_83f4d2ea168e42ca86aaa8b9b7fd4e53~mv2.png",
+      linkedin: "https://www.linkedin.com",
+    },
+    {
+      name: "Karan Darda",
+      role: "Executive Director & Editorial Director",
+      image: "https://static.wixstatic.com/media/548938_08276cddde434b3a93e170a02bc22bba~mv2.png",
       linkedin: "https://www.linkedin.com",
     }
   ];
@@ -117,7 +86,7 @@ export default function About() {
     <div className="w-full overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
       
-      <main className="flex-1 w-full pt-32 pb-24 md:pt-40 md:pb-32 relative">
+      <main className="flex-1 w-full pt-32 pb-0 md:pt-40 md:pb-0 relative">
         {/* Hero Header */}
         <div className="w-full px-[3%] text-center mb-12">
           <motion.div
@@ -181,71 +150,11 @@ export default function About() {
           </div>
         </section>
 
-        {/* Milestones Timeline */}
-        <section className="py-24 bg-[#FAFAFA] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full filter blur-[100px] pointer-events-none" />
-          
-          <div className="w-full px-[3%]">
-            <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Chronology of Impact</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Major Milestones</h2>
-              <p className="text-gray-500 font-light mt-4 text-base md:text-lg">
-                The journey of a regional powerhouse evolving into a major orchestrator of global thought leadership.
-              </p>
-            </div>
-
-            <div className="relative max-w-4xl mx-auto">
-              {/* Vertical line connector */}
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gray-200 -translate-x-1/2" />
-
-              <div className="space-y-12">
-                {milestones.map((m, idx) => {
-                  const isLeft = idx % 2 === 0;
-                  return (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 0.6 }}
-                      className={`relative flex flex-col md:flex-row items-start ${
-                        isLeft ? "md:flex-row-reverse" : ""
-                      }`}
-                    >
-                      {/* Timeline Dot */}
-                      <div className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full border-4 border-white bg-red-600 shadow-md -translate-x-1/2 flex items-center justify-center z-10">
-                        <Milestone className="w-3 h-3 text-white" />
-                      </div>
-
-                      {/* Content panel */}
-                      <div className="w-full md:w-[45%] pl-12 md:pl-0">
-                        <div className={`p-8 bg-white border border-gray-150 rounded-2xl shadow-sm hover:border-red-200 transition-all duration-300 ${
-                          isLeft ? "md:text-right" : "md:text-left"
-                        }`}>
-                          <span className="inline-block px-3 py-1 bg-red-50 text-red-600 font-bold text-sm rounded-lg mb-4">
-                            {m.year}
-                          </span>
-                          <h3 className="text-xl font-bold text-[#111111] mb-3">
-                            {m.title}
-                          </h3>
-                          <p className="text-gray-500 text-sm font-light leading-relaxed">
-                            {m.desc}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Empty side for layout spacing */}
-                      <div className="hidden md:block w-[10%]"></div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Strategic Global Presence / Economic Footprints */}
+        <GlobalEconomicFootprintsSection />
 
         {/* Leadership Section */}
-        <section className="py-24 bg-white border-t border-gray-100">
+        <section className="pt-20 pb-16 md:pt-24 md:pb-20 bg-white border-t border-gray-100">
           <div className="w-full px-[3%]">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Governing Board</span>
@@ -255,7 +164,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 xl:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
               {leaders.map((leader, idx) => (
                 <motion.div
                   key={idx}
@@ -263,11 +172,11 @@ export default function About() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.05 }}
-                  className="bg-white border border-gray-200 p-5 rounded-2xl flex flex-col justify-between hover:border-red-200 hover:shadow-xl transition-all duration-300 group"
+                  className="bg-white border border-gray-200 p-3.5 sm:p-4 rounded-xl flex flex-col justify-between hover:border-red-200 hover:shadow-xl transition-all duration-300 group"
                 >
                   <div>
                     {/* Image in 3:4 ratio */}
-                    <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-gray-100">
+                    <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden mb-3 bg-gray-100">
                       <img
                         src={leader.image}
                         alt={leader.name}
@@ -276,25 +185,25 @@ export default function About() {
                     </div>
 
                     {/* Name & Designation */}
-                    <h3 className="text-xl font-bold text-[#111111] mb-1">
+                    <h3 className="text-base sm:text-lg font-bold text-[#111111] mb-0.5 leading-snug">
                       {leader.name}
                     </h3>
-                    <p className="text-red-600 text-xs font-bold uppercase tracking-wider">
+                    <p className="text-red-600 text-[11px] font-bold uppercase tracking-wider leading-snug">
                       {leader.role}
                     </p>
                   </div>
 
                   {/* LinkedIn Icon Action */}
-                  <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between">
-                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">LinkedIn</span>
+                  <div className="pt-3 mt-3 border-t border-gray-100 flex items-center justify-between">
+                    <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">LinkedIn</span>
                     <a
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${leader.name}'s LinkedIn Profile`}
-                      className="w-9 h-9 rounded-2xl border border-gray-200 bg-[#FAFAFA] flex items-center justify-center text-gray-600 hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:scale-105 transition-all duration-300 shadow-sm"
+                      className="w-8 h-8 rounded-xl border border-gray-200 bg-[#FAFAFA] flex items-center justify-center text-gray-600 hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:scale-105 transition-all duration-300 shadow-sm"
                     >
-                      <Linkedin className="w-4 h-4" />
+                      <Linkedin className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </motion.div>
@@ -302,6 +211,9 @@ export default function About() {
             </div>
           </div>
         </section>
+
+        {/* World Map Section pointing to Asia, Europe, Africa */}
+        <GlobalMapSection />
       </main>
       
       <Footer />

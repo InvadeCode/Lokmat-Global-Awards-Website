@@ -32,7 +32,7 @@ export default function AllEvents() {
                 <div className="text-center text-gray-400 py-10">No events currently available.</div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-12">
-                   {events.filter(e => !e.title.includes("Digital Transformation") && !e.title.includes("Youth Conclave")).map((event, index) => (
+                   {events.map((event, index) => (
                        <EventCard key={event.id} event={event} index={index} />
                    ))}
                 </div>
