@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
-import AboutSection from "@/src/components/AboutSection";
+import VisionMissionSection from "@/src/components/VisionMissionSection";
 import { motion } from "motion/react";
-import { Award, Shield, Target, Globe, Milestone, Users, Star, ArrowUpRight } from "lucide-react";
+import { Award, Shield, Target, Globe, Milestone, Users, Star, ArrowUpRight, Sparkles } from "lucide-react";
 
 export default function About() {
   // AIO, GEO, and SEO Best Practices: Dynamic Title and Description Updates
@@ -107,10 +107,10 @@ export default function About() {
   ];
 
   return (
-    <div className="w-[100vw] overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
+    <div className="w-full overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
       
-      <main className="flex-1 w-[100vw] pt-32 pb-24 md:pt-40 md:pb-32 relative">
+      <main className="flex-1 w-full pt-32 pb-24 md:pt-40 md:pb-32 relative">
         {/* Hero Header */}
         <div className="w-full px-[3%] text-center mb-12">
           <motion.div
@@ -129,12 +129,43 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Primary Legacy Section */}
-        <AboutSection />
+        {/* About the Brand Section */}
+        <section className="w-full px-[3%] mb-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-5xl mx-auto bg-white border border-gray-200/80 rounded-3xl p-8 md:p-12 shadow-xl shadow-gray-100/50 relative overflow-hidden"
+          >
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-600 via-orange-500 to-amber-500" />
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-4">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-100 text-red-600 font-bold text-xs uppercase tracking-[0.2em] mb-3">
+                  <Sparkles className="w-3.5 h-3.5" /> About The Brand
+                </span>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#111111] leading-tight">
+                  Lokmat Experiences
+                </h2>
+                <p className="text-xs uppercase tracking-widest text-red-600 font-semibold mt-1">
+                  Legacy of Excellence & Impact
+                </p>
+              </div>
+              <div className="lg:col-span-8 border-t lg:border-t-0 lg:border-l border-gray-100 pt-6 lg:pt-0 lg:pl-8">
+                <p className="text-gray-600 font-light text-base md:text-lg leading-relaxed">
+                  Born from the deeply trusted five-decade journalistic legacy of Lokmat Media Group, <strong>Lokmat Experiences</strong> is India's premier platform for high-impact summits, prestigious award conclaves, and international economic forums. We bridge regional leadership with global influence—curating transformative gatherings in iconic capitals across the world while celebrating grassroots changemakers, corporate titans, and cultural pioneers who shape our collective future.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Primary Interactive Vision & Mission Section */}
+        <VisionMissionSection />
 
         {/* Vision & Values Section */}
         <section className="py-20 bg-white border-t border-b border-gray-100">
-          <div className="w-[100vw] px-[3%]">
+          <div className="w-full px-[3%]">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Guided by Purpose</span>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Core Values</h2>
@@ -175,7 +206,7 @@ export default function About() {
         <section className="py-24 bg-[#FAFAFA] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full filter blur-[100px] pointer-events-none" />
           
-          <div className="w-[100vw] px-[3%]">
+          <div className="w-full px-[3%]">
             <div className="text-center max-w-3xl mx-auto mb-20">
               <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Chronology of Impact</span>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Major Milestones</h2>
@@ -236,7 +267,7 @@ export default function About() {
 
         {/* Leadership Section */}
         <section className="py-24 bg-white border-t border-gray-100">
-          <div className="w-[100vw] px-[3%]">
+          <div className="w-full px-[3%]">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Governing Board</span>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Visionary Leadership</h2>

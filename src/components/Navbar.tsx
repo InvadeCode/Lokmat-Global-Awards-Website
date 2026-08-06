@@ -20,7 +20,8 @@ export default function Navbar() {
     return href && location.pathname === href;
   };
 
-  const isDropdownActive = (items?: { href: string }[]) => {
+  const isDropdownActive = (items?: { href: string }[], parentHref?: string) => {
+    if (parentHref && location.pathname === parentHref) return true;
     return items?.some(item => location.pathname === item.href);
   };
 
@@ -36,16 +37,22 @@ export default function Navbar() {
           <div key={item.label} className="relative group">
             {item.items ? (
               <div className="flex items-center gap-1 cursor-pointer hover:text-red-600 transition-colors py-2 group-hover:text-red-600">
-                <span className={isDropdownActive(item.items) ? "text-red-600" : ""}>{item.label}</span>
+                {item.href ? (
+                  <Link to={item.href} className={isDropdownActive(item.items, item.href) ? "text-red-600" : ""}>
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className={isDropdownActive(item.items, item.href) ? "text-red-600" : ""}>{item.label}</span>
+                )}
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                 
-                <div className="absolute top-full left-0 pt-2 w-48 transition-all origin-top opacity-0 scale-y-0 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible">
+                <div className="absolute top-full left-0 pt-2 w-52 transition-all origin-top opacity-0 scale-y-0 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible">
                   <div className="flex flex-col bg-white border border-gray-100 shadow-lg rounded-lg overflow-hidden">
                     {item.items.map((subItem) => (
                       <Link 
                         key={subItem.label} 
                         to={subItem.href} 
-                        className={`px-4 py-3 text-xs hover:bg-gray-50 hover:text-red-600 transition-colors ${isActive(subItem.href) ? 'text-red-600 bg-gray-50' : 'text-gray-500'}`}
+                        className={`px-4 py-3 text-sm font-bold tracking-widest uppercase hover:bg-gray-50 hover:text-red-600 transition-colors ${isActive(subItem.href) ? 'text-red-600 bg-gray-50' : 'text-gray-500'}`}
                         onClick={() => setOpenDropdown(null)}
                       >
                         {subItem.label}
@@ -114,7 +121,7 @@ export default function Navbar() {
                                 key={subItem.label} 
                                 to={subItem.href} 
                                 onClick={() => setIsOpen(false)}
-                                className={`pl-8 pr-4 py-3 text-xs font-bold tracking-widest uppercase hover:text-red-600 ${isActive(subItem.href) ? 'text-red-600' : 'text-gray-500'}`}
+                                className={`pl-8 pr-4 py-3 text-sm font-bold tracking-widest uppercase hover:text-red-600 ${isActive(subItem.href) ? 'text-red-600' : 'text-gray-500'}`}
                               >
                                 {subItem.label}
                               </Link>

@@ -78,26 +78,26 @@ export default function Footer() {
             {navigationData.map((menu) => (
               <div key={menu.label}>
                 {menu.href ? (
-                  <h4 className="text-lg font-bold mb-6 tracking-wide">
+                  <h4 className="text-lg font-bold mb-4 tracking-wide">
                     <Link to={menu.href} className="hover:text-white transition-colors flex items-center group">
                       <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 -ml-5 transition-all text-red-300" />
                       {menu.label}
                     </Link>
                   </h4>
                 ) : (
-                  <>
-                    <h4 className="text-lg font-bold mb-6 tracking-wide">{menu.label}</h4>
-                    <ul className="space-y-4 text-red-100 font-medium text-[15px]">
-                      {menu.items?.map((item) => (
-                        <li key={item.label}>
-                          <Link to={item.href} className="hover:text-white transition-colors flex items-center group">
-                            <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 -ml-5 transition-all text-red-300" />
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
+                  <h4 className="text-lg font-bold mb-4 tracking-wide">{menu.label}</h4>
+                )}
+                {menu.items && (
+                  <ul className="space-y-3 text-red-100 font-medium text-[15px]">
+                    {menu.items.map((item) => (
+                      <li key={item.label}>
+                        <Link to={item.href} className="hover:text-white transition-colors flex items-center group">
+                          <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 -ml-5 transition-all text-red-300" />
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 )}
               </div>
             ))}

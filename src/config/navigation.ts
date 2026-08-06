@@ -11,23 +11,19 @@ export interface NavMenu {
 
 export const navigationData: NavMenu[] = [
   {
+    label: "Home",
+    href: "/"
+  },
+  {
     label: "About",
     href: "/about"
   },
   {
-    label: "LGEC",
+    label: "GloCon",
+    href: "/glocon",
     items: [
-      { label: "Singapore", href: "/event/singapore-2024" },
-      { label: "London", href: "/event/london-2025" }
-    ]
-  },
-  {
-    label: "LOWS&A",
-    items: [
-      { label: "Dubai", href: "/event/dubai-2023" },
-      { label: "Baku", href: "/event/baku-2024" },
-      { label: "Hong Kong", href: "/event/hong-kong-macau-2025" },
-      { label: "Egypt", href: "/event/cairo-2026" }
+      { label: "LGEC", href: "/lgec" },
+      { label: "LOWS", href: "/lows" }
     ]
   },
   {

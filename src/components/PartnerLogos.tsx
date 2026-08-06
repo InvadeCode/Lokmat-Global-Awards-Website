@@ -62,7 +62,8 @@ export default function PartnerLogos() {
                     src={partner.url} 
                     alt={partner.name} 
                     className="h-[133px] md:h-[200px] w-auto object-contain pointer-events-none" 
-                    loading="lazy" 
+                    loading="eager" 
+                    decoding="async"
                   />
                 </div>
               ))}
@@ -76,7 +77,8 @@ export default function PartnerLogos() {
                     src={partner.url} 
                     alt={partner.name} 
                     className="h-[133px] md:h-[200px] w-auto object-contain pointer-events-none" 
-                    loading="lazy" 
+                    loading="eager" 
+                    decoding="async"
                   />
                 </div>
               ))}

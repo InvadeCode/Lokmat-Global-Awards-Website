@@ -1,8 +1,13 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import aboutImg from "../assets/images/regenerated_image_1781771489896.jpg";
 
-export default function AboutSection() {
+interface AboutSectionProps {
+  showButton?: boolean;
+}
+
+export default function AboutSection({ showButton = true }: AboutSectionProps) {
   return (
     <section className="border-t border-gray-100 bg-[#FAFAFA] relative overflow-hidden py-12 md:py-20">
       {/* Decorative background blur */}
@@ -57,14 +62,16 @@ export default function AboutSection() {
               Built on Lokmat’s trusted media legacy, every experience is designed to celebrate excellence, spark meaningful conversations, create national visibility and recognise the people and ideas shaping India’s future.
             </p>
 
-            <div className="pt-4">
-              <button className="flex items-center gap-4 text-[#111111] hover:text-red-600 group transition-colors uppercase tracking-[0.2em] font-bold text-sm">
-                <span>Discover Our History</span>
-                <div className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-red-600 transition-colors">
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </button>
-            </div>
+            {showButton && (
+              <div className="pt-4">
+                <Link to="/about" className="inline-flex items-center gap-4 text-[#111111] hover:text-red-600 group transition-colors uppercase tracking-[0.2em] font-bold text-sm">
+                  <span>Discover Our History</span>
+                  <div className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-red-600 transition-colors">
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              </div>
+            )}
           </motion.div>
         </div>
       </div>

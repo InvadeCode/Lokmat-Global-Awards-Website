@@ -14,7 +14,7 @@ export default function EventDetails() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const event = events.find((e) => e.id === id);
+  const event = events.find((e) => e.id === id || (id === "singapore-2024" && e.id === "1") || (id === "1" && e.id === "singapore-2024"));
 
   useEffect(() => {
     if (event) {

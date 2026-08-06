@@ -10,6 +10,9 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Partners from "./pages/Partners";
 import About from "./pages/About";
+import GloCon from "./pages/GloCon";
+import LGEC from "./pages/LGEC";
+import LOWS from "./pages/LOWS";
 
 export default function App() {
   return (
@@ -17,6 +20,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/glocon" element={<GloCon />} />
+        <Route path="/lgec" element={<LGEC />} />
+        <Route path="/lows" element={<LOWS />} />
         <Route path="/event/:id" element={<EventDetails />} />
         <Route path="/awards" element={<Awards />} />
         <Route path="/all-events" element={<AllEvents />} />
