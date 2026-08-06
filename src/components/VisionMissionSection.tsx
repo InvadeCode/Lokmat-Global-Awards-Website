@@ -136,9 +136,6 @@ export default function VisionMissionSection() {
                       <span className="text-xs uppercase tracking-widest text-gray-400 font-bold">Key Focus</span>
                       <span className="text-lg font-bold text-red-600">{activeContent.stat}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-xs uppercase font-bold text-gray-500 tracking-wider">
-                      Lokmat Legacy <ArrowRight className="w-4 h-4 text-red-600" />
-                    </div>
                   </div>
                 </div>
 

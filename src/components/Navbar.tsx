@@ -102,15 +102,21 @@ export default function Navbar() {
         </Link>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex items-center gap-10 text-sm font-bold tracking-widest uppercase text-gray-500">
+      <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-bold tracking-widest uppercase text-gray-500">
         {navigationData.map((item) => (
           <div key={item.label} className="relative group">
             {item.items ? (
               <div className="flex items-center gap-1 cursor-pointer hover:text-red-600 transition-colors py-2 group-hover:text-red-600">
                 {item.href ? (
-                  <Link to={item.href} className={isDropdownActive(item.items, item.href) ? "text-red-600" : ""}>
-                    {item.label}
-                  </Link>
+                  item.isExternal || item.href.startsWith("http") ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="hover:text-red-600">
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link to={item.href} className={isDropdownActive(item.items, item.href) ? "text-red-600" : ""}>
+                      {item.label}
+                    </Link>
+                  )
                 ) : (
                   <span className={isDropdownActive(item.items, item.href) ? "text-red-600" : ""}>{item.label}</span>
                 )}
@@ -119,23 +125,45 @@ export default function Navbar() {
                 <div className="absolute top-full left-0 pt-2 min-w-[280px] transition-all origin-top opacity-0 scale-y-0 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible">
                   <div className="flex flex-col bg-white border border-gray-100 shadow-xl rounded-xl overflow-hidden">
                     {item.items.map((subItem) => (
-                      <Link 
-                        key={subItem.label} 
-                        to={subItem.href} 
-                        className={`px-5 py-3.5 text-sm font-bold tracking-widest uppercase whitespace-nowrap hover:bg-gray-50 hover:text-red-600 transition-colors ${isActive(subItem.href) ? 'text-red-600 bg-gray-50' : 'text-gray-500'}`}
-                        onClick={() => setOpenDropdown(null)}
-                      >
-                        {subItem.label}
-                      </Link>
+                      subItem.isExternal || subItem.href.startsWith("http") ? (
+                        <a 
+                          key={subItem.label} 
+                          href={subItem.href} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="px-5 py-3.5 text-sm font-bold tracking-widest uppercase whitespace-nowrap hover:bg-gray-50 hover:text-red-600 transition-colors text-gray-500"
+                          onClick={() => setOpenDropdown(null)}
+                        >
+                          {subItem.label}
+                        </a>
+                      ) : (
+                        <Link 
+                          key={subItem.label} 
+                          to={subItem.href} 
+                          className={`px-5 py-3.5 text-sm font-bold tracking-widest uppercase whitespace-nowrap hover:bg-gray-50 hover:text-red-600 transition-colors ${isActive(subItem.href) ? 'text-red-600 bg-gray-50' : 'text-gray-500'}`}
+                          onClick={() => setOpenDropdown(null)}
+                        >
+                          {subItem.label}
+                        </Link>
+                      )
                     ))}
                   </div>
                 </div>
               </div>
             ) : (
-              item.label === "Contact" ? (
+              item.isExternal || (item.href && item.href.startsWith("http")) ? (
+                <a 
+                  href={item.href!} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-red-600 transition-colors py-2 flex items-center gap-1"
+                >
+                  {item.label}
+                </a>
+              ) : item.label === "Contact" ? (
                 <Link 
                   to={item.href!} 
-                  className={`px-6 py-2 border rounded-2xl font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all duration-300 ${isActive(item.href) ? 'bg-red-600 text-white border-red-600' : 'border-gray-300 hover:border-[#111111] hover:text-[#111111] text-[#111111]'}`}
+                  className={`px-5 py-2 border rounded-2xl font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all duration-300 ${isActive(item.href) ? 'bg-red-600 text-white border-red-600' : 'border-gray-300 hover:border-[#111111] hover:text-[#111111] text-[#111111]'}`}
                 >
                   {item.label}
                 </Link>
@@ -201,13 +229,25 @@ export default function Navbar() {
                       </AnimatePresence>
                     </div>
                   ) : (
-                    <Link 
-                      to={item.href!} 
-                      onClick={() => setIsOpen(false)}
-                      className={`block py-4 text-sm font-bold tracking-widest uppercase hover:text-red-600 ${isActive(item.href) ? 'text-red-600' : 'text-gray-600'}`}
-                    >
-                      {item.label}
-                    </Link>
+                    item.isExternal || (item.href && item.href.startsWith("http")) ? (
+                      <a 
+                        href={item.href!} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={() => setIsOpen(false)}
+                        className="block py-4 text-sm font-bold tracking-widest uppercase hover:text-red-600 text-gray-600"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link 
+                        to={item.href!} 
+                        onClick={() => setIsOpen(false)}
+                        className={`block py-4 text-sm font-bold tracking-widest uppercase hover:text-red-600 ${isActive(item.href) ? 'text-red-600' : 'text-gray-600'}`}
+                      >
+                        {item.label}
+                      </Link>
+                    )
                   )}
                 </div>
               ))}

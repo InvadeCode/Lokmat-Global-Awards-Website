@@ -160,7 +160,7 @@ export default function AboutBrandSection() {
                 <div
                   key={facet.id}
                   onMouseEnter={() => setHoveredFacet(idx)}
-                  className={`relative p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-default group/card ${
+                  className={`relative p-4 sm:p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-default group/card ${
                     isHovered
                       ? "bg-gradient-to-b from-white/15 to-white/5 border-red-500/80 shadow-xl shadow-red-600/20 -translate-y-1"
                       : "bg-white/[0.03] border-white/10 hover:bg-white/[0.08] hover:border-white/20"
@@ -174,9 +174,9 @@ export default function AboutBrandSection() {
                   />
 
                   <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-5">
+                    <div className="flex items-center justify-between mb-3">
                       <div
-                        className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
                           isHovered
                             ? "bg-gradient-to-br from-red-600 to-orange-500 text-white shadow-lg shadow-red-600/40 scale-105"
                             : "bg-white/10 text-gray-300"
@@ -189,16 +189,16 @@ export default function AboutBrandSection() {
                       </span>
                     </div>
 
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-red-400 block mb-1.5">
+                    <span className="text-[10px] uppercase tracking-widest font-bold text-red-400 block mb-1">
                       {facet.badge}
                     </span>
 
-                    <h3 className="text-xl font-bold text-white leading-snug">
+                    <h3 className="text-lg sm:text-xl font-bold text-white leading-snug">
                       {facet.title}
                     </h3>
                   </div>
 
-                  <div className="relative z-10 pt-5 mt-6 border-t border-white/10 flex items-center justify-between">
+                  <div className="relative z-10 pt-3 mt-4 border-t border-white/10 flex items-center justify-between">
                     <span className="text-xs font-semibold text-gray-400">Impact</span>
                     <span className="text-sm font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-amber-300">
                       {facet.stats}

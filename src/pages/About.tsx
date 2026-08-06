@@ -4,7 +4,7 @@ import Footer from "@/src/components/Footer";
 import VisionMissionSection from "@/src/components/VisionMissionSection";
 import AboutBrandSection from "@/src/components/AboutBrandSection";
 import { motion } from "motion/react";
-import { Award, Shield, Target, Globe, Milestone, Users, Star, ArrowUpRight, Sparkles } from "lucide-react";
+import { Award, Shield, Target, Globe, Milestone, Users, Star, ArrowUpRight, Sparkles, Linkedin } from "lucide-react";
 
 export default function About() {
   // AIO, GEO, and SEO Best Practices: Dynamic Title and Description Updates
@@ -84,26 +84,32 @@ export default function About() {
     {
       name: "John Doe",
       role: "Chairman",
-      desc: "Visionary leader driving the editorial integrity and strategic expansion of our global footprint.",
-      initials: "JD",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800",
+      linkedin: "https://www.linkedin.com",
     },
     {
       name: "Jane Smith",
       role: "Editor-in-Chief",
-      desc: "Renowned journalist and public figure, steering our intellectual direction and community connections.",
-      initials: "JS",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
+      linkedin: "https://www.linkedin.com",
     },
     {
       name: "Michael Johnson",
       role: "Joint Managing Director",
-      desc: "Chief architect of our modern experience platforms, organizing international conclaves and integrating digital-first content platforms.",
-      initials: "MJ",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800",
+      linkedin: "https://www.linkedin.com",
     },
     {
       name: "Emily Davis",
       role: "Managing Director",
-      desc: "Pioneering business operations, industrial alignments, and corporate partnerships across all global and national summit chapters.",
-      initials: "ED",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800",
+      linkedin: "https://www.linkedin.com",
+    },
+    {
+      name: "David Wilson",
+      role: "Executive Director",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+      linkedin: "https://www.linkedin.com",
     }
   ];
 
@@ -249,7 +255,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 xl:gap-6">
               {leaders.map((leader, idx) => (
                 <motion.div
                   key={idx}
@@ -257,26 +263,39 @@ export default function About() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.05 }}
-                  className="bg-[#FAFAFA] border border-gray-200 p-8 rounded-2xl flex flex-col justify-between hover:border-red-200 hover:shadow-lg transition-all duration-300"
+                  className="bg-white border border-gray-200 p-5 rounded-2xl flex flex-col justify-between hover:border-red-200 hover:shadow-xl transition-all duration-300 group"
                 >
                   <div>
-                    {/* Visual avatar badge */}
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-orange-500 flex items-center justify-center text-white font-bold text-lg mb-6 shadow-md shadow-red-600/20">
-                      {leader.initials}
+                    {/* Image in 3:4 ratio */}
+                    <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-gray-100">
+                      <img
+                        src={leader.image}
+                        alt={leader.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
+
+                    {/* Name & Designation */}
                     <h3 className="text-xl font-bold text-[#111111] mb-1">
                       {leader.name}
                     </h3>
-                    <p className="text-red-600 text-xs font-bold uppercase tracking-wider mb-4">
+                    <p className="text-red-600 text-xs font-bold uppercase tracking-wider">
                       {leader.role}
                     </p>
-                    <p className="text-gray-500 font-light text-sm leading-relaxed mb-6">
-                      {leader.desc}
-                    </p>
                   </div>
-                  <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-gray-400 group cursor-pointer hover:text-red-600 transition-colors">
-                    <span className="text-xs font-bold uppercase tracking-widest">Read Full Profile</span>
-                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+
+                  {/* LinkedIn Icon Action */}
+                  <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between">
+                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">LinkedIn</span>
+                    <a
+                      href={leader.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${leader.name}'s LinkedIn Profile`}
+                      className="w-9 h-9 rounded-2xl border border-gray-200 bg-[#FAFAFA] flex items-center justify-center text-gray-600 hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:scale-105 transition-all duration-300 shadow-sm"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </a>
                   </div>
                 </motion.div>
               ))}

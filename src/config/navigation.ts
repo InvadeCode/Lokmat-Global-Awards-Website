@@ -1,11 +1,13 @@
 export interface NavLink {
   label: string;
   href: string;
+  isExternal?: boolean;
 }
 
 export interface NavMenu {
   label: string;
   href?: string;
+  isExternal?: boolean;
   items?: NavLink[];
 }
 
@@ -24,6 +26,11 @@ export const navigationData: NavMenu[] = [
       { label: "Global Economic Convention", href: "/lgec" },
       { label: "One World Summit", href: "/lows" }
     ]
+  },
+  {
+    label: "LMOTY",
+    href: "https://lokmatmaharashtrian.com/",
+    isExternal: true
   },
   {
     label: "Gallery",
