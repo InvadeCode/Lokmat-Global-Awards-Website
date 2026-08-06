@@ -4,8 +4,7 @@ import Footer from "@/src/components/Footer";
 import EventCard from "@/src/components/EventCard";
 import { useEvents } from "@/src/hooks/useEvents";
 import { motion } from "motion/react";
-import { Globe, TrendingUp, Building2, Landmark, Award, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Globe, TrendingUp, Building2, Award } from "lucide-react";
 
 export default function LGEC() {
   const { events, loading } = useEvents();
@@ -16,7 +15,6 @@ export default function LGEC() {
   }, []);
 
   // Filter events corresponding to LGEC (Singapore & London)
-  const lgecEventIds = ["1", "singapore-2024", "london-2025"];
   const lgecEvents = events.filter((e) => 
     e.title.toLowerCase().includes("economic convention") ||
     e.id === "1" || 
@@ -28,109 +26,99 @@ export default function LGEC() {
     {
       icon: Globe,
       title: "Global Footprint",
-      description: "Positioning Indian business leadership and economic thought within key international trade and finance corridors."
+      description: "Connecting Indian economic leadership with international trade corridors."
     },
     {
       icon: TrendingUp,
       title: "Strategic Dialogue",
-      description: "Convening policymakers, industrial titans, and investors to address cross-border opportunities and emerging markets."
+      description: "Convening policymakers, industrial leaders, and investors."
     },
     {
       icon: Building2,
-      title: "Industry Collaboration",
-      description: "Fostering trade partnerships, institutional alliances, and enterprise growth across global business hubs."
+      title: "Industry Alliances",
+      description: "Fostering trade partnerships across global financial hubs."
     },
     {
       icon: Award,
-      title: "Prestigious Honours",
-      description: "Bestowing coveted recognitions such as Maharashtra Ratna, Bharat Bhushan, and Global Sakhi on distinguished achievers."
+      title: "Prestigious Honors",
+      description: "Recognizing pioneering achievers on international stages."
     }
   ];
 
   return (
-    <div className="w-[100vw] overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
+    <div className="w-full overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 w-[100vw] pt-32 pb-24 md:pt-40 md:pb-32 relative">
+      <main className="flex-1 w-full pt-28 pb-20 md:pt-36 md:pb-28 relative">
         {/* Hero Section */}
-        <div className="w-full px-[3%] mb-16 md:mb-24">
-          <div className="max-w-5xl mx-auto text-center">
+        <section className="w-full px-[3%] mb-10 md:mb-14">
+          <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-3xl text-left"
             >
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.25em] uppercase bg-red-50 text-red-600 border border-red-100 mb-6">
-                Lokmat Global Economic Convention
+              <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold tracking-[0.25em] uppercase bg-red-50 text-red-600 border border-red-100 mb-4">
+                LGEC
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight mb-8">
-                Driving Global Economic Dialogue & Leadership
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-[#111111]">
+                Lokmat Global Economic Convention
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
-                The Lokmat Global Economic Convention (LGEC) serves as an international platform connecting business leaders, policy architects, and innovators across key global economic centers.
+              <p className="text-base sm:text-lg text-gray-600 font-light leading-relaxed">
+                An international platform connecting business leaders, policy architects, and global diaspora across major financial capitals.
               </p>
             </motion.div>
+
+            {/* Right Logo Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex-shrink-0 w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-2xl bg-white border border-gray-100 shadow-sm p-2 sm:p-2.5 flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="https://static.wixstatic.com/media/548938_01de16ecda2648ee8f744a76a35e1a11~mv2.jpg"
+                alt="LGEC Logo"
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </motion.div>
           </div>
-        </div>
+        </section>
 
-        {/* Content Overview Section */}
-        <section className="py-16 bg-white border-y border-gray-100 mb-20">
-          <div className="w-full px-[3%] max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-6 space-y-6">
-                <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs block">About LGEC</span>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                  Where Global Vision Meets Economic Opportunity
-                </h2>
-                <p className="text-gray-600 font-light leading-relaxed text-base md:text-lg">
-                  Evolving beyond traditional awards ceremonies, the Lokmat Global Economic Convention was established to foster high-level intellectual exchange, strategic trade connections, and actionable economic policy insights.
-                </p>
-                <p className="text-gray-600 font-light leading-relaxed text-base">
-                  From landmark venues in Singapore to iconic institutions like The Savoy in London, LGEC brings together influential voices from politics, enterprise, social impact, and the global Indian diaspora to shape the future of international business and economic cooperation.
-                </p>
-              </div>
-
-              <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {pillars.map((pillar, idx) => {
-                  const Icon = pillar.icon;
-                  return (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      className="p-6 rounded-2xl bg-[#FAFAFA] border border-gray-200 hover:border-red-200 hover:shadow-md transition-all"
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center mb-4">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <h3 className="font-bold text-lg mb-2">{pillar.title}</h3>
-                      <p className="text-gray-500 text-xs font-light leading-relaxed">{pillar.description}</p>
-                    </motion.div>
-                  );
-                })}
-              </div>
+        {/* Minimal Pillars Section */}
+        <section className="w-full px-[3%] mb-16">
+          <div className="w-full bg-white border border-gray-100 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {pillars.map((pillar, idx) => {
+                const Icon = pillar.icon;
+                return (
+                  <div key={idx} className="flex flex-col items-start space-y-2">
+                    <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center mb-1">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-bold text-base text-[#111111]">{pillar.title}</h3>
+                    <p className="text-gray-500 text-xs font-light leading-relaxed">{pillar.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
 
         {/* Editions & Cards Section */}
-        <section className="w-full px-[3%] max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Convention Editions</span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">LGEC Global Chapters</h2>
-            <p className="text-gray-500 font-light mt-4 text-base md:text-lg">
-              Explore the international editions of the Lokmat Global Economic Convention. Click on any edition to view full event details, highlights, and photo galleries.
-            </p>
+        <section className="w-full px-[3%]">
+          <div className="mb-8">
+            <span className="text-red-600 font-bold tracking-[0.25em] uppercase text-xs block mb-1">Chapters</span>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111111]">Convention Editions</h2>
           </div>
 
           {loading ? (
-            <div className="flex justify-center items-center py-20">
-              <div className="w-10 h-10 border-4 border-red-600/20 border-t-red-600 rounded-full animate-spin" />
+            <div className="flex justify-center items-center py-16">
+              <div className="w-8 h-8 border-3 border-red-600/20 border-t-red-600 rounded-full animate-spin" />
             </div>
           ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {lgecEvents.map((event, idx) => (
                 <EventCard key={event.id} event={event} index={idx} />
               ))}

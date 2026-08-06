@@ -20,10 +20,9 @@ export const navigationData: NavMenu[] = [
   },
   {
     label: "GloCon",
-    href: "/glocon",
     items: [
-      { label: "LGEC", href: "/lgec" },
-      { label: "LOWS", href: "/lows" }
+      { label: "Global Economic Convention", href: "/lgec" },
+      { label: "One World Summit", href: "/lows" }
     ]
   },
   {

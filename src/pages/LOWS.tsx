@@ -4,7 +4,7 @@ import Footer from "@/src/components/Footer";
 import EventCard from "@/src/components/EventCard";
 import { useEvents } from "@/src/hooks/useEvents";
 import { motion } from "motion/react";
-import { Globe2, Sparkles, HeartHandshake, ShieldCheck, Award } from "lucide-react";
+import { Globe2, Sparkles, HeartHandshake, ShieldCheck } from "lucide-react";
 
 export default function LOWS() {
   const { events, loading } = useEvents();
@@ -28,109 +28,99 @@ export default function LOWS() {
     {
       icon: Globe2,
       title: "One World Philosophy",
-      description: "Uniting leaders across borders, cultures, and industries under a shared vision of global harmony and growth."
+      description: "Uniting global leaders across borders and industries under a shared vision."
     },
     {
       icon: Sparkles,
-      title: "Cross-Industry Innovation",
-      description: "Bringing together visionaries in tech, governance, arts, and sustainability to exchange transformational ideas."
+      title: "Innovation Exchange",
+      description: "Bringing together visionaries in tech, governance, and sustainability."
     },
     {
       icon: HeartHandshake,
-      title: "Cultural Exchange",
-      description: "Blending recognition of Indian leadership with international diplomacy and civilizational heritage."
+      title: "Cultural Diplomacy",
+      description: "Blending Indian leadership recognition with international civilizational heritage."
     },
     {
       icon: ShieldCheck,
-      title: "Impact & Sustainability",
-      description: "Addressing global challenges, climate responsibility, and social progress collectively with international partners."
+      title: "Global Progress",
+      description: "Addressing global challenges and social impact collectively."
     }
   ];
 
   return (
-    <div className="w-[100vw] overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
+    <div className="w-full overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 w-[100vw] pt-32 pb-24 md:pt-40 md:pb-32 relative">
+      <main className="flex-1 w-full pt-28 pb-20 md:pt-36 md:pb-28 relative">
         {/* Hero Section */}
-        <div className="w-full px-[3%] mb-16 md:mb-24">
-          <div className="max-w-5xl mx-auto text-center">
+        <section className="w-full px-[3%] mb-10 md:mb-14">
+          <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-3xl text-left"
             >
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.25em] uppercase bg-red-50 text-red-600 border border-red-100 mb-6">
-                Lokmat One World Summit & Awards
+              <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold tracking-[0.25em] uppercase bg-red-50 text-red-600 border border-red-100 mb-4">
+                LOWS
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight mb-8">
-                Uniting Global Leaders Under One Vision
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-[#111111]">
+                Lokmat One World Summit & Awards
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
-                The Lokmat One World Summit and Awards (LOWS) celebrates extraordinary global leadership, cross-cultural progress, and human excellence across key global destinations.
+              <p className="text-base sm:text-lg text-gray-600 font-light leading-relaxed">
+                Celebrating extraordinary leadership, cross-cultural progress, and human excellence across premier international destinations.
               </p>
             </motion.div>
+
+            {/* Right Logo Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex-shrink-0 w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-2xl bg-white border border-gray-100 shadow-sm p-2 sm:p-2.5 flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="https://static.wixstatic.com/media/548938_e7d535855ae14a3eab331ff35834918c~mv2.jpg"
+                alt="LOWS Logo"
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </motion.div>
           </div>
-        </div>
+        </section>
 
-        {/* Content Overview Section */}
-        <section className="py-16 bg-white border-y border-gray-100 mb-20">
-          <div className="w-full px-[3%] max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-6 space-y-6">
-                <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs block">About LOWS</span>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                  A Shared Platform for Vision, Excellence & Humanity
-                </h2>
-                <p className="text-gray-600 font-light leading-relaxed text-base md:text-lg">
-                  Built on the foundational conviction that global progress relies on shared vision, LOWS brings together leaders from over 150 nations, industries, and disciplines.
-                </p>
-                <p className="text-gray-600 font-light leading-relaxed text-base">
-                  From the inaugural international debut in Dubai and Flame Towers in Baku, to the vibrant economic nexus of Hong Kong and the civilizational crossroads of Cairo (Egypt), LOWS combines high-level summit discussions with prestigious award recognitions that inspire future generations.
-                </p>
-              </div>
-
-              <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {corePillars.map((pillar, idx) => {
-                  const Icon = pillar.icon;
-                  return (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      className="p-6 rounded-2xl bg-[#FAFAFA] border border-gray-200 hover:border-red-200 hover:shadow-md transition-all"
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center mb-4">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <h3 className="font-bold text-lg mb-2">{pillar.title}</h3>
-                      <p className="text-gray-500 text-xs font-light leading-relaxed">{pillar.description}</p>
-                    </motion.div>
-                  );
-                })}
-              </div>
+        {/* Minimal Pillars Section */}
+        <section className="w-full px-[3%] mb-16">
+          <div className="w-full bg-white border border-gray-100 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {corePillars.map((pillar, idx) => {
+                const Icon = pillar.icon;
+                return (
+                  <div key={idx} className="flex flex-col items-start space-y-2">
+                    <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center mb-1">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-bold text-base text-[#111111]">{pillar.title}</h3>
+                    <p className="text-gray-500 text-xs font-light leading-relaxed">{pillar.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
 
         {/* Editions & Cards Section */}
-        <section className="w-full px-[3%] max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Summit Chapters</span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">LOWS Summit & Award Editions</h2>
-            <p className="text-gray-500 font-light mt-4 text-base md:text-lg">
-              Explore the four landmark international chapters of LOWS in Dubai, Baku, Hong Kong, and Egypt. Click any card to read full event details, watch videos, and view photo galleries.
-            </p>
+        <section className="w-full px-[3%]">
+          <div className="mb-8">
+            <span className="text-red-600 font-bold tracking-[0.25em] uppercase text-xs block mb-1">Chapters</span>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111111]">Summit Editions</h2>
           </div>
 
           {loading ? (
-            <div className="flex justify-center items-center py-20">
-              <div className="w-10 h-10 border-4 border-red-600/20 border-t-red-600 rounded-full animate-spin" />
+            <div className="flex justify-center items-center py-16">
+              <div className="w-8 h-8 border-3 border-red-600/20 border-t-red-600 rounded-full animate-spin" />
             </div>
           ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {lowsEvents.map((event, idx) => (
                 <EventCard key={event.id} event={event} index={idx} />
               ))}

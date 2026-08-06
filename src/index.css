@@ -43,3 +43,14 @@ body {
 @keyframes bg-gradient {
   to { background-position: 200% center; }
 }
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-33.333333%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 38.5s linear infinite;
+}
