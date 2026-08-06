@@ -1,58 +1,42 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Eye, Target, Compass, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Eye, Target, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
 import image1 from "../assets/images/regenerated_image_1782986234817.jpg";
 import image2 from "../assets/images/regenerated_image_1782985355671.jpg";
-import image4 from "../assets/images/regenerated_image_1782985362017.jpg";
 
 export default function VisionMissionSection() {
-  const [activeTab, setActiveTab] = useState<"vision" | "mission" | "ethos">("vision");
+  const [activeTab, setActiveTab] = useState<"vision" | "mission">("vision");
 
   const tabsData = {
     vision: {
       tag: "OUR VISION",
-      title: "Elevating Indian Leadership to the Global Zenith",
-      subtitle: "Connecting grassroots excellence with global centers of influence.",
+      title: "To Be a Dominant Media Player",
+      subtitle: "Informing, entertaining, and building super brands.",
       icon: Eye,
-      description: "To build India's most respected global platform for thought leadership, policy dialogue, and cultural celebration—amplifying regional achievements from Maharashtra to London, Dubai, Baku, Singapore, and beyond.",
+      description: "To be a dominant media player by informing and entertaining audiences, staying relevant, and creating super brands.",
       points: [
-        "Create high-profile platforms where world leaders and regional pioneers collaborate.",
-        "Expand our international chapter footprint across 20+ world capitals by 2030.",
-        "Drive sustainable socio-economic impact through transparent recognition & advocacy."
+        "Informing and entertaining diverse global & regional audiences.",
+        "Staying relevant through continuous digital and experiential innovation.",
+        "Creating and scaling super brands that drive long-term impact."
       ],
-      stat: "20+ Global Destinations",
+      stat: "Super Brands & Media Excellence",
       image: "https://static.wixstatic.com/media/548938_e7d535855ae14a3eab331ff35834918c~mv2.jpg",
       fallbackImage: image1
     },
     mission: {
       tag: "OUR MISSION",
-      title: "Curating Impartial, High-Impact Conventions & Awards",
-      subtitle: "Uncompromising integrity, rigorous jury selection, and unforgettable experiences.",
+      title: "To Enrich Lives Every Day",
+      subtitle: "Informing, educating, empowering, and entertaining.",
       icon: Target,
-      description: "To systematically identify, honor, and connect changemakers across governance, enterprise, arts, sports, and social innovation through world-class summits, rigorous independent jury processes, and immersive multimedia coverage.",
+      description: "To enrich lives by informing, educating, giving people a voice, and entertaining.",
       points: [
-        "Maintain 100% independent jury governance chaired by esteemed public figures.",
-        "Deliver seamless, high-production international economic conventions and conclaves.",
-        "Provide lifetime visibility and mentorship networks for every honoree."
+        "Informing & Educating with accurate, high-impact coverage.",
+        "Giving people a voice across grassroots, business, and policy platforms.",
+        "Entertaining through world-class summits, conclaves, and cultural experiences."
       ],
-      stat: "5,000+ Honorees Celebrated",
+      stat: "Enriching Millions of Lives",
       image: "https://static.wixstatic.com/media/548938_01de16ecda2648ee8f744a76a35e1a11~mv2.jpg",
       fallbackImage: image2
-    },
-    ethos: {
-      tag: "OUR ETHOS",
-      title: "Rooted in Regional Pride, Resonating Worldwide",
-      subtitle: "Over 5 decades of journalistic trust driving meaningful global dialogues.",
-      icon: Compass,
-      description: "Built upon the bedrock of Lokmat Media's trusted legacy, our ethos balances deep regional roots with global ambition. We believe true progress happens when local champions are empowered to share their stories with the world.",
-      points: [
-        "Unwavering commitment to truth, transparency, and community empowerment.",
-        "Championing women leaders, youth innovators, and grassroots changemakers.",
-        "Bridging cross-border trade, cultural exchanges, and diplomatic ties."
-      ],
-      stat: "50+ Years of Journalistic Trust",
-      image: "https://static.wixstatic.com/media/548938_e27482ebd1ef499db675193aa77055e0~mv2.jpg",
-      fallbackImage: image4
     }
   };
 
@@ -70,7 +54,7 @@ export default function VisionMissionSection() {
         {/* Interactive Tab Switcher */}
         <div className="flex justify-center mb-10">
           <div className="inline-flex p-1.5 rounded-2xl bg-gray-100/80 border border-gray-200/80 backdrop-blur-md shadow-inner gap-1">
-            {(["vision", "mission", "ethos"] as const).map((tabKey) => {
+            {(["vision", "mission"] as const).map((tabKey) => {
               const tabInfo = tabsData[tabKey];
               const Icon = tabInfo.icon;
               const isActive = activeTab === tabKey;
@@ -93,7 +77,7 @@ export default function VisionMissionSection() {
                   )}
                   <span className="relative z-10 flex items-center gap-2">
                     <Icon className="w-4 h-4" />
-                    {tabKey === "vision" ? "Our Vision" : tabKey === "mission" ? "Our Mission" : "Our Ethos"}
+                    {tabKey === "vision" ? "Our Vision" : "Our Mission"}
                   </span>
                 </button>
               );

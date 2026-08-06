@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
 import VisionMissionSection from "@/src/components/VisionMissionSection";
+import AboutBrandSection from "@/src/components/AboutBrandSection";
 import { motion } from "motion/react";
 import { Award, Shield, Target, Globe, Milestone, Users, Star, ArrowUpRight, Sparkles } from "lucide-react";
 
@@ -130,35 +131,7 @@ export default function About() {
         </div>
 
         {/* About the Brand Section */}
-        <section className="w-full px-[3%] mb-12">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-5xl mx-auto bg-white border border-gray-200/80 rounded-3xl p-8 md:p-12 shadow-xl shadow-gray-100/50 relative overflow-hidden"
-          >
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-600 via-orange-500 to-amber-500" />
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-4">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-100 text-red-600 font-bold text-xs uppercase tracking-[0.2em] mb-3">
-                  <Sparkles className="w-3.5 h-3.5" /> About The Brand
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#111111] leading-tight">
-                  Lokmat Experiences
-                </h2>
-                <p className="text-xs uppercase tracking-widest text-red-600 font-semibold mt-1">
-                  Legacy of Excellence & Impact
-                </p>
-              </div>
-              <div className="lg:col-span-8 border-t lg:border-t-0 lg:border-l border-gray-100 pt-6 lg:pt-0 lg:pl-8">
-                <p className="text-gray-600 font-light text-base md:text-lg leading-relaxed">
-                  Born from the deeply trusted five-decade journalistic legacy of Lokmat Media Group, <strong>Lokmat Experiences</strong> is India's premier platform for high-impact summits, prestigious award conclaves, and international economic forums. We bridge regional leadership with global influence—curating transformative gatherings in iconic capitals across the world while celebrating grassroots changemakers, corporate titans, and cultural pioneers who shape our collective future.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </section>
+        <AboutBrandSection />
 
         {/* Primary Interactive Vision & Mission Section */}
         <VisionMissionSection />
