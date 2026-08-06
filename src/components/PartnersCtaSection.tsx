@@ -19,12 +19,12 @@ export default function PartnersCtaSection() {
             transition={{ duration: 0.8 }}
             className="flex-1 space-y-6 relative z-10"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-tight">
-              <span>Partner With </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-white drop-shadow-sm">Excellence</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] xl:text-[66px] font-bold tracking-tight text-white leading-tight whitespace-nowrap">
+              <span>Create Your Next </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-white drop-shadow-sm">Big Moment</span>
             </h2>
-            <p className="text-white/90 text-lg max-w-2xl font-medium leading-relaxed">
-              Align your brand with Lokmat’s most prestigious events, awards and leadership platforms. Reach influential audiences through trusted media visibility, high-impact on-ground experiences and curated opportunities built for national recognition and global brand presence.
+            <p className="text-white/90 text-lg max-w-3xl font-medium leading-relaxed">
+              Explore Lokmat’s prestigious events, awards and leadership platforms. Connect with influential audiences, gain trusted media visibility and discover opportunities designed to strengthen your brand’s national and global presence.
             </p>
           </motion.div>
 
