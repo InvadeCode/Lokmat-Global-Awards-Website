@@ -7,9 +7,9 @@ import AutoScroll from "embla-carousel-auto-scroll";
 import { Link } from "react-router-dom";
 import { formatDate } from "@/src/lib/utils";
 
-import image1 from "../assets/images/regenerated_image_1782986234817.jpg";
-import image2 from "../assets/images/regenerated_image_1782985355671.jpg";
-import image4 from "../assets/images/regenerated_image_1782985362017.jpg";
+const image1 = "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800";
+const image2 = "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800";
+const image4 = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);

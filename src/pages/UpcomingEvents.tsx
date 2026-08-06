@@ -71,7 +71,7 @@ export default function UpcomingEvents() {
                            <p className="text-gray-500 font-light leading-relaxed mb-4 line-clamp-3">
                                {event.description}
                            </p>
-                           <Link to={`/event/${event.id}`} className="inline-flex max-w-max px-8 py-3 bg-[#111111] text-white rounded-full font-bold tracking-widest uppercase text-sm hover:bg-red-600 transition-colors mt-auto">
+                           <Link to={`/event/${event.id}`} className="inline-flex max-w-max px-8 py-4 bg-[#111111] text-white rounded-2xl font-bold tracking-widest uppercase text-sm hover:bg-red-600 hover:scale-105 transition-all duration-300 shadow-md mt-auto">
                                View Event
                            </Link>
                        </div>

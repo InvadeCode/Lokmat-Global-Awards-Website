@@ -368,9 +368,9 @@ export default function Partners() {
 
                     <button 
                       type="submit"
-                      className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#111111] text-white rounded-xl overflow-hidden transition-all duration-300 hover:bg-red-600 hover:shadow-xl self-start"
+                      className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#111111] text-white rounded-2xl overflow-hidden font-bold tracking-widest uppercase text-sm hover:bg-red-600 hover:scale-105 transition-all duration-300 shadow-xl self-start"
                     >
-                      <span className="relative z-10 font-bold tracking-widest uppercase text-xs">Submit Partnership Inquiry</span>
+                      <span className="relative z-10">Submit Partnership Inquiry</span>
                       <Send className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </button>
                   </motion.form>
@@ -392,7 +392,7 @@ export default function Partners() {
                     </div>
                     <button 
                       onClick={handleReset}
-                      className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-xl font-bold text-xs uppercase tracking-widest transition-colors"
+                      className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-2xl font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all duration-300"
                     >
                       Submit Another Inquiry
                     </button>

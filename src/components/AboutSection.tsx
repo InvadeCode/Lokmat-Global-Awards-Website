@@ -1,13 +1,18 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import aboutImg from "../assets/images/regenerated_image_1781771489896.jpg";
+import { useState } from "react";
+
+const aboutImg = "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=1200";
+const fallbackImg = "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=1200";
 
 interface AboutSectionProps {
   showButton?: boolean;
 }
 
 export default function AboutSection({ showButton = true }: AboutSectionProps) {
+  const [imgSrc, setImgSrc] = useState(aboutImg);
+
   return (
     <section className="border-t border-gray-100 bg-[#FAFAFA] relative overflow-hidden py-12 md:py-20">
       {/* Decorative background blur */}
@@ -25,10 +30,11 @@ export default function AboutSection({ showButton = true }: AboutSectionProps) {
             <div className="relative aspect-[10/9] w-full group cursor-pointer">
               <div className="absolute inset-0 bg-red-600 translate-x-4 translate-y-4 rounded-[12px] transition-transform duration-500 ease-out group-hover:translate-x-6 group-hover:translate-y-6" />
               <img 
-                src={aboutImg} 
+                src={imgSrc} 
                 alt="About Lokmat Events" 
                 loading="lazy"
                 referrerPolicy="no-referrer"
+                onError={() => setImgSrc(fallbackImg)}
                 className="absolute inset-0 w-full h-full object-cover rounded-[12px] grayscale group-hover:grayscale-0 transition-all duration-700 shadow-xl group-hover:-translate-x-2 group-hover:-translate-y-2"
               />
               {/* Overlay Text */}

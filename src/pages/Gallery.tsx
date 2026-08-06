@@ -5,18 +5,18 @@ import Footer from "@/src/components/Footer";
 import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
 
-import galImg1 from "@/src/assets/images/regenerated_image_1781851211887.jpg";
-import galImg2 from "@/src/assets/images/regenerated_image_1781771489896.jpg";
-import galImg3 from "@/src/assets/images/regenerated_image_1781771494283.jpg";
-import galImg4 from "@/src/assets/images/regenerated_image_1781771497526.jpg";
-import galImg5 from "@/src/assets/images/regenerated_image_1781850977043.jpg";
-import galImg6 from "@/src/assets/images/regenerated_image_1781851022066.jpg";
-import galImg7 from "@/src/assets/images/regenerated_image_1781771508431.jpg";
-import galImg8 from "@/src/assets/images/regenerated_image_1781850983557.jpg";
-import galImg9 from "@/src/assets/images/regenerated_image_1781850987032.jpg";
-import galImg10 from "@/src/assets/images/regenerated_image_1781771514614.jpg";
-import galImg11 from "@/src/assets/images/regenerated_image_1781851037770.jpg";
-import galImg12 from "@/src/assets/images/regenerated_image_1781851041625.jpg";
+const galImg1 = "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&auto=format&fit=crop&q=80";
+const galImg2 = "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&auto=format&fit=crop&q=80";
+const galImg3 = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80";
+const galImg4 = "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&auto=format&fit=crop&q=80";
+const galImg5 = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop&q=80";
+const galImg6 = "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&auto=format&fit=crop&q=80";
+const galImg7 = "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format&fit=crop&q=80";
+const galImg8 = "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format&fit=crop&q=80";
+const galImg9 = "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&auto=format&fit=crop&q=80";
+const galImg10 = "https://images.unsplash.com/photo-1561489401-fc2876ced162?w=800&auto=format&fit=crop&q=80";
+const galImg11 = "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800&auto=format&fit=crop&q=80";
+const galImg12 = "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&auto=format&fit=crop&q=80";
 
 const GALLERY_IMAGES = [
   galImg1,
@@ -128,9 +128,9 @@ export default function Gallery() {
                 <div className="mt-16 flex justify-center">
                     <button 
                         onClick={loadMore}
-                        className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 border border-gray-300 text-[#111111] rounded-full overflow-hidden transition-all duration-300 hover:border-[#111111] hover:bg-gray-50"
+                        className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 border border-gray-300 text-[#111111] rounded-2xl overflow-hidden font-bold tracking-widest uppercase text-sm hover:scale-105 hover:border-[#111111] hover:bg-gray-50 transition-all duration-300 shadow-sm"
                     >
-                        <span className="relative z-10 font-bold tracking-widest uppercase text-sm">Load More</span>
+                        <span className="relative z-10">Load More</span>
                         <ArrowDown className="relative z-10 w-4 h-4 transition-transform group-hover:translate-y-1" />
                     </button>
                 </div>

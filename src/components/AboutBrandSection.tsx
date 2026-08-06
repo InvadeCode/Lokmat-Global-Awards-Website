@@ -139,10 +139,7 @@ export default function AboutBrandSection() {
             <strong className="text-white font-bold">Lokmat Media Pvt. Ltd.</strong> is a leading media company with interests in a diversified portfolio of publishing, broadcast, digital, entertainment and community. It has an employee strength of more than 3,000 and has a PAN-India network of offices.
           </p>
           <p className="text-gray-200 font-light text-sm sm:text-base md:text-lg leading-relaxed">
-            Lokmat Media Group publishes India's No.1 Marathi daily <span className="text-white font-semibold">‘Lokmat’</span>, along with <span className="text-white font-semibold">‘Lokmat Samachar’</span> and <span className="text-white font-semibold">‘Lokmat Times’</span>, with a combined readership of 2.56 Cr (source: All India, Total Readership, IRS 2019, Q4).
-          </p>
-          <p className="text-gray-200 font-light text-sm sm:text-base md:text-lg leading-relaxed">
-            Keeping abreast with the changing digital landscape, Lokmat Group makes its content available for its readers through its multilingual news portals and mobile news app.
+            Lokmat Media Group publishes India's No.1 Marathi daily <span className="text-white font-semibold">‘Lokmat’</span>, along with <span className="text-white font-semibold">‘Lokmat Samachar’</span> and <span className="text-white font-semibold">‘Lokmat Times’</span>, with a combined readership of 2.56 Cr (source: All India, Total Readership, IRS 2019, Q4). Keeping abreast with the changing digital landscape, Lokmat Group makes its content available for its readers through its multilingual news portals and mobile news app.
           </p>
           <p className="text-gray-200 font-light text-sm sm:text-base md:text-lg leading-relaxed">
             Lokmat entered the TV space in 2008 and it co-owns a 24-hour news and current affairs channel <span className="text-white font-semibold">‘News18 Lokmat’</span> (formerly known as IBN Lokmat), through a JV with the Network18 Group.

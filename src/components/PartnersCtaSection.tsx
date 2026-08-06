@@ -19,9 +19,9 @@ export default function PartnersCtaSection() {
             transition={{ duration: 0.8 }}
             className="flex-1 space-y-6 relative z-10"
           >
-            <h2 className="flex flex-col text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-none">
-              <span>Partner With</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-white drop-shadow-sm -mt-1 md:-mt-3">Excellence</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-tight">
+              <span>Partner With </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-white drop-shadow-sm">Excellence</span>
             </h2>
             <p className="text-white/90 text-lg max-w-2xl font-medium leading-relaxed">
               Align your brand with Lokmat’s most prestigious events, awards and leadership platforms. Reach influential audiences through trusted media visibility, high-impact on-ground experiences and curated opportunities built for national recognition and global brand presence.
@@ -36,11 +36,8 @@ export default function PartnersCtaSection() {
             className="relative z-10 flex flex-col sm:flex-row gap-4"
           >
             <button className="bg-white text-red-600 px-8 py-5 font-bold uppercase tracking-widest text-sm hover:bg-gray-50 hover:scale-105 transition-all duration-300 rounded-2xl flex items-center justify-center gap-2 shadow-xl group">
-              <span>Sponsorships</span>
+              <span>Enquire Now</span>
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </button>
-            <button className="bg-black/20 backdrop-blur-md text-white border border-white/30 px-8 py-5 font-bold uppercase tracking-widest text-sm hover:bg-black/30 hover:border-white/50 hover:scale-105 transition-all duration-300 rounded-2xl">
-              Press Inquiries
             </button>
           </motion.div>
         </div>

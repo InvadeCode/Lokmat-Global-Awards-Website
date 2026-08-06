@@ -25,12 +25,12 @@ export default function Footer() {
               <input 
                 type="email" 
                 placeholder="Enter your email address" 
-                className="w-full px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-red-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white/20 transition-all font-medium"
+                className="w-full px-6 py-4 rounded-2xl bg-white/10 border border-white/20 text-white placeholder:text-red-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white/20 transition-all font-medium"
                 required
               />
               <button 
                 type="submit" 
-                className="px-8 py-4 bg-white text-[#e40009] font-bold rounded-full hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+                className="px-8 py-4 bg-white text-[#e40009] font-bold uppercase tracking-widest text-sm rounded-2xl hover:bg-gray-50 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap shadow-md"
               >
                 Subscribe
                 <ArrowRight className="w-5 h-5" />

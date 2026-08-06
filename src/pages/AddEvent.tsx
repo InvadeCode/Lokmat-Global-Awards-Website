@@ -182,7 +182,7 @@ export default function AddEvent() {
                 <button 
                   disabled={isSubmitting}
                   type="submit"
-                  className="w-full bg-[#111111] text-white hover:bg-red-600 font-bold py-4 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-4 uppercase tracking-[0.2em] text-sm"
+                  className="w-full bg-[#111111] text-white hover:bg-red-600 font-bold py-4 rounded-2xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed mt-4 uppercase tracking-[0.2em] text-sm shadow-md"
                 >
                   {isSubmitting ? "Publishing..." : "Publish Event to Live Showcase"}
                 </button>

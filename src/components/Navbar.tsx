@@ -135,7 +135,7 @@ export default function Navbar() {
               item.label === "Contact" ? (
                 <Link 
                   to={item.href!} 
-                  className={`px-6 py-2 border rounded-full transition-all ${isActive(item.href) ? 'bg-red-600 text-white border-red-600' : 'border-gray-300 hover:border-[#111111] hover:text-[#111111] text-[#111111]'}`}
+                  className={`px-6 py-2 border rounded-2xl font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all duration-300 ${isActive(item.href) ? 'bg-red-600 text-white border-red-600' : 'border-gray-300 hover:border-[#111111] hover:text-[#111111] text-[#111111]'}`}
                 >
                   {item.label}
                 </Link>

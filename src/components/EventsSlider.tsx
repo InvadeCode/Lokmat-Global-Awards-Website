@@ -57,9 +57,9 @@ export default function EventsSlider({ events }: EventsSliderProps) {
         <button
           onClick={scrollPrev}
           disabled={!prevBtnEnabled}
-          className={`w-14 h-14 rounded-full border flex items-center justify-center transition-all ${
+          className={`w-14 h-14 rounded-2xl border flex items-center justify-center transition-all duration-300 ${
             prevBtnEnabled 
-              ? "border-gray-300 text-[#111111] hover:border-red-600 hover:text-red-600 hover:bg-red-50" 
+              ? "border-gray-300 text-[#111111] hover:border-red-600 hover:text-red-600 hover:bg-red-50 hover:scale-105" 
               : "border-gray-100 text-gray-300 cursor-not-allowed"
           }`}
           aria-label="Previous slide"
@@ -69,9 +69,9 @@ export default function EventsSlider({ events }: EventsSliderProps) {
         <button
           onClick={scrollNext}
           disabled={!nextBtnEnabled}
-          className={`w-14 h-14 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
+          className={`w-14 h-14 rounded-2xl border flex items-center justify-center transition-all duration-300 cursor-pointer ${
             nextBtnEnabled 
-              ? "border-red-600 text-red-600 hover:bg-red-600 hover:text-white" 
+              ? "border-red-600 text-red-600 hover:bg-red-600 hover:text-white hover:scale-105" 
               : "border-gray-100 text-gray-300 cursor-not-allowed"
           }`}
           aria-label="Next slide"
