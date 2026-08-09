@@ -78,7 +78,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 w-full flex flex-col h-full justify-between mt-2 md:mt-4">
         
-        <div className="flex flex-col lg:flex-row items-center lg:items-center gap-4 lg:gap-2 w-full mt-auto mb-auto">
+        <div className="flex flex-col lg:flex-row items-center lg:items-center gap-4 lg:gap-2 w-full mt-auto mb-auto translate-y-[15px]">
           {/* Left Side: Text */}
           <div className="w-full lg:w-[38%] xl:w-[38%] flex flex-col text-left pr-2">
             <motion.div
@@ -141,18 +141,18 @@ export default function HeroSection() {
 
             {/* Slider Container with Mask */}
             <div 
-              className="w-full overflow-hidden z-10 [mask-image:linear-gradient(to_right,transparent_0%,black_15%,black_88%,transparent_100%)]" 
+              className="w-full overflow-hidden z-10 py-6 [mask-image:linear-gradient(to_right,transparent_0%,black_12%,black_88%,transparent_100%)]" 
               ref={emblaRef}
             >
-              <div className="flex touch-pan-y flex-row items-center">
+              <div className="flex touch-pan-y flex-row items-center py-6">
                 {carouselImages.map((imgObj, index) => (
                   <div 
                     key={index} 
-                    className="flex-[0_0_auto] min-w-0 px-3 xl:px-5"
+                    className="flex-[0_0_auto] min-w-0 px-3 xl:px-5 py-4"
                   >
                     <motion.div 
                       whileHover={{ scale: 1.02, rotate: index % 2 === 0 ? 1.5 : -1.5 }}
-                      className="relative overflow-hidden rounded-3xl w-[660px] h-[410px] shadow-xl border-[5px] border-white group"
+                      className="relative overflow-hidden rounded-3xl w-[660px] h-[410px] shadow-[0_22px_45px_rgba(0,0,0,0.18)] border-[5px] border-white group"
                     >
                       <img 
                         src={imgObj.src} 
