@@ -23,8 +23,16 @@ export function useEvents() {
         e => !e.category.toLowerCase().includes("upcoming")
       );
       
-      // Sort by creation date or custom date logic (newest first)
+      // Sort by event year descending (latest to oldest), then by createdAt descending
+      const getYear = (e: LokmatEvent) => {
+        const match = e.date.match(/\b\d{4}\b/) || e.title.match(/\b\d{4}\b/);
+        return match ? parseInt(match[0], 10) : 0;
+      };
+
       const sortedEvents = allEvents.sort((a, b) => {
+        const yearA = getYear(a);
+        const yearB = getYear(b);
+        if (yearB !== yearA) return yearB - yearA;
         return b.createdAt - a.createdAt;
       });
 

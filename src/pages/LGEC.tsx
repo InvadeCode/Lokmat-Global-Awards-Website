@@ -95,7 +95,9 @@ export default function LGEC() {
         <section className="w-full px-[3%] mb-16">
           <div className="mb-8">
             <span className="text-red-600 font-bold tracking-[0.25em] uppercase text-xs block mb-1">Chapters</span>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111111]">Convention Editions</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
+              Convention <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Editions</span>
+            </h2>
           </div>
 
           {loading ? (

@@ -36,8 +36,8 @@ export default function GallerySection() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Curated <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">Gallery</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
+            Curated <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent pr-2">Gallery</span>
           </h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mt-6"></div>
         </motion.div>

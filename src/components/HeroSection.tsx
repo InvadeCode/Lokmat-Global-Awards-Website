@@ -121,9 +121,9 @@ export default function HeroSection() {
   ];
 
   return (
-    <div ref={containerRef} className="relative h-[100vh] w-[100vw] flex flex-col overflow-hidden bg-[#FAFAFA] pt-20 pb-6 px-[3%]">
+    <div ref={containerRef} className="relative min-h-screen w-[100vw] flex flex-col bg-[#FAFAFA] pt-20 pb-12 px-[3%]">
       {/* Abstract Background Elements */}
-      <motion.div style={{ y, opacity }} className="absolute inset-0 z-0 pointer-events-none">
+      <motion.div style={{ y, opacity }} className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-[#FAFAFA] z-10 bg-opacity-90" />
         <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_100%)]" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-lokmat-red rounded-full mix-blend-multiply filter blur-[120px] opacity-5 text-red-500 animate-pulse z-0" />
@@ -242,15 +242,15 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative z-10 w-full border-t border-gray-200 mt-6 pt-6 pb-2"
+            className="relative z-10 w-full border-t border-gray-200 mt-6 pt-6 pb-6"
           >
             <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-4">Latest Events</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 p-1">
               {latestEvents.map((event) => (
                 <Link 
                   key={event.id}
                   to={`/event/${event.id}`}
-                  className="group border border-gray-200 rounded-xl p-3.5 sm:p-4 flex flex-col justify-between transition-colors duration-300 hover:border-red-200 hover:bg-neutral-50 min-h-[160px] h-full"
+                  className="group bg-white border border-gray-100 rounded-2xl p-4 flex flex-col justify-between shadow-[0_12px_32px_rgba(0,0,0,0.03)] hover:shadow-[0_22px_45px_rgba(0,0,0,0.07)] transition-all duration-300 hover:border-red-500/40 hover:-translate-y-1 min-h-[165px] h-full"
                   onMouseEnter={() => setHoveredEventId(event.id)}
                   onMouseLeave={() => setHoveredEventId(null)}
                 >
@@ -262,7 +262,7 @@ export default function HeroSection() {
                       {event.title}
                     </h4>
                   </div>
-                  <div className="flex items-center justify-between w-full mt-2 pt-2 border-t border-gray-100">
+                  <div className="flex items-center justify-between w-full mt-3 pt-2.5 border-t border-gray-100">
                     <span className="text-[10px] text-gray-400 font-medium">{formatDate(event.date)} | {event.location.split(',')[0]}</span>
                     <div className="w-6 h-6 flex-shrink-0 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-red-600 group-hover:bg-red-50 text-gray-400 group-hover:text-red-600 transition-all transform group-hover:scale-110">
                       <ArrowUpRight className="w-3 h-3" />

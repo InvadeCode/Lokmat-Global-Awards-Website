@@ -115,8 +115,8 @@ export default function AboutBrandSection() {
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 font-bold text-xs uppercase tracking-[0.25em] mb-3 backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-red-400 animate-pulse" /> About The Brand
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Lokmat Experiences
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-white">
+              Lokmat <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-amber-300 pr-2">Experiences</span>
             </h2>
             <p className="text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-red-400 mt-2">
               Legacy of Excellence & Impact

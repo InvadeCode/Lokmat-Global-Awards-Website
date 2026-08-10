@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { LokmatEvent } from "@/src/types";
 
+import { formatDate } from "@/src/lib/utils";
+
 interface SimpleEventCardProps {
   event: LokmatEvent;
 }
@@ -29,7 +31,7 @@ export default function SimpleEventCard({ event }: SimpleEventCardProps) {
       
       <div className="mt-auto flex items-center justify-between border-t border-gray-100 pt-4">
         <span className="text-gray-500 text-sm font-medium">
-          {new Date(event.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) === 'Invalid Date' ? event.date : new Date(event.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} | {event.location}
+          {formatDate(event.date)} | {event.location.split(',')[0]}
         </span>
         
         <Link to={`/event/${event.id}`} className={`h-10 w-10 rounded-full border flex items-center justify-center transition-transform duration-300 hover:scale-110 ${isUpcoming ? 'border-red-600 text-red-600 hover:bg-red-600 hover:text-white' : 'border-gray-200 text-gray-500 hover:border-[#111111] hover:text-[#111111]'}`}>

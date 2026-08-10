@@ -177,7 +177,9 @@ export default function Partners() {
           <div className="w-[100vw] px-[3%]">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Sponsorship Tiers</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Curated Packages</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
+                Our Curated <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Packages</span>
+              </h2>
               <p className="text-gray-500 font-light mt-4 text-base md:text-lg">
                 Choose the perfect level of visibility to align with your corporate marketing roadmap, media strategies, and networking requirements.
               </p>
@@ -243,7 +245,9 @@ export default function Partners() {
           <div className="w-[100vw] px-[3%]">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Proven Trust</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Past Aligned Brands</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
+                Our Past <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Aligned Brands</span>
+              </h2>
               <p className="text-gray-500 font-light mt-4 text-base md:text-lg">
                 India's top corporate companies, public sector undertakings, and global luxury giants trust Lokmat to host their elite brand narratives.
               </p>

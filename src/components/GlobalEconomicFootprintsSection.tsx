@@ -50,10 +50,10 @@ export default function GlobalEconomicFootprintsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white whitespace-nowrap"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-white"
           >
             Global Economic{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">
               Footprints
             </span>
           </motion.h2>

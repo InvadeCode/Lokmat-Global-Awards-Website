@@ -30,8 +30,8 @@ export default function NewsUpdatesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-              News & <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">Updates</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
+              News & <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Updates</span>
             </h2>
           </motion.div>
           <motion.button 

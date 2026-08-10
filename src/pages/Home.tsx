@@ -31,8 +31,8 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight md:whitespace-nowrap">
-              Lokmat Global <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 pr-1 pb-1">Economic Convention</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
+              Lokmat Global <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Economic Convention</span>
             </h2>
             <div className="w-24 h-1 bg-red-600 mt-6"></div>
           </motion.div>
@@ -83,8 +83,8 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight md:whitespace-nowrap">
-                    Lokmat <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 pr-1 pb-1">One World</span> Summit & Awards
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
+                    Lokmat <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">One World</span> Summit & Awards
                   </h2>
                   <div className="w-24 h-1 bg-red-600 mt-6"></div>
                 </motion.div>

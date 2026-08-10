@@ -39,8 +39,8 @@ export default function PartnerLogos() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Our Network</span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#111111]">
-              Trusted By Global Partners
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
+              Trusted By <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Global Partners</span>
             </h2>
           </motion.div>
         </div>

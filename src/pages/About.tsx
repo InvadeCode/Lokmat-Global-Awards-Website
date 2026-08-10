@@ -116,7 +116,9 @@ export default function About() {
           <div className="w-full px-[3%]">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Guided by Purpose</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Core Values</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
+                Our Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Values</span>
+              </h2>
               <p className="text-gray-500 font-light mt-4 text-base md:text-lg">
                 Behind every global convention, high-profile summit, and prestigious awards ceremony is a set of guiding principles we hold sacred.
               </p>
@@ -158,7 +160,9 @@ export default function About() {
           <div className="w-full px-[3%]">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Governing Board</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Visionary Leadership</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
+                Our Visionary <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Leadership</span>
+              </h2>
               <p className="text-gray-500 font-light mt-4 text-base md:text-lg">
                 The distinguished executive stewards driving the intellectual depth, global operations, and regional integrity of the Lokmat portfolio.
               </p>
