@@ -70,7 +70,7 @@ export default function AboutSection({ showButton = true }: AboutSectionProps) {
 
             {showButton && (
               <div className="pt-2">
-                <Link to="/about" className="inline-flex items-center gap-4 text-[#111111] hover:text-red-600 group transition-colors uppercase tracking-[0.2em] font-bold text-sm">
+                <Link to="/about" onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center gap-4 text-[#111111] hover:text-red-600 group transition-colors uppercase tracking-[0.2em] font-bold text-sm">
                   <span>Discover Our History</span>
                   <div className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-red-600 transition-colors">
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

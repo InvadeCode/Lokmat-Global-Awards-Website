@@ -11,7 +11,7 @@ export default function AllEvents() {
     <div className="w-[100vw] overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 w-[100vw] pt-32 pb-24 md:pt-40 md:pb-32 px-[3%] relative">
+      <main className="flex-1 w-[100vw] pt-[159px] pb-24 md:pt-[195px] md:pb-32 px-[3%] relative">
         <div className="w-full flex flex-col items-center animate-in fade-in zoom-in-95 duration-700 text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight mb-8">
               All Events

@@ -25,7 +25,7 @@ export default function UpcomingEvents() {
     <div className="w-[100vw] overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 w-[100vw] pt-32 pb-24 md:pt-40 md:pb-32 px-[3%] relative">
+      <main className="flex-1 w-[100vw] pt-[159px] pb-24 md:pt-[195px] md:pb-32 px-[3%] relative">
         <div className="w-full flex flex-col items-center animate-in fade-in zoom-in-95 duration-700 text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight mb-8">
               Upcoming Events
@@ -60,12 +60,21 @@ export default function UpcomingEvents() {
                            </div>
                            <Link to={`/event/${event.id}`}>
                                <h2 className="text-2xl md:text-3xl font-bold leading-tight transition-colors duration-300 group-hover:text-red-600">
-                                   {event.title.split(' – ').map((part, i) => (
-                                     <span key={i}>
-                                       {part}
-                                       {i === 0 && event.title.includes(' – ') && <br />}
-                                     </span>
-                                   ))}
+                                   {(() => {
+                                     const parts = event.title.split(' – ');
+                                     const eventName = parts[0];
+                                     const eventPlaceYear = parts[1];
+                                     return (
+                                       <span className="inline-flex flex-wrap items-baseline gap-x-2">
+                                         <span>{eventName}</span>
+                                         {eventPlaceYear && (
+                                           <span className="font-normal text-gray-500 text-lg md:text-xl">
+                                             – {eventPlaceYear}
+                                           </span>
+                                         )}
+                                       </span>
+                                     );
+                                   })()}
                                </h2>
                            </Link>
                            <p className="text-gray-500 font-light leading-relaxed mb-4 line-clamp-3">

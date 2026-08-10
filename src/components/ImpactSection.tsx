@@ -46,8 +46,8 @@ export default function ImpactSection() {
       />
 
       <div className="w-[100vw] px-[3%] my-[3%] relative z-10">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-          <div className="lg:w-2/5 pt-1">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start justify-between">
+          <div className="lg:w-[35%] pt-1">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -60,7 +60,7 @@ export default function ImpactSection() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 block mt-1.5 pr-2">Numbers</span>
               </h2>
               
-              <div className="bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6 rounded-2xl relative overflow-hidden my-[3%]">
+              <div className="bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6 rounded-2xl relative overflow-hidden my-4">
                 <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-red-500 to-orange-400" />
                 <p className="text-sm md:text-base italic text-gray-600 leading-snug font-sans relative z-10 pl-2">
                   "Creating national impact through recognition, culture and meaningful conversations. Lokmat Experiences brings together influential voices, iconic platforms and high-impact events that set new benchmarks for credibility, scale and prestige."
@@ -71,9 +71,9 @@ export default function ImpactSection() {
             </motion.div>
           </div>
 
-          <div className="lg:w-3/5 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 w-full p-[3%]">
+          <div className="lg:w-[61%] grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 w-full ml-auto">
             {stats.map((stat, i) => (
-              <div key={stat.label} className={`flex flex-col m-[3%] ${i === 1 ? 'sm:mt-8' : i === 2 ? 'sm:mt-16' : ''}`}>
+              <div key={stat.label} className={`flex flex-col ${i === 1 ? 'sm:mt-8' : i === 2 ? 'sm:mt-16' : ''}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}

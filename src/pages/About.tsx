@@ -86,7 +86,7 @@ export default function About() {
     <div className="w-full overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
       
-      <main className="flex-1 w-full pt-32 pb-0 md:pt-40 md:pb-0 relative">
+      <main className="flex-1 w-full pt-[159px] pb-0 md:pt-[195px] md:pb-0 relative">
         {/* Hero Header */}
         <div className="w-full px-[3%] text-center mb-12">
           <motion.div

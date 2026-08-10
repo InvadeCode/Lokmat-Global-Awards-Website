@@ -49,7 +49,7 @@ export default function LGEC() {
     <div className="w-full overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 w-full pt-28 pb-20 md:pt-36 md:pb-28 relative">
+      <main className="flex-1 w-full pt-[143px] pb-20 md:pt-[179px] md:pb-28 relative">
         {/* Hero Section */}
         <section className="w-full px-[3%] mb-10 md:mb-14">
           <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-8">
@@ -107,7 +107,7 @@ export default function LGEC() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {lgecEvents.map((event, idx) => (
-                <EventCard key={event.id} event={event} index={idx} />
+                <EventCard key={event.id} event={event} index={idx} hideLocationYear={true} />
               ))}
             </div>
           )}

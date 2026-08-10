@@ -4,10 +4,18 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   src: string;
   alt: string;
   className?: string;
+  fallbackSrc?: string;
 }
 
-export default function OptimizedImage({ src, alt, className = "", ...props }: OptimizedImageProps) {
+export default function OptimizedImage({
+  src,
+  alt,
+  className = "",
+  fallbackSrc = "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?auto=format&fit=crop&q=80&w=800",
+  ...props
+}: OptimizedImageProps) {
   const [loaded, setLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState(src);
 
   return (
     <div className={`relative overflow-hidden bg-gray-100 ${className}`}>
@@ -19,12 +27,18 @@ export default function OptimizedImage({ src, alt, className = "", ...props }: O
         </div>
       )}
       <img
-        src={src}
+        src={imgSrc}
         alt={alt}
         loading="lazy"
         decoding="async"
         referrerPolicy="no-referrer"
         onLoad={() => setLoaded(true)}
+        onError={() => {
+          setLoaded(true);
+          if (imgSrc !== fallbackSrc) {
+            setImgSrc(fallbackSrc);
+          }
+        }}
         className={`w-full h-full object-cover transition-opacity duration-700 ease-out ${
           loaded ? "opacity-100" : "opacity-0"
         }`}

@@ -10,7 +10,7 @@ import PartnersCtaSection from "@/src/components/PartnersCtaSection";
 import Footer from "@/src/components/Footer";
 import { Link } from "react-router-dom";
 import { useEvents } from "@/src/hooks/useEvents";
-import { LayoutGrid, AlertCircle } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 
 export default function Home() {
   const { events, loading, error } = useEvents();
@@ -35,17 +35,6 @@ export default function Home() {
               Lokmat Global <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Economic Convention</span>
             </h2>
             <div className="w-24 h-1 bg-red-600 mt-6"></div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex items-center gap-2 text-gray-400 font-mono text-sm tracking-widest uppercase"
-          >
-            <LayoutGrid className="w-4 h-4" />
-            <span>Curated Selection</span>
           </motion.div>
         </div>
 
@@ -72,7 +61,7 @@ export default function Home() {
                   .filter(e => e.title.includes("Lokmat Global Economic Convention"))
                   .slice(0, 2)
                   .map(event => (
-                    <EventCard key={event.id} event={event} />
+                    <EventCard key={event.id} event={event} hideLocationYear={true} />
                   ))}
               </div>
 
@@ -87,17 +76,6 @@ export default function Home() {
                     Lokmat <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">One World</span> Summit & Awards
                   </h2>
                   <div className="w-24 h-1 bg-red-600 mt-6"></div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="flex items-center gap-2 text-gray-400 font-mono text-sm tracking-widest uppercase"
-                >
-                  <LayoutGrid className="w-4 h-4" />
-                  <span>Global Influence</span>
                 </motion.div>
               </div>
 

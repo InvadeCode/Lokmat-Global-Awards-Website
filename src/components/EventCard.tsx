@@ -8,10 +8,11 @@ import OptimizedImage from "@/src/components/OptimizedImage";
 
 interface EventCardProps {
   event: LokmatEvent;
-  index: number;
+  index?: number;
+  hideLocationYear?: boolean;
 }
 
-const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
+const EventCard: React.FC<EventCardProps> = ({ event, index = 0, hideLocationYear = false }) => {
   return (
     <Link to={`/event/${event.id}`} className="block w-full h-full" onClick={() => window.scrollTo(0,0)}>
       <motion.div
@@ -48,12 +49,21 @@ const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
       <div className="flex-1 flex flex-col justify-center space-y-4 pb-16 xl:pb-0 relative">
         <div className="space-y-3">
           <h3 className="text-xl lg:text-2xl font-bold leading-tight text-[#111111] group-hover:text-red-600 transition-colors duration-300">
-            {event.title.split(' – ').map((part, i) => (
-              <span key={i}>
-                {part}
-                {i === 0 && event.title.includes(' – ') && <br />}
-              </span>
-            ))}
+            {(() => {
+              const parts = event.title.split(' – ');
+              const eventName = parts[0];
+              const eventPlaceYear = parts[1];
+              return (
+                <span className="inline-flex flex-wrap items-baseline gap-x-2">
+                  <span>{eventName}</span>
+                  {!hideLocationYear && eventPlaceYear && (
+                    <span className="font-normal text-gray-500 text-base lg:text-lg">
+                      – {eventPlaceYear}
+                    </span>
+                  )}
+                </span>
+              );
+            })()}
           </h3>
           <p className="text-gray-500 text-sm font-light leading-relaxed line-clamp-4">
             {event.description}

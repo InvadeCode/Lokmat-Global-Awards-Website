@@ -20,7 +20,7 @@ export default function VisionMissionSection() {
         "Creating and scaling super brands that drive long-term impact."
       ],
       stat: "Super Brands & Media Excellence",
-      image: "https://static.wixstatic.com/media/548938_e7d535855ae14a3eab331ff35834918c~mv2.jpg",
+      image: "https://static.wixstatic.com/media/548938_8e1a682b5aeb4f79b98b882fa070c4f4~mv2.jpg",
       fallbackImage: image1
     },
     mission: {

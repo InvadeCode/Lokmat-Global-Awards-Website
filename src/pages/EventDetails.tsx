@@ -7,6 +7,7 @@ import Footer from "@/src/components/Footer";
 import { motion } from "motion/react";
 import { formatDate } from "@/src/lib/utils";
 import EventCard from "@/src/components/EventCard";
+import AwardWinnersSection from "@/src/components/AwardWinnersSection";
 
 export default function EventDetails() {
   const { id } = useParams<{ id: string }>();
@@ -41,7 +42,7 @@ export default function EventDetails() {
       <Navbar />
 
       {/* Main Content Start */}
-      <main className="flex-1 w-[100vw] pt-32 pb-24 md:pt-40 md:pb-32 px-[3%] relative">
+      <main className="flex-1 w-[100vw] pt-[127px] pb-24 md:pt-[147px] md:pb-32 px-[3%] relative">
         
         {loading ? (
            <div className="flex flex-col items-center justify-center py-32 space-y-4">
@@ -61,13 +62,6 @@ export default function EventDetails() {
            </div>
         ) : (
           <div className="w-full flex flex-col items-center animate-in fade-in zoom-in-95 duration-700">
-            
-            <div className="w-full mb-8">
-              <Link to="/" className="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-gray-500 hover:text-red-600 transition-colors">
-                <ArrowLeft className="w-4 h-4" /> 
-                Return to Experiences
-              </Link>
-            </div>
 
             {/* Event Title */}
             <motion.div 
@@ -76,14 +70,21 @@ export default function EventDetails() {
               transition={{ duration: 0.8 }}
               className="w-full mb-8"
             >
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pb-2">
-                {event.title.split(' – ').map((part, i) => (
-                  <span key={i}>
-                    {part}
-                    {i === 0 && event.title.includes(' – ') && <br />}
-                  </span>
-                ))}
-              </h1>
+              {(() => {
+                const parts = event.title.split(' – ');
+                const eventName = parts[0];
+                const eventPlaceYear = parts[1] || `${event.location}, ${event.date}`;
+                return (
+                  <div className="w-full flex flex-col md:flex-row md:items-baseline justify-between gap-3 md:gap-8 pb-3 border-b border-gray-100">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">
+                      {eventName}
+                    </h1>
+                    <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal text-gray-500 whitespace-nowrap md:text-right shrink-0">
+                      {eventPlaceYear}
+                    </div>
+                  </div>
+                );
+              })()}
             </motion.div>
 
             {/* Top Media */}
@@ -128,91 +129,65 @@ export default function EventDetails() {
               </div>
             </motion.div>
 
-            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 w-full">
-              {/* Left Column - At A Glance */}
-              <div className="w-full lg:w-4/12 flex flex-col gap-8 order-2 lg:order-1">
-                <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] sticky top-32">
-                  <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-6">At A Glance</h4>
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-600 flex-shrink-0">
-                        <Calendar className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-500 font-medium uppercase tracking-widest">Date</p>
-                        <p className="font-semibold text-lg mt-1">{formatDate(event.date)}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-600 flex-shrink-0">
-                        <MapPin className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-500 font-medium uppercase tracking-widest">Location</p>
-                        <p className="font-semibold text-lg mt-1">{event.location}</p>
-                      </div>
-                    </div>
-
-                  </div>
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full items-stretch">
+              {/* Left Column - Event Logo Card (Equal height to right column content) */}
+              <div className="w-full lg:w-4/12 flex flex-col order-2 lg:order-1">
+                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex items-center justify-center overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1578269174936-2709b6aeb913?auto=format&fit=crop&q=80&w=800"
+                    alt={`${event.title} Logo`}
+                    className="w-full h-full max-h-[280px] object-contain rounded-2xl"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&q=80&w=800";
+                    }}
+                  />
                 </div>
               </div>
 
               {/* Right Column - Details */}
-              <div className="w-full lg:w-8/12 flex flex-col justify-start order-1 lg:order-2">
+              <div className="w-full lg:w-8/12 flex flex-col justify-between order-1 lg:order-2">
                 <motion.div 
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <div className="text-xl md:text-2xl text-gray-500 font-light leading-relaxed mb-12 mt-4">
+                  <div className="text-xl md:text-2xl text-gray-500 font-light leading-relaxed mb-6 mt-2">
                     {event.description}
-                  </div>
-                  
-                  {/* Additional dummy content to make it look like a detailed page */}
-                  <div className="space-y-12">
-                     <div>
-                        <h4 className="text-xl font-bold mb-6 tracking-tight">Event Gallery</h4>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                          {(event?.gallery || [
-                            "https://static.wixstatic.com/media/548938_e7d535855ae14a3eab331ff35834918c~mv2.jpg",
-                            "https://static.wixstatic.com/media/548938_16da964fa0a64825b25b0d428948b731~mv2.jpg",
-                            "https://static.wixstatic.com/media/548938_bd414512485f4f8d829f43bf08dddcd7~mv2.jpg",
-                            "https://static.wixstatic.com/media/548938_4f37d9ddf20743fe9a52e3db9eacc36d~mv2.jpg",
-                            "https://static.wixstatic.com/media/548938_8e1a682b5aeb4f79b98b882fa070c4f4~mv2.jpg",
-                            "https://static.wixstatic.com/media/548938_67cac5d58a9e41628c58f9bf88989ffe~mv2.jpg"
-                          ]).map((img, idx) => (
-                            <img key={idx} src={img} alt={`Gallery ${idx + 1}`} loading="lazy" referrerPolicy="no-referrer" className="w-full aspect-[4/3] object-cover rounded-xl shadow-sm hover:opacity-90 transition-opacity cursor-pointer bg-gray-100" />
-                          ))}
-                        </div>
-                     </div>
                   </div>
                 </motion.div>
                 
-                {/* Mobile version of facts */}
-                <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm mt-12 block lg:hidden w-full">
-                  <div className="flex flex-col sm:flex-row gap-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-600 flex-shrink-0">
-                        <Calendar className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-500 font-medium uppercase tracking-widest">Date</p>
-                        <p className="font-semibold text-base mt-1">{new Date(event.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-600 flex-shrink-0">
-                        <MapPin className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-500 font-medium uppercase tracking-widest">Location</p>
-                        <p className="font-semibold text-base mt-1">{event.location}</p>
-                      </div>
-                    </div>
+                {/* Event Key Date & Location Badges */}
+                <div className="flex flex-wrap items-center gap-4 mt-2">
+                  <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-gray-100 shadow-sm text-sm font-semibold text-gray-700">
+                    <Calendar className="w-4 h-4 text-red-600" />
+                    <span>{formatDate(event.date)}</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-gray-100 shadow-sm text-sm font-semibold text-gray-700">
+                    <MapPin className="w-4 h-4 text-red-600" />
+                    <span>{event.location}</span>
                   </div>
                 </div>
 
+              </div>
+            </div>
+
+            {/* 2-Column Award & Winners Section after content and before Event Gallery */}
+            <AwardWinnersSection event={event} />
+
+            {/* Event Gallery */}
+            <div className="w-full mt-12 pt-10 border-t border-gray-200">
+              <h4 className="text-2xl font-bold mb-6 tracking-tight text-[#111111]">Event Gallery</h4>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {(event?.gallery || [
+                  "https://static.wixstatic.com/media/548938_8e1a682b5aeb4f79b98b882fa070c4f4~mv2.jpg",
+                  "https://static.wixstatic.com/media/548938_16da964fa0a64825b25b0d428948b731~mv2.jpg",
+                  "https://static.wixstatic.com/media/548938_bd414512485f4f8d829f43bf08dddcd7~mv2.jpg",
+                  "https://static.wixstatic.com/media/548938_4f37d9ddf20743fe9a52e3db9eacc36d~mv2.jpg",
+                  "https://static.wixstatic.com/media/548938_8e1a682b5aeb4f79b98b882fa070c4f4~mv2.jpg",
+                  "https://static.wixstatic.com/media/548938_67cac5d58a9e41628c58f9bf88989ffe~mv2.jpg"
+                ]).map((img, idx) => (
+                  <img key={idx} src={img} alt={`Gallery ${idx + 1}`} loading="lazy" referrerPolicy="no-referrer" className="w-full aspect-[4/3] object-cover rounded-xl shadow-sm hover:opacity-90 transition-opacity cursor-pointer bg-gray-100" />
+                ))}
               </div>
             </div>
             

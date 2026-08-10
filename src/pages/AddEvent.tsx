@@ -47,17 +47,8 @@ export default function AddEvent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col pt-12 pb-24 font-sans">
+    <div className="min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col pt-[47px] pb-24 font-sans">
       <div className="w-[100vw] px-[3%] max-w-3xl mx-auto">
-        
-        {/* Navigation */}
-        <button 
-          onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-gray-500 hover:text-red-600 transition-colors mb-16 group"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span className="text-sm tracking-widest uppercase font-bold">Back to Showcase</span>
-        </button>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

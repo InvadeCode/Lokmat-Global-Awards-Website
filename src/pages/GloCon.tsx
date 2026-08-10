@@ -28,7 +28,7 @@ export default function GloCon() {
     <div className="w-[100vw] overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 w-[100vw] pt-32 pb-24 md:pt-40 md:pb-32 relative">
+      <main className="flex-1 w-[100vw] pt-[159px] pb-24 md:pt-[195px] md:pb-32 relative">
         {/* Main Hero Header */}
         <div className="w-full px-[3%] mb-16 md:mb-20">
           <div className="max-w-5xl mx-auto text-center">
@@ -133,7 +133,7 @@ export default function GloCon() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {lgecEvents.map((event, idx) => (
-              <EventCard key={event.id} event={event} index={idx} />
+              <EventCard key={event.id} event={event} index={idx} hideLocationYear={true} />
             ))}
           </div>
         </section>
@@ -152,7 +152,7 @@ export default function GloCon() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {lowsEvents.map((event, idx) => (
-              <EventCard key={event.id} event={event} index={idx} />
+              <EventCard key={event.id} event={event} index={idx} hideLocationYear={true} />
             ))}
           </div>
         </section>

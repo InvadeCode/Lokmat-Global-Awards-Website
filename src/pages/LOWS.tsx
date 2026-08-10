@@ -51,7 +51,7 @@ export default function LOWS() {
     <div className="w-full overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 w-full pt-28 pb-20 md:pt-36 md:pb-28 relative">
+      <main className="flex-1 w-full pt-[143px] pb-20 md:pt-[179px] md:pb-28 relative">
         {/* Hero Section */}
         <section className="w-full px-[3%] mb-10 md:mb-14">
           <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-8">
@@ -88,7 +88,7 @@ export default function LOWS() {
               className="flex-shrink-0 w-44 h-44 sm:w-52 sm:h-52 md:w-68 md:h-68 lg:w-[270px] lg:h-[270px] rounded-2xl bg-white border border-gray-100 shadow-sm p-2 sm:p-2.5 flex items-center justify-center overflow-hidden"
             >
               <img
-                src="https://static.wixstatic.com/media/548938_e7d535855ae14a3eab331ff35834918c~mv2.jpg"
+                src="https://static.wixstatic.com/media/548938_8e1a682b5aeb4f79b98b882fa070c4f4~mv2.jpg"
                 alt="LOWS Logo"
                 className="w-full h-full object-cover rounded-xl"
               />
@@ -112,7 +112,7 @@ export default function LOWS() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {lowsEvents.map((event, idx) => (
-                <EventCard key={event.id} event={event} index={idx} />
+                <EventCard key={event.id} event={event} index={idx} hideLocationYear={true} />
               ))}
             </div>
           )}

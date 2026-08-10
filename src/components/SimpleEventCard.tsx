@@ -20,12 +20,21 @@ export default function SimpleEventCard({ event }: SimpleEventCardProps) {
         </span>
         
         <h3 className={`text-xl lg:text-2xl font-bold leading-tight mb-8 ${isUpcoming ? 'text-red-600' : 'text-[#111111]'}`}>
-          {event.title.split(' – ').map((part, i) => (
-            <span key={i}>
-              {part}
-              {i === 0 && event.title.includes(' – ') && <br />}
-            </span>
-          ))}
+          {(() => {
+            const parts = event.title.split(' – ');
+            const eventName = parts[0];
+            const eventPlaceYear = parts[1];
+            return (
+              <span className="inline-flex flex-wrap items-baseline gap-x-2">
+                <span>{eventName}</span>
+                {eventPlaceYear && (
+                  <span className="font-normal text-gray-500 text-base lg:text-lg">
+                    – {eventPlaceYear}
+                  </span>
+                )}
+              </span>
+            );
+          })()}
         </h3>
       </div>
       
