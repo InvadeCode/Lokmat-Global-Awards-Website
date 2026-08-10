@@ -36,87 +36,87 @@ export default function HeroSection() {
     {
       src: "https://static.wixstatic.com/media/548938_4cac77e950a84d069f5f29b1cfbbb7b0~mv2.jpg",
       fallback: image1,
-      title: "Lokmat Global Economic Convention – London"
+      title: "London, 2025"
     },
     {
       src: "https://static.wixstatic.com/media/548938_ded036dc37f0424680a37bc2eb2e5426~mv2.jpg",
       fallback: image2,
-      title: "Lokmat Global Convention – Hong Kong & Macau"
+      title: "Hong Kong & Macau, 2025"
     },
     {
-      src: "https://static.wixstatic.com/media/548938_bcfbc37d13e846ebb239ae504fb62d47~mv2.jpg",
+      src: "https://static.wixstatic.com/media/548938_3bb60499955446c586cd7a148e78b1bb~mv2.jpg",
       fallback: image4,
-      title: "Lokmat One World Summit – Cairo"
+      title: "Cairo, 2026"
     },
     {
-      src: "https://static.wixstatic.com/media/548938_f17856adbfaf4b808f9952ac041970f8~mv2.jpg",
+      src: "https://static.wixstatic.com/media/548938_7c6fc72928a346979bc09fc548fb6f2c~mv2.jpg",
       fallback: image1,
-      title: "Lokmat One World Summit – Baku"
+      title: "Baku, 2024"
     },
     {
-      src: "https://static.wixstatic.com/media/548938_d907db88d2c64adb82b755a951dc4759~mv2.jpg",
+      src: "https://static.wixstatic.com/media/548938_8e1a682b5aeb4f79b98b882fa070c4f4~mv2.jpg",
       fallback: image2,
-      title: "Lokmat Global Economic Convention – Singapore"
+      title: "Singapore, 2024"
     },
     {
       src: "https://static.wixstatic.com/media/548938_27ecf9ec07494470ad8dc8eafa8506f1~mv2.jpg",
       fallback: image4,
-      title: "Lokmat International Awards – Dubai"
+      title: "Dubai, 2023"
     },
     {
       src: "https://static.wixstatic.com/media/548938_1f8b314b7b1b40ab956ebbc4904144f0~mv2.jpg",
       fallback: image1,
-      title: "Lokmat Maharashtrariyan of the Year"
+      title: "Mumbai, 2024"
     },
     {
       src: "https://static.wixstatic.com/media/548938_69e1c744da164a2bba0b000a0a4ae7da~mv2.jpg",
       fallback: image2,
-      title: "Lokmat Global Sakhi Awards"
+      title: "Pune, 2024"
     },
     {
       src: "https://static.wixstatic.com/media/548938_64f88fd0bc6244ae8fa8cbbd867a0ac6~mv2.jpg",
       fallback: image4,
-      title: "Lokmat Corporate Excellence Conclave"
+      title: "Mumbai, 2024"
     },
     {
       src: "https://static.wixstatic.com/media/548938_81ae385140b74ece88a4c4618649c5e3~mv2.jpg",
       fallback: image1,
-      title: "Lokmat Most Stylish Awards"
+      title: "Mumbai, 2024"
     },
     {
       src: "https://static.wixstatic.com/media/548938_c0cfacfe865741be8c013808da91a8b2~mv2.jpg",
       fallback: image2,
-      title: "Lokmat Leadership & Economic Forum"
+      title: "New Delhi, 2024"
     },
     {
       src: "https://static.wixstatic.com/media/548938_d6e6fb602cde4cb8ab4673a9b1a75c4e~mv2.jpg",
       fallback: image4,
-      title: "Lokmat Parliamentary Awards"
+      title: "New Delhi, 2024"
     },
     {
       src: "https://static.wixstatic.com/media/548938_228ca21f330843d9acda383849850676~mv2.jpg",
       fallback: image1,
-      title: "Lokmat Sur Jyotsna National Music Awards"
+      title: "New Delhi, 2024"
     },
     {
       src: "https://static.wixstatic.com/media/548938_9f9a35752cfa4086917eba5290e5a523~mv2.jpg",
       fallback: image2,
-      title: "Lokmat Business Icons Conclave"
+      title: "Nagpur, 2024"
     },
     {
       src: "https://static.wixstatic.com/media/548938_801555c0b96f487f8435536325b6902e~mv2.jpg",
       fallback: image4,
-      title: "Lokmat Global Thought Leadership Summit"
+      title: "London, 2024"
     },
     {
       src: "https://static.wixstatic.com/media/548938_3bb60499955446c586cd7a148e78b1bb~mv2.jpg",
       fallback: image1,
-      title: "Lokmat Cultural & Innovation Exchange"
+      title: "Cairo, 2025"
     },
     {
       src: "https://static.wixstatic.com/media/548938_9548fde182f34469ae7b8aa41b781a81~mv2.jpg",
       fallback: image2,
-      title: "Lokmat Women Achievement Awards"
+      title: "Mumbai, 2024"
     }
   ];
 
@@ -223,8 +223,8 @@ export default function HeroSection() {
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                      <div className="absolute bottom-4 left-6 z-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-xs font-bold uppercase tracking-widest bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                      <div className="absolute bottom-4 left-6 z-10 text-white opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="text-xs font-bold uppercase tracking-widest bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">
                           {imgObj.title}
                         </span>
                       </div>
