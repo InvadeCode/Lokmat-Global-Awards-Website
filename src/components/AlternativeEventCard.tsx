@@ -44,7 +44,7 @@ const AlternativeEventCard: React.FC<Props> = ({ event }) => {
           </div>
         </div>
         <div className="p-6 flex flex-col flex-grow">
-          <h3 className="text-xl font-bold mb-3 group-hover:text-red-600 transition-colors line-clamp-2 leading-tight">
+          <h3 className="text-xl font-bold mb-3 group-hover:text-red-600 transition-colors line-clamp-3 leading-tight">
             {event.title}
           </h3>
           <p className="text-gray-500 text-sm line-clamp-3 flex-grow">

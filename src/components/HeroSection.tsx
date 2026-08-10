@@ -31,37 +31,92 @@ export default function HeroSection() {
     [AutoScroll({ playOnInit: true, speed: 1.2, stopOnInteraction: false })]
   );
 
-  // Original Authentic Event Images
+  // Authentic Event Images for Hero Slider
   const carouselImages = [
     {
-      src: "https://static.wixstatic.com/media/548938_e7d535855ae14a3eab331ff35834918c~mv2.jpg",
+      src: "https://static.wixstatic.com/media/548938_4cac77e950a84d069f5f29b1cfbbb7b0~mv2.jpg",
       fallback: image1,
-      title: "Singapore Convention"
+      title: "Lokmat Global Economic Convention – London"
     },
     {
-      src: "https://static.wixstatic.com/media/548938_01de16ecda2648ee8f744a76a35e1a11~mv2.jpg",
+      src: "https://static.wixstatic.com/media/548938_ded036dc37f0424680a37bc2eb2e5426~mv2.jpg",
       fallback: image2,
-      title: "London Savoy Convention"
+      title: "Lokmat Global Convention – Hong Kong & Macau"
     },
     {
-      src: "https://static.wixstatic.com/media/548938_e27482ebd1ef499db675193aa77055e0~mv2.jpg",
+      src: "https://static.wixstatic.com/media/548938_bcfbc37d13e846ebb239ae504fb62d47~mv2.jpg",
       fallback: image4,
-      title: "Dubai International Awards"
+      title: "Lokmat One World Summit – Cairo"
     },
     {
-      src: "https://static.wixstatic.com/media/548938_31fa24f8914e4eb19bd3b336095f4a0b~mv2.jpg",
+      src: "https://static.wixstatic.com/media/548938_f17856adbfaf4b808f9952ac041970f8~mv2.jpg",
       fallback: image1,
-      title: "Baku Flame Towers Summit"
+      title: "Lokmat One World Summit – Baku"
     },
     {
-      src: "https://static.wixstatic.com/media/548938_c154eed85ef3434684d993283d8b3f5c~mv2.jpg",
+      src: "https://static.wixstatic.com/media/548938_d907db88d2c64adb82b755a951dc4759~mv2.jpg",
       fallback: image2,
-      title: "Hong Kong & Macau Summit"
+      title: "Lokmat Global Economic Convention – Singapore"
     },
     {
-      src: "https://static.wixstatic.com/media/548938_f48ad9abc61a4ff1bb526c86dd36123c~mv2.jpg",
+      src: "https://static.wixstatic.com/media/548938_27ecf9ec07494470ad8dc8eafa8506f1~mv2.jpg",
       fallback: image4,
-      title: "Cairo One World Summit"
+      title: "Lokmat International Awards – Dubai"
+    },
+    {
+      src: "https://static.wixstatic.com/media/548938_1f8b314b7b1b40ab956ebbc4904144f0~mv2.jpg",
+      fallback: image1,
+      title: "Lokmat Maharashtrariyan of the Year"
+    },
+    {
+      src: "https://static.wixstatic.com/media/548938_69e1c744da164a2bba0b000a0a4ae7da~mv2.jpg",
+      fallback: image2,
+      title: "Lokmat Global Sakhi Awards"
+    },
+    {
+      src: "https://static.wixstatic.com/media/548938_64f88fd0bc6244ae8fa8cbbd867a0ac6~mv2.jpg",
+      fallback: image4,
+      title: "Lokmat Corporate Excellence Conclave"
+    },
+    {
+      src: "https://static.wixstatic.com/media/548938_81ae385140b74ece88a4c4618649c5e3~mv2.jpg",
+      fallback: image1,
+      title: "Lokmat Most Stylish Awards"
+    },
+    {
+      src: "https://static.wixstatic.com/media/548938_c0cfacfe865741be8c013808da91a8b2~mv2.jpg",
+      fallback: image2,
+      title: "Lokmat Leadership & Economic Forum"
+    },
+    {
+      src: "https://static.wixstatic.com/media/548938_d6e6fb602cde4cb8ab4673a9b1a75c4e~mv2.jpg",
+      fallback: image4,
+      title: "Lokmat Parliamentary Awards"
+    },
+    {
+      src: "https://static.wixstatic.com/media/548938_228ca21f330843d9acda383849850676~mv2.jpg",
+      fallback: image1,
+      title: "Lokmat Sur Jyotsna National Music Awards"
+    },
+    {
+      src: "https://static.wixstatic.com/media/548938_9f9a35752cfa4086917eba5290e5a523~mv2.jpg",
+      fallback: image2,
+      title: "Lokmat Business Icons Conclave"
+    },
+    {
+      src: "https://static.wixstatic.com/media/548938_801555c0b96f487f8435536325b6902e~mv2.jpg",
+      fallback: image4,
+      title: "Lokmat Global Thought Leadership Summit"
+    },
+    {
+      src: "https://static.wixstatic.com/media/548938_3bb60499955446c586cd7a148e78b1bb~mv2.jpg",
+      fallback: image1,
+      title: "Lokmat Cultural & Innovation Exchange"
+    },
+    {
+      src: "https://static.wixstatic.com/media/548938_9548fde182f34469ae7b8aa41b781a81~mv2.jpg",
+      fallback: image2,
+      title: "Lokmat Women Achievement Awards"
     }
   ];
 
@@ -195,7 +250,7 @@ export default function HeroSection() {
                 <Link 
                   key={event.id}
                   to={`/event/${event.id}`}
-                  className="group border border-gray-200 rounded-xl p-4 flex flex-col justify-between transition-colors duration-300 hover:border-red-200 hover:bg-neutral-50 h-36"
+                  className="group border border-gray-200 rounded-xl p-3.5 sm:p-4 flex flex-col justify-between transition-colors duration-300 hover:border-red-200 hover:bg-neutral-50 min-h-[160px] h-full"
                   onMouseEnter={() => setHoveredEventId(event.id)}
                   onMouseLeave={() => setHoveredEventId(null)}
                 >
@@ -203,16 +258,11 @@ export default function HeroSection() {
                     <span className={`text-[9px] font-mono uppercase tracking-widest ${event.category.includes('Upcoming') ? 'text-red-600 font-bold animate-pulse' : 'text-gray-500'}`}>
                       {event.category}
                     </span>
-                    <h4 className="text-sm font-semibold text-[#111111] group-hover:text-red-600 transition-colors duration-300 line-clamp-2">
-                      {event.title.split(' – ').map((part, i) => (
-                        <span key={i}>
-                          {part}
-                          {i === 0 && event.title.includes(' – ') && <br />}
-                        </span>
-                      ))}
+                    <h4 className="text-xs sm:text-sm font-semibold text-[#111111] group-hover:text-red-600 transition-colors duration-300 line-clamp-3 leading-snug">
+                      {event.title}
                     </h4>
                   </div>
-                  <div className="flex items-center justify-between w-full mt-2">
+                  <div className="flex items-center justify-between w-full mt-2 pt-2 border-t border-gray-100">
                     <span className="text-[10px] text-gray-400 font-medium">{formatDate(event.date)} | {event.location.split(',')[0]}</span>
                     <div className="w-6 h-6 flex-shrink-0 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-red-600 group-hover:bg-red-50 text-gray-400 group-hover:text-red-600 transition-all transform group-hover:scale-110">
                       <ArrowUpRight className="w-3 h-3" />
