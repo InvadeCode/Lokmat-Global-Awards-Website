@@ -6,6 +6,7 @@ import AlternativeEventCard from "@/src/components/AlternativeEventCard";
 import AboutSection from "@/src/components/AboutSection";
 import PartnerLogos from "@/src/components/PartnerLogos";
 import ImpactSection from "@/src/components/ImpactSection";
+import TestimonialsSection from "@/src/components/TestimonialsSection";
 import PartnersCtaSection from "@/src/components/PartnersCtaSection";
 import Footer from "@/src/components/Footer";
 import { Link } from "react-router-dom";
@@ -93,7 +94,9 @@ export default function Home() {
       </main>
 
       <ImpactSection />
-      
+
+      <TestimonialsSection />
+
       <PartnersCtaSection />
       
       <Footer />
