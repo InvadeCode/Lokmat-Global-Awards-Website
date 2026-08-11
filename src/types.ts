@@ -6,6 +6,7 @@ export interface LokmatEvent {
   description: string;
   category: string;
   imageUrl: string;
+  logoUrl?: string;
   videoUrl?: string;
   gallery?: string[];
   createdAt: number;

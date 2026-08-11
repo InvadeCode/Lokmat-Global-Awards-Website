@@ -8,10 +8,11 @@ export const staticEvents: LokmatEvent[] = [
     location: "Cairo",
     description: "Held in Cairo, this edition further strengthened the One World Summit vision, bringing together global leaders, innovators, and industry voices on a shared platform. It emphasized cross-industry dialogue and collaborative thinking, blending recognition with meaningful intellectual exchange. Set against a city rich in civilizational legacy, the summit underscored leadership, innovation, and societal impact, while setting the stage for future editions, including the upcoming Mauritius chapter.",
     category: "Past Summit & Awards",
-    imageUrl: "https://static.wixstatic.com/media/548938_3bb60499955446c586cd7a148e78b1bb~mv2.jpg",
+    imageUrl: "https://static.wixstatic.com/media/548938_f48ad9abc61a4ff1bb526c86dd36123c~mv2.jpg",
+    logoUrl: "https://static.wixstatic.com/media/548938_f3b5076c66b8459ab236b19a2cce9775~mv2.png",
     videoUrl: "https://video.wixstatic.com/video/548938_52570e309bdb42edac5e01f01a264d5f/1080p/mp4/file.mp4",
     gallery: [
-      "https://static.wixstatic.com/media/548938_3bb60499955446c586cd7a148e78b1bb~mv2.jpg",
+      "https://static.wixstatic.com/media/548938_f48ad9abc61a4ff1bb526c86dd36123c~mv2.jpg",
       "https://static.wixstatic.com/media/548938_e7d3e1979a4744b79da66690874091b9~mv2.jpg",
       "https://static.wixstatic.com/media/548938_e5cba0d41a6d4055abe0f39a47e999af~mv2.jpg",
       "https://static.wixstatic.com/media/548938_4726a3324014489a9fc72f013ab14bfe~mv2.jpg",
@@ -28,6 +29,7 @@ export const staticEvents: LokmatEvent[] = [
     description: "Held at The Savoy, London, this edition elevated the Lokmat Global Economic Convention to a wider global stage, building on its Singapore debut. It brought together influential voices from politics, business, and social impact, alongside prominent global Indian leaders, creating a powerful confluence of perspectives. The platform enabled meaningful dialogue on economic direction, leadership, and responsibility, while recognitions such as Bharat Bhushan, Kohinoor of India Award, Maharashtra Ratna  and Global Sakhi Award added ceremonial prestige and gravitas.",
     category: "Past Convention",
     imageUrl: "https://static.wixstatic.com/media/548938_01de16ecda2648ee8f744a76a35e1a11~mv2.jpg",
+    logoUrl: "https://static.wixstatic.com/media/548938_bb4544e8c39540f6bc29d2fc4ddcbcd2~mv2.png",
     videoUrl: "https://video.wixstatic.com/video/548938_9fe3ce3c905f4b5697077579576aa818/1080p/mp4/file.mp4",
     gallery: [
       "https://static.wixstatic.com/media/548938_01de16ecda2648ee8f744a76a35e1a11~mv2.jpg",
@@ -47,6 +49,7 @@ export const staticEvents: LokmatEvent[] = [
     description: "This edition marked Lokmat’s strategic entry into the Greater China region, positioning the platform within a key global economic corridor. Hosted in Hong Kong, it brought together voices from India across business, policy, and industry, reflecting the country’s global outlook and ambitions. The convention emphasized presence and engagement, creating visibility for Indian leadership while fostering dialogue on international markets, cross-border opportunities, and the evolving role of India on the global stage.",
     category: "Past Summit & Awards",
     imageUrl: "https://static.wixstatic.com/media/548938_c154eed85ef3434684d993283d8b3f5c~mv2.jpg",
+    logoUrl: "https://static.wixstatic.com/media/548938_ffe099d2f4ed4e8eb57c90cabf19628f~mv2.png",
     videoUrl: "https://video.wixstatic.com/video/548938_a451c54c18a848bfb0c1862c682082fd/1080p/mp4/file.mp4",
     gallery: [
       "https://static.wixstatic.com/media/548938_c154eed85ef3434684d993283d8b3f5c~mv2.jpg",
@@ -66,6 +69,7 @@ export const staticEvents: LokmatEvent[] = [
     description: "Hosted at the iconic Flame Towers, this was the first edition of the Lokmat One World Summit and Awards, built on the idea of uniting diverse leaders under one global vision. The “One World” philosophy emphasized collaboration across industries, cultures, and nations. Bringing together over 150 leaders, it blended recognition with discussions on sustainability, innovation, and progress, creating a platform where challenges and shared futures could be addressed collectively.",
     category: "Past Summit & Awards",
     imageUrl: "https://static.wixstatic.com/media/548938_7c6fc72928a346979bc09fc548fb6f2c~mv2.jpg",
+    logoUrl: "https://static.wixstatic.com/media/548938_1ab989b4e53944148b356acca3d590bd~mv2.png",
     videoUrl: "https://video.wixstatic.com/video/548938_acb9d7cf46164d29abd916abcbf3bae3/1080p/mp4/file.mp4",
     gallery: [
       "https://static.wixstatic.com/media/548938_7c6fc72928a346979bc09fc548fb6f2c~mv2.jpg",
@@ -85,6 +89,7 @@ export const staticEvents: LokmatEvent[] = [
     description: "Held at the Shangri-La Hotel, this edition marked the first Lokmat Global Economic Convention, evolving beyond an awards ceremony into a platform for dialogue. It brought together business leaders, policymakers, and innovators to discuss global economic trends, entrepreneurship, and social impact. The “convention” format enabled panel discussions, exchanges, and actionable insights, positioning Lokmat as not just a recogniser of excellence, but a facilitator of global economic thought leadership.",
     category: "Past Convention",
     imageUrl: "https://static.wixstatic.com/media/548938_8e1a682b5aeb4f79b98b882fa070c4f4~mv2.jpg",
+    logoUrl: "https://static.wixstatic.com/media/548938_e9fa4e9a5f1b40f9a16d85af6ca4b2dd~mv2.png",
     videoUrl: "https://video.wixstatic.com/video/548938_7509a0a87488442ca70f19ff9821dc87/1080p/mp4/file.mp4",
     createdAt: Date.now() - 64000,
   },
@@ -96,6 +101,7 @@ export const staticEvents: LokmatEvent[] = [
     description: "The Dubai edition marked Lokmat’s global debut, transforming the awards into an international platform of prestige and influence. Hosted at the Grand Hyatt, it brought together leaders across sectors and geographies. Its defining strength was storytelling—each awardee’s journey was presented with narrative depth and visual richness. As the first international edition, it established a bold, inclusive vision, blending recognition with cross-cultural dialogue.",
     category: "Past Award",
     imageUrl: "https://static.wixstatic.com/media/548938_e27482ebd1ef499db675193aa77055e0~mv2.jpg",
+    logoUrl: "https://static.wixstatic.com/media/548938_a197a9bae5b84d93920a8f6feeb15841~mv2.png",
     videoUrl: "https://video.wixstatic.com/video/548938_fe4a1e10b26b44e6bfde7aa94966bd3b/480p/mp4/file.mp4",
     gallery: [
       "https://static.wixstatic.com/media/548938_e27482ebd1ef499db675193aa77055e0~mv2.jpg",

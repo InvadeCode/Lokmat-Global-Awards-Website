@@ -5,6 +5,7 @@ import { Calendar, MapPin, ArrowUpRight } from "lucide-react";
 import { LokmatEvent } from "@/src/types";
 import { formatDate } from "@/src/lib/utils";
 import OptimizedImage from "@/src/components/OptimizedImage";
+import { getLocationLogo } from "@/src/locationLogos";
 
 interface EventCardProps {
   event: LokmatEvent;
@@ -13,6 +14,8 @@ interface EventCardProps {
 }
 
 const EventCard: React.FC<EventCardProps> = ({ event, index = 0, hideLocationYear = false }) => {
+  const logo = event.logoUrl || getLocationLogo(event.location || event.title);
+
   return (
     <Link to={`/event/${event.id}`} className="block w-full h-full" onClick={() => window.scrollTo(0,0)}>
       <motion.div
@@ -43,6 +46,11 @@ const EventCard: React.FC<EventCardProps> = ({ event, index = 0, hideLocationYea
             {event.category}
           </span>
         </div>
+        {logo && (
+          <div className="absolute top-3 right-3 z-20 w-10 h-10 rounded-full bg-white/95 p-1.5 shadow-md backdrop-blur-md flex items-center justify-center border border-gray-100">
+            <img src={logo} alt={`${event.location} Logo`} className="w-full h-full object-contain" />
+          </div>
+        )}
       </div>
 
       {/* Content */}

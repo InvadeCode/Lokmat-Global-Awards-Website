@@ -8,6 +8,12 @@ import { motion } from "motion/react";
 import { formatDate } from "@/src/lib/utils";
 import EventCard from "@/src/components/EventCard";
 import AwardWinnersSection from "@/src/components/AwardWinnersSection";
+import { getLocationLogo } from "@/src/locationLogos";
+
+const getEventLogoImage = (event: { location?: string; title?: string; logoUrl?: string }) => {
+  if (event.logoUrl) return event.logoUrl;
+  return getLocationLogo(event.location || event.title || "");
+};
 
 export default function EventDetails() {
   const { id } = useParams<{ id: string }>();
@@ -92,7 +98,8 @@ export default function EventDetails() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-full rounded-3xl overflow-hidden aspect-video relative border border-gray-100 shadow-sm mb-12 bg-black group"
+              className="w-full rounded-3xl overflow-hidden aspect-[16/8.55] relative border border-gray-100 shadow-sm mb-12 bg-black group"
+              style={{ aspectRatio: "16 / 8.55" }}
             >
               {event.videoUrl ? (
                 <>
@@ -130,22 +137,22 @@ export default function EventDetails() {
             </motion.div>
 
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full items-stretch">
-              {/* Left Column - Event Logo Card (Equal height to right column content) */}
-              <div className="w-full lg:w-4/12 flex flex-col order-2 lg:order-1">
-                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex items-center justify-center overflow-hidden">
+              {/* Left Column - Event Logo Card (1:1 Aspect Ratio) */}
+              <div className="w-full lg:w-auto flex flex-col order-2 lg:order-1 shrink-0 items-center justify-center">
+                <div className="bg-white rounded-3xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] aspect-square h-full max-h-[320px] w-full max-w-[320px] lg:w-auto flex items-center justify-center overflow-hidden p-6">
                   <img
-                    src="https://images.unsplash.com/photo-1578269174936-2709b6aeb913?auto=format&fit=crop&q=80&w=800"
+                    src={getEventLogoImage(event)}
                     alt={`${event.title} Logo`}
-                    className="w-full h-full max-h-[280px] object-contain rounded-2xl"
+                    className="w-full h-full aspect-square object-contain transition-transform duration-300 hover:scale-105"
                     onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&q=80&w=800";
+                      e.currentTarget.src = "https://static.wixstatic.com/media/548938_f3b5076c66b8459ab236b19a2cce9775~mv2.png";
                     }}
                   />
                 </div>
               </div>
 
-              {/* Right Column - Details */}
-              <div className="w-full lg:w-8/12 flex flex-col justify-between order-1 lg:order-2">
+              {/* Right Column - Details (Expanded width by ~5%) */}
+              <div className="w-full lg:flex-1 flex flex-col justify-between order-1 lg:order-2">
                 <motion.div 
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}

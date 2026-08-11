@@ -80,17 +80,17 @@ export default function LOWS() {
               </div>
             </motion.div>
 
-            {/* Right Logo Placeholder */}
+            {/* Right Logo Display */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex-shrink-0 w-44 h-44 sm:w-52 sm:h-52 md:w-68 md:h-68 lg:w-[270px] lg:h-[270px] rounded-2xl bg-white border border-gray-100 shadow-sm p-2 sm:p-2.5 flex items-center justify-center overflow-hidden"
+              className="flex-shrink-0 w-44 h-44 sm:w-52 sm:h-52 md:w-68 md:h-68 lg:w-[270px] lg:h-[270px] rounded-2xl bg-white border border-gray-100 shadow-sm p-4 sm:p-6 flex items-center justify-center overflow-hidden"
             >
               <img
-                src="https://static.wixstatic.com/media/548938_8e1a682b5aeb4f79b98b882fa070c4f4~mv2.jpg"
-                alt="LOWS Logo"
-                className="w-full h-full object-cover rounded-xl"
+                src="https://static.wixstatic.com/media/548938_f3b5076c66b8459ab236b19a2cce9775~mv2.png"
+                alt="Lokmat One World Summit Logo"
+                className="w-full h-full object-contain"
               />
             </motion.div>
           </div>

@@ -47,7 +47,7 @@ export default function UpcomingEvents() {
               ) : (
                 upcomingEventsList.map((event) => (
                     <div key={event.id} className="group border border-gray-200 bg-white rounded-2xl p-6 flex flex-col gap-8 transition-colors duration-300 hover:border-red-200 hover:shadow-xl w-full">
-                       <Link to={`/event/${event.id}`} className="w-full aspect-video bg-gray-100 rounded-xl flex items-center justify-center text-gray-300 font-mono text-sm relative overflow-hidden">
+                       <Link to={`/event/${event.id}`} className="w-full aspect-[16/8.55] bg-gray-100 rounded-xl flex items-center justify-center text-gray-300 font-mono text-sm relative overflow-hidden" style={{ aspectRatio: "16 / 8.55" }}>
                           <div className="absolute top-4 left-4 z-10 bg-red-600 text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-widest shadow-md animate-pulse">Open</div>
                           <OptimizedImage src={event.imageUrl} alt={event.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                        </Link>

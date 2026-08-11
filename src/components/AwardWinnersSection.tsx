@@ -54,13 +54,29 @@ const defaultWinners3: Winner[] = [
   { id: "10", name: "Zainab Ibrahim", designation: "Director, Cultural Heritage Council", image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=400" }
 ];
 
+const TROPHY_IMAGES: Record<string, string> = {
+  "Hong Kong Trophy": "https://static.wixstatic.com/media/548938_d09ae19c52eb479496863821f04cb8a3~mv2.png",
+  "Dubai Trophy": "https://static.wixstatic.com/media/548938_951587d6f5e44ae3803383883269cbc1~mv2.png",
+  "Lokmat Global Excellence Award": "https://static.wixstatic.com/media/548938_2fa722912316444dba5be87e11bd33bf~mv2.png",
+  "Lokmat Bharat Bhushan Award": "https://static.wixstatic.com/media/548938_977bc89c8ad94e958d1c97178adfc1dd~mv2.png",
+  "Lokmat Global Icon Award": "https://static.wixstatic.com/media/548938_9d91ea1bcf164e6aaaa5795885ac6050~mv2.png",
+  "Lokmat Global Industry Awards": "https://static.wixstatic.com/media/548938_c0f2feec36ad400cab92653b3557c53b~mv2.png",
+  "Lokmat Global Sakhi Awards, Singapore": "https://static.wixstatic.com/media/548938_adfd1b5219f548d0a8697c797d80fb12~mv2.png",
+  "Lokmat Global Sakhi Awards, London": "https://static.wixstatic.com/media/548938_6403716513614bd6a16dc3de4b04a482~mv2.png",
+  "Lokmat Gujarat Ratna Awards": "https://static.wixstatic.com/media/548938_c03bea0990074d6e8c592946d198ccaa~mv2.png",
+  "Lokmat Global Trailblazers Awards": "https://static.wixstatic.com/media/548938_26ae440f87a444aaac8a54c53dbdb646~mv2.png",
+  "Lokmat Maharashtra Ratna Awards": "https://static.wixstatic.com/media/548938_45d96b0c26284e84bc98deeceb49a956~mv2.png",
+  "Lokmat Kohinoor of India": "https://static.wixstatic.com/media/548938_c5d7c9f2c54545dc906d0c699cf5dc9d~mv2.png",
+  "Lokmat Marudhar Sanman": "https://static.wixstatic.com/media/548938_cd16264bdf15472b8e9ecd547bd24ecb~mv2.png",
+};
+
 const awardDataMap: Record<string, AwardData[]> = {
   // Dubai - 1 Trophy
   "dubai-2023": [
     {
       awardName: "Dubai Trophy",
       awardSubtitle: "Lokmat International Awards 2023 – Dubai",
-      trophyImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_951587d6f5e44ae3803383883269cbc1~mv2.png",
       winners: [
         { id: "1", name: "Sheikh Rashid Al-Maktoum", designation: "Patron, Middle East Innovation", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" },
         { id: "2", name: "Priya Sundaram", designation: "Founder, Gulf Retail Group", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" },
@@ -79,41 +95,41 @@ const awardDataMap: Record<string, AwardData[]> = {
   // Singapore - 3 Awards
   "singapore-2024": [
     {
-      awardName: "Marudhar Sanman",
+      awardName: "Lokmat Marudhar Sanman",
       awardSubtitle: "Lokmat Global Economic Convention 2024 – Singapore",
-      trophyImage: "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_cd16264bdf15472b8e9ecd547bd24ecb~mv2.png",
       winners: defaultWinners2
     },
     {
-      awardName: "Global Women Excellence Awards",
+      awardName: "Lokmat Global Sakhi Awards, Singapore",
       awardSubtitle: "Lokmat Global Economic Convention 2024 – Singapore",
-      trophyImage: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_adfd1b5219f548d0a8697c797d80fb12~mv2.png",
       winners: defaultWinners1
     },
     {
-      awardName: "Global Trailblazer Award",
+      awardName: "Lokmat Global Trailblazers Awards",
       awardSubtitle: "Lokmat Global Economic Convention 2024 – Singapore",
-      trophyImage: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_26ae440f87a444aaac8a54c53dbdb646~mv2.png",
       winners: defaultWinners3
     }
   ],
   "1": [
     {
-      awardName: "Marudhar Sanman",
+      awardName: "Lokmat Marudhar Sanman",
       awardSubtitle: "Lokmat Global Economic Convention 2024 – Singapore",
-      trophyImage: "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_cd16264bdf15472b8e9ecd547bd24ecb~mv2.png",
       winners: defaultWinners2
     },
     {
-      awardName: "Global Women Excellence Awards",
+      awardName: "Lokmat Global Sakhi Awards, Singapore",
       awardSubtitle: "Lokmat Global Economic Convention 2024 – Singapore",
-      trophyImage: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_adfd1b5219f548d0a8697c797d80fb12~mv2.png",
       winners: defaultWinners1
     },
     {
-      awardName: "Global Trailblazer Award",
+      awardName: "Lokmat Global Trailblazers Awards",
       awardSubtitle: "Lokmat Global Economic Convention 2024 – Singapore",
-      trophyImage: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_26ae440f87a444aaac8a54c53dbdb646~mv2.png",
       winners: defaultWinners3
     }
   ],
@@ -121,9 +137,9 @@ const awardDataMap: Record<string, AwardData[]> = {
   // Baku - 3 Awards
   "baku-2024": [
     {
-      awardName: "Lokmat Global Trailblazer Awards",
+      awardName: "Lokmat Global Trailblazers Awards",
       awardSubtitle: "Lokmat One World Summit & Awards 2024 – Baku",
-      trophyImage: "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_26ae440f87a444aaac8a54c53dbdb646~mv2.png",
       winners: [
         { id: "1", name: "Ilham Guliyev", designation: "Director, Caspian Energy Forum", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" },
         { id: "2", name: "Suman Saxena", designation: "Founder, GreenEarth Foundation", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" },
@@ -140,13 +156,13 @@ const awardDataMap: Record<string, AwardData[]> = {
     {
       awardName: "Lokmat Global Industry Awards",
       awardSubtitle: "Lokmat One World Summit & Awards 2024 – Baku",
-      trophyImage: "https://images.unsplash.com/photo-1614036417651-efe5912149d8?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_c0f2feec36ad400cab92653b3557c53b~mv2.png",
       winners: defaultWinners1
     },
     {
-      awardName: "Lokmat Global Excellence Awards",
+      awardName: "Lokmat Global Excellence Award",
       awardSubtitle: "Lokmat One World Summit & Awards 2024 – Baku",
-      trophyImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_2fa722912316444dba5be87e11bd33bf~mv2.png",
       winners: defaultWinners2
     }
   ],
@@ -156,7 +172,7 @@ const awardDataMap: Record<string, AwardData[]> = {
     {
       awardName: "Hong Kong Trophy",
       awardSubtitle: "Lokmat Global Convention 2025 – Hong Kong & Macau",
-      trophyImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_d09ae19c52eb479496863821f04cb8a3~mv2.png",
       winners: [
         { id: "1", name: "Chen Wei", designation: "President, East Asia Capital", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" },
         { id: "2", name: "Pooja Mehta", designation: "VP Marketing, Global Reach", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" },
@@ -177,31 +193,31 @@ const awardDataMap: Record<string, AwardData[]> = {
     {
       awardName: "Lokmat Bharat Bhushan Award",
       awardSubtitle: "Lokmat Global Economic Convention 2025 – London",
-      trophyImage: "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_977bc89c8ad94e958d1c97178adfc1dd~mv2.png",
       winners: defaultWinners1
     },
     {
-      awardName: "Lokmat Global Sakhi Award London",
+      awardName: "Lokmat Global Sakhi Awards, London",
       awardSubtitle: "Lokmat Global Economic Convention 2025 – London",
-      trophyImage: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_6403716513614bd6a16dc3de4b04a482~mv2.png",
       winners: defaultWinners2
     },
     {
-      awardName: "Lokmat Gujarat Ratna Award",
+      awardName: "Lokmat Gujarat Ratna Awards",
       awardSubtitle: "Lokmat Global Economic Convention 2025 – London",
-      trophyImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_c03bea0990074d6e8c592946d198ccaa~mv2.png",
       winners: defaultWinners3
     },
     {
-      awardName: "Lokmat Kohinoor of India Award",
+      awardName: "Lokmat Kohinoor of India",
       awardSubtitle: "Lokmat Global Economic Convention 2025 – London",
-      trophyImage: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_c5d7c9f2c54545dc906d0c699cf5dc9d~mv2.png",
       winners: defaultWinners1
     },
     {
-      awardName: "Lokmat Maharashtra Ratna Award",
+      awardName: "Lokmat Maharashtra Ratna Awards",
       awardSubtitle: "Lokmat Global Economic Convention 2025 – London",
-      trophyImage: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_45d96b0c26284e84bc98deeceb49a956~mv2.png",
       winners: defaultWinners2
     }
   ],
@@ -211,13 +227,13 @@ const awardDataMap: Record<string, AwardData[]> = {
     {
       awardName: "Lokmat Global Excellence Award",
       awardSubtitle: "Lokmat One World Summit & Awards 2026 – Cairo",
-      trophyImage: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_2fa722912316444dba5be87e11bd33bf~mv2.png",
       winners: defaultWinners3
     },
     {
       awardName: "Lokmat Global Icon Award",
       awardSubtitle: "Lokmat One World Summit & Awards 2026 – Cairo",
-      trophyImage: "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?auto=format&fit=crop&q=80&w=800",
+      trophyImage: "https://static.wixstatic.com/media/548938_9d91ea1bcf164e6aaaa5795885ac6050~mv2.png",
       winners: defaultWinners1
     }
   ]
@@ -282,17 +298,17 @@ export default function AwardWinnersSection({ event }: AwardWinnersSectionProps)
                   )}
                 </div>
 
-                {/* Trophy Image Display with subtle light grey border */}
-                <div className="relative w-full flex-1 min-h-[260px] sm:min-h-[300px] lg:min-h-[280px] rounded-2xl overflow-hidden border border-gray-200 bg-gray-50 flex items-center justify-center">
+                {/* Trophy Image Display - filled directly in block with rounded corners */}
+                <div className="relative w-full flex-1 min-h-[260px] sm:min-h-[300px] lg:min-h-[280px] rounded-2xl overflow-hidden flex items-center justify-center">
                   <img
-                    src={data.trophyImage}
+                    src={TROPHY_IMAGES[data.awardName] || data.trophyImage}
                     alt={data.awardName}
                     loading="lazy"
                     referrerPolicy="no-referrer"
                     onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?auto=format&fit=crop&q=80&w=800";
+                      e.currentTarget.src = "https://static.wixstatic.com/media/548938_2fa722912316444dba5be87e11bd33bf~mv2.png";
                     }}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-2xl transition-transform duration-300 hover:scale-105"
                   />
                 </div>
               </div>
