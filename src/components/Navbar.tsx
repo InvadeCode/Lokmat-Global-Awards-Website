@@ -289,7 +289,7 @@ export default function Navbar() {
             </div>
 
             {/* Video Embed */}
-            <div className="relative w-full aspect-[16/8.55] bg-black" style={{ aspectRatio: "16 / 8.55" }}>
+            <div className="relative w-full aspect-[16/7.7] bg-black" style={{ aspectRatio: "16 / 7.7" }}>
               <iframe
                 src={`${selectedSpeech.videoEmbedUrl}?autoplay=1`}
                 title={selectedSpeech.title}

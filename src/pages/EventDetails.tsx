@@ -98,8 +98,8 @@ export default function EventDetails() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-full rounded-3xl overflow-hidden aspect-[16/8.55] relative border border-gray-100 shadow-sm mb-12 bg-black group"
-              style={{ aspectRatio: "16 / 8.55" }}
+              className="w-full rounded-3xl overflow-hidden aspect-[16/7.7] relative border border-gray-100 shadow-sm mb-12 bg-black group"
+              style={{ aspectRatio: "16 / 7.7" }}
             >
               {event.videoUrl ? (
                 <>
