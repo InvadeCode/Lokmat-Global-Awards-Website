@@ -104,7 +104,7 @@ export default function Contact() {
     <div className="w-[100vw] overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 w-[100vw] pt-[159px] pb-24 md:pt-[195px] md:pb-32 px-[3%] relative">
+      <main className="flex-1 w-[100vw] pt-[159px] pb-16 md:pt-[195px] md:pb-24 px-[3%] relative">
         <div className="w-full flex flex-col items-center text-center">
             
             {/* Header */}
@@ -124,8 +124,8 @@ export default function Contact() {
             </motion.div>
             
             {/* Location Cards */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left mb-20 max-w-6xl mx-auto">
-              <div className="bg-white p-10 border border-gray-150 rounded-2xl shadow-sm flex flex-col justify-between group hover:border-red-200 transition-colors duration-300">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left mb-16 md:mb-20">
+              <div className="bg-white p-10 border border-gray-200 rounded-2xl shadow-sm flex flex-col justify-between group hover:border-red-200 transition-colors duration-300">
                 <div>
                   <MapPin className="w-8 h-8 text-red-600 mb-6" />
                   <h3 className="text-xl font-bold mb-3">Headquarters</h3>
@@ -135,13 +135,13 @@ export default function Contact() {
                     Maharashtra, 400011, India
                   </p>
                 </div>
-                <div className="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between text-xs text-gray-400 group-hover:text-red-600 transition-colors">
+                <div className="pt-6 border-t border-gray-200 mt-6 flex items-center justify-between text-xs text-gray-400 group-hover:text-red-600 transition-colors">
                   <span>Get Driving Directions</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
 
-              <div className="bg-white p-10 border border-gray-150 rounded-2xl shadow-sm flex flex-col justify-between group hover:border-red-200 transition-colors duration-300">
+              <div className="bg-white p-10 border border-gray-200 rounded-2xl shadow-sm flex flex-col justify-between group hover:border-red-200 transition-colors duration-300">
                 <div>
                   <Mail className="w-8 h-8 text-red-600 mb-6" />
                   <h3 className="text-xl font-bold mb-3">Electronic Mail</h3>
@@ -150,13 +150,13 @@ export default function Contact() {
                     For general press: <a href="mailto:press@lokmat.com" className="font-medium text-[#111111] hover:text-red-600 transition-colors">press@lokmat.com</a>
                   </p>
                 </div>
-                <div className="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between text-xs text-gray-400 group-hover:text-red-600 transition-colors">
+                <div className="pt-6 border-t border-gray-200 mt-6 flex items-center justify-between text-xs text-gray-400 group-hover:text-red-600 transition-colors">
                   <span>Open Mail Application</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
 
-              <div className="bg-white p-10 border border-gray-150 rounded-2xl shadow-sm flex flex-col justify-between group hover:border-red-200 transition-colors duration-300">
+              <div className="bg-white p-10 border border-gray-200 rounded-2xl shadow-sm flex flex-col justify-between group hover:border-red-200 transition-colors duration-300">
                 <div>
                   <Phone className="w-8 h-8 text-red-600 mb-6" />
                   <h3 className="text-xl font-bold mb-3">Direct Support</h3>
@@ -166,7 +166,7 @@ export default function Contact() {
                     Coordinating desk: Mumbai
                   </p>
                 </div>
-                <div className="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between text-xs text-gray-400 group-hover:text-red-600 transition-colors">
+                <div className="pt-6 border-t border-gray-200 mt-6 flex items-center justify-between text-xs text-gray-400 group-hover:text-red-600 transition-colors">
                   <span>Call Reception Desk</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
@@ -174,9 +174,9 @@ export default function Contact() {
             </div>
 
             {/* Department Split Grid */}
-            <section className="w-full py-16 bg-white border-t border-b border-gray-100 mb-20">
-              <div className="max-w-6xl mx-auto px-4 text-left">
-                <div className="mb-12">
+            <section className="w-full py-12 md:py-16 bg-white border border-gray-200 rounded-2xl shadow-sm mb-16 md:mb-20 px-6 md:px-12">
+              <div className="w-full text-left">
+                <div className="mb-10">
                   <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Specialized Channels</span>
                   <h2 className="text-2xl md:text-4xl font-bold tracking-tight">Departmental Directories</h2>
                   <p className="text-gray-500 font-light text-sm md:text-base mt-2">
@@ -186,7 +186,7 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {departments.map((dept, i) => (
-                    <div key={i} className="border border-gray-150 p-8 rounded-2xl bg-[#FAFAFA] hover:border-red-100 transition-all duration-300">
+                    <div key={i} className="border border-gray-200 p-8 rounded-2xl bg-[#FAFAFA] hover:border-red-100 transition-all duration-300">
                       <h3 className="text-lg font-bold text-[#111111] mb-2">{dept.title}</h3>
                       <p className="text-gray-500 font-light text-sm leading-relaxed mb-6">{dept.desc}</p>
                       <div className="space-y-2 text-xs font-mono">
@@ -200,10 +200,10 @@ export default function Contact() {
             </section>
 
             {/* Split Contact Form and FAQ */}
-            <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 text-left mb-16 items-start">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 text-left mb-8 md:mb-10 items-start">
               
               {/* Form Block (7 Columns) */}
-              <div className="lg:col-span-7 bg-white p-8 md:p-12 border border-gray-150 rounded-2xl shadow-sm">
+              <div className="lg:col-span-7 bg-white p-8 md:p-12 border border-gray-200 rounded-2xl shadow-sm">
                 <h2 className="text-2xl font-bold mb-3">Send us a message</h2>
                 <p className="text-gray-400 font-light text-sm leading-relaxed mb-8">
                   Have a general question? Complete the credentials below and we will route it to the appropriate officer.
@@ -317,7 +317,7 @@ export default function Contact() {
                     return (
                       <div 
                         key={idx} 
-                        className="bg-white border border-gray-150 rounded-xl overflow-hidden shadow-sm transition-all duration-300"
+                        className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm transition-all duration-300"
                       >
                         <button
                           onClick={() => toggleFaq(idx)}
@@ -334,7 +334,7 @@ export default function Contact() {
                               animate={{ height: "auto", opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.3 }}
-                              className="border-t border-gray-100 bg-neutral-50/50"
+                              className="border-t border-gray-200 bg-neutral-50/50"
                             >
                               <div className="p-5 text-xs text-gray-500 font-light leading-relaxed">
                                 {faq.answer}
