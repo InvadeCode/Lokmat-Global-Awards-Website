@@ -81,12 +81,12 @@ export default function Navbar() {
             <div key={seqKey} className="flex items-center gap-[9px] shrink-0 pr-[9px]">
               {marqueeItems.map((item, idx) => (
                 <React.Fragment key={idx}>
-                  <button
-                    onClick={() => setSelectedSpeech(item)}
+                  <span
+                    // Reserved for future clickability: onClick={() => setSelectedSpeech(item)}
                     className="text-gray-200 hover:text-yellow-400 transition-colors duration-200 cursor-pointer font-semibold"
                   >
-                    <span>{item.title}</span>
-                  </button>
+                    {item.title}
+                  </span>
                   <span className="text-red-500/80 select-none">•</span>
                 </React.Fragment>
               ))}

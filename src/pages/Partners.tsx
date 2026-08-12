@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
 import PartnersCtaSection from "@/src/components/PartnersCtaSection";
-import { motion, AnimatePresence } from "motion/react";
-import { Check, ShieldCheck, Briefcase, Award, Sparkles, Building, Send, Globe, Users, Trophy } from "lucide-react";
 
 export default function Partners() {
   // AIO, GEO, and SEO Best Practices: Dynamic Title and Description Updates
@@ -13,237 +11,84 @@ export default function Partners() {
     // Update Meta Description dynamically for SEO/AIO scrapers
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute("content", "Explore elite corporate sponsorship opportunities with Lokmat Premium Events. Review our partnership packages, audience reach, past sponsors, and submit dynamic inquiry decks.");
+      metaDesc.setAttribute("content", "Explore elite corporate sponsorship opportunities with Lokmat Premium Events. Review past sponsors, and submit dynamic inquiry decks.");
     }
   }, []);
 
-  const stats = [
-    { label: "Aggregate Media Reach", value: "50M+" },
-    { label: "Influential Speakers", value: "150+" },
-    { label: "Global Summit Locations", value: "10+" },
-    { label: "Active Brands Aligned", value: "500+" }
+  // 5 Rows of 9 Logos (45 total) with dummy logo image URLs directly on the white cards
+  const logoRows = [
+    // Row 1: Left to Right
+    [
+      { id: 1, logoUrl: "https://static.wixstatic.com/media/548938_3517354234f44387ba169417543cf6aa~mv2.png" },
+      { id: 2, logoUrl: "https://static.wixstatic.com/media/548938_ac970b8bb38e4c06ab62afe4ff7852ed~mv2.png" },
+      { id: 3, logoUrl: "https://static.wixstatic.com/media/548938_6bd5e52ef4af4570954008648d3e04ce~mv2.png" },
+      { id: 4, logoUrl: "https://static.wixstatic.com/media/548938_3b4bed0127944aa5b33d11cdbbac24e9~mv2.png" },
+      { id: 5, logoUrl: "https://static.wixstatic.com/media/548938_f11314907d6b495eb5fa71cc5919d826~mv2.png" },
+      { id: 6, logoUrl: "https://static.wixstatic.com/media/548938_d101fac150394c7aa0ed80ac6cf4f7f1~mv2.png" },
+      { id: 7, logoUrl: "https://static.wixstatic.com/media/548938_1b5fc06a89f445c19f137d6f136d821d~mv2.png" },
+      { id: 8, logoUrl: "https://static.wixstatic.com/media/548938_b2d63f4e816840b6a54d382ba524d946~mv2.png" },
+      { id: 9, logoUrl: "https://static.wixstatic.com/media/548938_066d9e0bba424ec085faa8d5702baedd~mv2.png" }
+    ],
+    // Row 2: Right to Left
+    [
+      { id: 10, logoUrl: "https://static.wixstatic.com/media/548938_a32168812d604607983bdb00b6be345c~mv2.png" },
+      { id: 11, logoUrl: "https://static.wixstatic.com/media/548938_30583cbfcfa1499888e13050088d1bc0~mv2.png" },
+      { id: 12, logoUrl: "https://static.wixstatic.com/media/548938_daac95562a664c70806356d98de4706d~mv2.png" },
+      { id: 13, logoUrl: "https://static.wixstatic.com/media/548938_1855926bd974441699a371c893aa674b~mv2.png" },
+      { id: 14, logoUrl: "https://static.wixstatic.com/media/548938_d0167cb40e5e41e7aa72dc5ee6c21446~mv2.png" },
+      { id: 15, logoUrl: "https://static.wixstatic.com/media/548938_5b8cef233cd54cd781f5a91a1ea1539d~mv2.png" },
+      { id: 16, logoUrl: "https://static.wixstatic.com/media/548938_c1dbcb7fd9cd467e8c753a0d050330a8~mv2.png" },
+      { id: 17, logoUrl: "https://static.wixstatic.com/media/548938_45b1fc39625d43fe8564823b3e736693~mv2.png" },
+      { id: 18, logoUrl: "https://static.wixstatic.com/media/548938_53bba9e61e714df2914fa032f50cb7d7~mv2.png" }
+    ],
+    // Row 3: Left to Right
+    [
+      { id: 19, logoUrl: "https://static.wixstatic.com/media/548938_7431ab3eafec4e5495559925affbb0bf~mv2.png" },
+      { id: 20, logoUrl: "https://static.wixstatic.com/media/548938_f5527f7adc7c449eba21ba517bf280ca~mv2.png" },
+      { id: 21, logoUrl: "https://static.wixstatic.com/media/548938_cf4b4a2b7bc047bb8c4c9bcae8d87ac4~mv2.png" },
+      { id: 22, logoUrl: "https://static.wixstatic.com/media/548938_e7e4285de95f4934bd93de609beeb489~mv2.png" },
+      { id: 23, logoUrl: "https://static.wixstatic.com/media/548938_27b5df27132742c5b21b3432f94dc596~mv2.png" },
+      { id: 24, logoUrl: "https://static.wixstatic.com/media/548938_be1dd259880d4f4bbf933642df723212~mv2.png" },
+      { id: 25, logoUrl: "https://static.wixstatic.com/media/548938_f55f51e524dd47e5980b09c2096cb21e~mv2.png" },
+      { id: 26, logoUrl: "https://static.wixstatic.com/media/548938_6e724a7f91bd4959886415cc9580fca1~mv2.png" },
+      { id: 27, logoUrl: "https://static.wixstatic.com/media/548938_a6ebe3ea618b415db60f9054b9b6f4b1~mv2.png" }
+    ],
+    // Row 4: Right to Left
+    [
+      { id: 28, logoUrl: "https://static.wixstatic.com/media/548938_c4be23b9b6514c23901b4d74c5653d34~mv2.png" },
+      { id: 29, logoUrl: "https://static.wixstatic.com/media/548938_f6d1731ab80042139b041bfd39f34d13~mv2.png" },
+      { id: 30, logoUrl: "https://static.wixstatic.com/media/548938_eeae537d5c474c4d94abd4f2dc932875~mv2.png" },
+      { id: 31, logoUrl: "https://static.wixstatic.com/media/548938_7fa4c84f5adc4938a9add3b390b4a311~mv2.png" },
+      { id: 32, logoUrl: "https://static.wixstatic.com/media/548938_b05446a40948498f8bae0b350d42fcee~mv2.png" },
+      { id: 33, logoUrl: "https://static.wixstatic.com/media/548938_9319c14e1a8740ff8e35f51dafa0a18b~mv2.png" },
+      { id: 34, logoUrl: "https://static.wixstatic.com/media/548938_56b600bf754c48f78eb215375f2d9110~mv2.png" },
+      { id: 35, logoUrl: "https://static.wixstatic.com/media/548938_e40ae1eadad44c1c98c0f0fdd89c1a14~mv2.png" },
+      { id: 36, logoUrl: "https://static.wixstatic.com/media/548938_b59c743a87fb4025969a0c56ca525ea5~mv2.png" }
+    ],
+    // Row 5: Left to Right
+    [
+      { id: 37, logoUrl: "https://static.wixstatic.com/media/548938_ad4e3038aa0b4d5a89906d6b0617a29d~mv2.png" },
+      { id: 38, logoUrl: "https://static.wixstatic.com/media/548938_ecc926099deb4b88a175c76ac28230c3~mv2.png" },
+      { id: 39, logoUrl: "https://static.wixstatic.com/media/548938_a6342a8a08564a48bbf552c82aceb4bb~mv2.png" },
+      { id: 40, logoUrl: "https://static.wixstatic.com/media/548938_f21bca8c35fd498694392926bc1e0099~mv2.png" },
+      { id: 41, logoUrl: "https://static.wixstatic.com/media/548938_3644eefd24634ef2a2f69ab939784c19~mv2.png" },
+      { id: 42, logoUrl: "https://static.wixstatic.com/media/548938_b5a08c1b7950490cb8ec4c15d74d96d0~mv2.png" },
+      { id: 43, logoUrl: "https://static.wixstatic.com/media/548938_1e22db883b9c49349ef3a7c6709bda44~mv2.png" },
+      { id: 44, logoUrl: "https://static.wixstatic.com/media/548938_f077571078144f82888b7c3f0690a0fb~mv2.png" },
+      { id: 45, logoUrl: "https://static.wixstatic.com/media/548938_4261a3583924442f9baf592533ea0e71~mv2.jpg" }
+    ]
   ];
-
-  const packages = [
-    {
-      name: "Platinum Global Partner",
-      price: "Inquire for Pricing",
-      popular: true,
-      tagline: "Absolute category exclusivity & prominent dual branding across all summits.",
-      features: [
-        "Primary title dual-logo placement on all global marketing collaterals",
-        "Keynote speaker slot for company executive in 3 international chapters",
-        "VVIP front-row lounge seating (10 invites per global convention)",
-        "Double-spread full-page editorial feature in Lokmat Daily newspaper",
-        "Exclusive post-event networking dinner hosting rights with delegates",
-        "Premium full-screen video ads played during the primary award broadcast"
-      ]
-    },
-    {
-      name: "Gold Presenting Partner",
-      price: "Inquire for Pricing",
-      popular: false,
-      tagline: "Exceptional visual prominence and dedicated session hosting privileges.",
-      features: [
-        "Secondary presenting logo placement on global conclave backdrops",
-        "Dedicated panel moderator or panelist slot for company representative",
-        "VIP seating tier (6 invites per national/international chapter)",
-        "Full-page premium advertisement in the official Summit Souvenir booklet",
-        "Prominent logo feature on all digital & social media campaign channels",
-        "Dedicated product/service experience kiosk at the venue lobby"
-      ]
-    },
-    {
-      name: "Technology & Innovation Ally",
-      price: "Inquire for Pricing",
-      popular: false,
-      tagline: "Position your brand as the technical engine of our digital experience.",
-      features: [
-        "Exclusive 'Powered by' branding on the official mobile app and website",
-        "Interactive display integrations inside the main networking lounge",
-        "Custom technical demonstration showcase slot on the main stage",
-        "4 VIP passes to all domestic and international events",
-        "Targeted opt-in email newsletter campaign feature to 50,000+ delegates",
-        "Technical whitepaper inclusion in the digital delegate kits"
-      ]
-    }
-  ];
-
-  const categorizedSponsors = [
-    {
-      category: "Finance & Institutional",
-      brands: ["State Bank of India", "HDFC Bank", "ICICI Prudential", "LIC India", "Union Bank"]
-    },
-    {
-      category: "Real Estate & Infrastructure",
-      brands: ["Lodha Group", "Godrej Properties", "Hiranandani", "K Raheja Corp", "Runwal"]
-    },
-    {
-      category: "Technology & Automobile",
-      brands: ["Tata Motors", "Mahindra & Mahindra", "Jio Platforms", "Infosys", "Intel India"]
-    },
-    {
-      category: "Lifestyle, Hospitality & Luxury",
-      brands: ["The Taj Hotels", "Shangri-La International", "The Savoy London", "Air India", "Raymond"]
-    }
-  ];
-
-  // Contact Form States
-  const [formData, setFormData] = useState({
-    companyName: "",
-    contactPerson: "",
-    email: "",
-    phone: "",
-    selectedTier: "Platinum Global Partner",
-    message: ""
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.companyName || !formData.email || !formData.contactPerson) {
-      alert("Please fill out the required fields.");
-      return;
-    }
-    // Save locally
-    const existingInquiries = localStorage.getItem("lokmat_partner_inquiries");
-    const list = existingInquiries ? JSON.parse(existingInquiries) : [];
-    list.push({ ...formData, id: Date.now(), timestamp: new Date().toISOString() });
-    localStorage.setItem("lokmat_partner_inquiries", JSON.stringify(list));
-    setSubmitted(true);
-  };
-
-  const handleReset = () => {
-    setFormData({
-      companyName: "",
-      contactPerson: "",
-      email: "",
-      phone: "",
-      selectedTier: "Platinum Global Partner",
-      message: ""
-    });
-    setSubmitted(false);
-  };
 
   return (
     <div className="w-[100vw] overflow-x-hidden min-h-screen bg-[#FAFAFA] text-[#111111] flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 w-[100vw] pt-[159px] pb-24 md:pt-[195px] md:pb-32 relative">
+      <main className="flex-1 w-[100vw] pt-[143px] pb-0 md:pt-[175px] md:pb-0 relative">
         
-        {/* Page Title */}
-        <div className="w-full px-[3%] text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
-          >
-            <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Collaborative Growth</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
-              Our Corporate Partners
-            </h1>
-            <p className="text-lg md:text-xl text-gray-500 font-light leading-relaxed max-w-3xl mx-auto">
-              Align your brand with regional pride and global influence. Explore prestigious integration packages designed for high-value business networks.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Reach & Influence Statistics Banner */}
-        <section className="mb-20">
-          <div className="w-[100vw] px-[3%]">
-            <div className="bg-white border border-gray-150 rounded-3xl p-8 md:p-12 shadow-sm grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y md:divide-y-0 lg:divide-x divide-gray-150">
-              {stats.map((stat, i) => (
-                <div key={i} className={`flex flex-col items-center text-center p-4 ${i > 1 ? 'pt-8 md:pt-4' : ''}`}>
-                  <span className="text-4xl md:text-6xl font-bold text-red-600 tracking-tight mb-2">
-                    {stat.value}
-                  </span>
-                  <span className="text-gray-500 font-light text-xs md:text-sm uppercase tracking-widest">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Existing CTA Section (Provides visual entry point) */}
-        <div className="mb-24">
-          <PartnersCtaSection />
-        </div>
-
-        {/* Sponsorship Packages / Grid */}
-        <section className="py-20 bg-white border-t border-b border-gray-100">
-          <div className="w-[100vw] px-[3%]">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Sponsorship Tiers</span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
-                Our Curated <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Packages</span>
-              </h2>
-              <p className="text-gray-500 font-light mt-4 text-base md:text-lg">
-                Choose the perfect level of visibility to align with your corporate marketing roadmap, media strategies, and networking requirements.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {packages.map((pkg, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className={`border rounded-3xl p-8 flex flex-col justify-between relative shadow-sm transition-all duration-300 ${
-                    pkg.popular 
-                      ? "border-red-600 bg-[#FAFAFA] ring-2 ring-red-600/10 shadow-xl lg:-translate-y-2" 
-                      : "border-gray-150 bg-white hover:border-red-200 hover:shadow-lg"
-                  }`}
-                >
-                  {pkg.popular && (
-                    <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-white font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md flex items-center gap-1">
-                      <Sparkles className="w-3.5 h-3.5" /> High Impact Exclusivity
-                    </span>
-                  )}
-
-                  <div>
-                    <h3 className="text-2xl font-bold text-[#111111] mb-2">{pkg.name}</h3>
-                    <p className="text-gray-400 font-light text-xs uppercase tracking-wider mb-4 font-mono">{pkg.price}</p>
-                    <p className="text-gray-600 text-sm font-light leading-relaxed mb-6 pb-6 border-b border-gray-100">
-                      {pkg.tagline}
-                    </p>
-
-                    <ul className="space-y-4 mb-8">
-                      {pkg.features.map((feature, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-3">
-                          <div className="w-5 h-5 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0 mt-0.5">
-                            <Check className="w-3.5 h-3.5 stroke-[3]" />
-                          </div>
-                          <span className="text-gray-600 text-sm font-light leading-relaxed">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <a 
-                    href="#partnership-form"
-                    className={`w-full py-4 text-center font-bold uppercase tracking-widest text-xs rounded-xl transition-all duration-300 block ${
-                      pkg.popular 
-                        ? "bg-red-600 text-white hover:bg-red-700 shadow-md shadow-red-600/20" 
-                        : "bg-[#111111] text-white hover:bg-red-600"
-                    }`}
-                  >
-                    Request Integration Kit
-                  </a>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Past Sponsors Showcase */}
-        <section className="py-20 bg-[#FAFAFA]">
+        <section className="pt-8 pb-20 bg-[#FAFAFA]">
           <div className="w-[100vw] px-[3%]">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Proven Trust</span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
                 Our Past <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Aligned Brands</span>
@@ -253,159 +98,44 @@ export default function Partners() {
               </p>
             </div>
 
-            <div className="space-y-10 max-w-5xl mx-auto">
-              {categorizedSponsors.map((cat, idx) => (
-                <div key={idx} className="bg-white border border-gray-150 p-8 rounded-2xl shadow-sm">
-                  <h3 className="text-xs uppercase tracking-widest font-bold text-gray-400 mb-6 font-mono border-b border-gray-100 pb-3 flex items-center gap-2">
-                    <Building className="w-4 h-4 text-red-600" /> {cat.category}
-                  </h3>
-                  <div className="flex flex-wrap gap-4">
-                    {cat.brands.map((brand, bIdx) => (
-                      <span 
-                        key={bIdx}
-                        className="px-5 py-3 bg-[#FAFAFA] border border-gray-150 rounded-xl text-sm font-medium text-[#111111] hover:border-red-200 hover:bg-red-50/20 hover:text-red-600 transition-all duration-300 cursor-default"
-                      >
-                        {brand}
-                      </span>
-                    ))}
+            <div 
+              className="space-y-2 w-full overflow-x-hidden overflow-y-visible py-4 bg-transparent"
+              style={{
+                WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
+                maskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)'
+              }}
+            >
+              {logoRows.map((row, rIdx) => {
+                const isLeftToRight = rIdx % 2 === 0;
+                const animClass = isLeftToRight ? "animate-marquee-reverse" : "animate-marquee";
+                const tripleRow = [...row, ...row, ...row];
+
+                return (
+                  <div key={rIdx} className="relative w-full bg-transparent py-2">
+                    <div className={`flex gap-7 py-3 bg-transparent ${animClass}`}>
+                      {tripleRow.map((brand, bIdx) => (
+                        <div
+                          key={bIdx}
+                          className="w-[196px] sm:w-[224px] md:w-[252px] lg:w-[280px] aspect-[4/3] bg-white border border-gray-200 rounded-xl p-4 shadow-xs hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center shrink-0 cursor-pointer overflow-hidden z-0 hover:z-20 relative"
+                        >
+                          <img
+                            src={brand.logoUrl}
+                            alt="Partner Logo"
+                            className="max-h-[70%] max-w-[80%] object-contain rounded-lg transition-transform duration-300"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* Partnership Inquiry Form */}
-        <section id="partnership-form" className="py-24 bg-white border-t border-gray-100">
-          <div className="w-[100vw] px-[3%]">
-            <div className="max-w-4xl mx-auto bg-[#FAFAFA] border border-gray-150 rounded-[2rem] p-8 md:p-16 shadow-sm">
-              <div className="text-center max-w-2xl mx-auto mb-12">
-                <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Corporate Inquiry</span>
-                <h2 className="text-3xl font-bold tracking-tight text-[#111111]">Become A Corporate Sponsor</h2>
-                <p className="text-gray-500 font-light mt-3 text-sm md:text-base">
-                  Leave your commercial coordinates below. Our global sponsorship and partnership integration desk will revert within 24 business hours with custom pitch presentations.
-                </p>
-              </div>
-
-              <AnimatePresence mode="wait">
-                {!submitted ? (
-                  <motion.form 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onSubmit={handleSubmit} 
-                    className="space-y-6"
-                  >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="flex flex-col gap-2">
-                        <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Company / Brand Name *</label>
-                        <input 
-                          type="text" 
-                          required
-                          value={formData.companyName}
-                          onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                          className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600/20 transition-all" 
-                          placeholder="e.g. Tata Group" 
-                        />
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Contact Person Name *</label>
-                        <input 
-                          type="text" 
-                          required
-                          value={formData.contactPerson}
-                          onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
-                          className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600/20 transition-all" 
-                          placeholder="e.g. John Smith" 
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="flex flex-col gap-2">
-                        <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Corporate Email Address *</label>
-                        <input 
-                          type="email" 
-                          required
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600/20 transition-all" 
-                          placeholder="e.g. partner@tatamotors.com" 
-                        />
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Direct Telephone Number</label>
-                        <input 
-                          type="tel" 
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600/20 transition-all" 
-                          placeholder="e.g. +91 98200 XXXXX" 
-                        />
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col gap-2">
-                      <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Preferred Integration Tier</label>
-                      <select 
-                        value={formData.selectedTier}
-                        onChange={(e) => setFormData({ ...formData, selectedTier: e.target.value })}
-                        className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-red-600 transition-all cursor-pointer font-medium"
-                      >
-                        <option value="Platinum Global Partner">Platinum Global Partner (Maximum Branding)</option>
-                        <option value="Gold Presenting Partner">Gold Presenting Partner (Session Host)</option>
-                        <option value="Technology & Innovation Ally">Technology & Innovation Ally</option>
-                        <option value="Custom Event Alignment">Custom Event-Specific Association</option>
-                      </select>
-                    </div>
-
-                    <div className="flex flex-col gap-2">
-                      <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Specific Target Outcomes / Message</label>
-                      <textarea 
-                        rows={4} 
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600/20 transition-all resize-none" 
-                        placeholder="Detail any target locations (e.g. London, Dubai) or customized brand integrations of interest..."
-                      />
-                    </div>
-
-                    <button 
-                      type="submit"
-                      className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#111111] text-white rounded-2xl overflow-hidden font-bold tracking-widest uppercase text-sm hover:bg-red-600 hover:scale-105 transition-all duration-300 shadow-xl self-start"
-                    >
-                      <span className="relative z-10">Submit Partnership Inquiry</span>
-                      <Send className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </button>
-                  </motion.form>
-                ) : (
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="text-center py-12 space-y-6"
-                  >
-                    <div className="w-20 h-20 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto shadow-md">
-                      <ShieldCheck className="w-10 h-10" />
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-2xl font-bold text-[#111111]">Inquiry Received Successfully!</h3>
-                      <p className="text-gray-500 font-light max-w-lg mx-auto text-sm md:text-base">
-                        Thank you for reaching out to Lokmat. A copy of your inquiry for <strong>{formData.selectedTier}</strong> has been logged in our regional system. Our corporate relations director will email you within 24 hours.
-                      </p>
-                    </div>
-                    <button 
-                      onClick={handleReset}
-                      className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-2xl font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all duration-300"
-                    >
-                      Submit Another Inquiry
-                    </button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </div>
-        </section>
+        {/* Create Your Next Big Moment CTA Section */}
+        <PartnersCtaSection />
       </main>
 
       <Footer />

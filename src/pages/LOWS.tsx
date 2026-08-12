@@ -67,7 +67,7 @@ export default function LOWS() {
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[54px] font-extrabold tracking-tight mb-4 text-[#111111] whitespace-nowrap">
                 Lokmat One World Summit & Awards
               </h1>
-              <div className="space-y-4 text-base sm:text-lg text-gray-600 font-light leading-relaxed">
+              <div className="space-y-4 text-base sm:text-lg text-gray-600 font-light leading-relaxed max-w-[95%]">
                 <p>
                   The Lokmat One World Summit & Awards brings together changemakers, entrepreneurs, innovators, policymakers, business leaders and thought leaders from different sectors and geographies.
                 </p>
@@ -88,7 +88,7 @@ export default function LOWS() {
               className="flex-shrink-0 w-44 h-44 sm:w-52 sm:h-52 md:w-68 md:h-68 lg:w-[270px] lg:h-[270px] rounded-2xl bg-white border border-gray-100 shadow-sm p-4 sm:p-6 flex items-center justify-center overflow-hidden"
             >
               <img
-                src="https://static.wixstatic.com/media/548938_f3b5076c66b8459ab236b19a2cce9775~mv2.png"
+                src="https://static.wixstatic.com/media/548938_f3138e1501f74aa0a17aeb8ff15034cf~mv2.jpg"
                 alt="Lokmat One World Summit Logo"
                 className="w-full h-full object-contain"
               />

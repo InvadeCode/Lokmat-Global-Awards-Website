@@ -8,7 +8,7 @@ export default function PartnersCtaSection() {
 
   return (
     <>
-      <section className="py-16 md:py-24 bg-[#FAFAFA] border-t border-gray-200">
+      <section className="py-12 md:py-16 bg-[#FAFAFA] border-t border-gray-200">
         <div className="w-[100vw] px-[3%]">
           <div className="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 bg-[length:200%_auto] animate-gradient p-10 md:p-16 rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(220,38,38,0.5)] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12 text-white border border-white/20">
             

@@ -14,6 +14,9 @@ import About from "./pages/About";
 import GloCon from "./pages/GloCon";
 import LGEC from "./pages/LGEC";
 import LOWS from "./pages/LOWS";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
+import Disclaimer from "./pages/Disclaimer";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -43,8 +46,13 @@ export default function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/partners" element={<Partners />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
         {/* Hidden CMS Route as requested */}
         <Route path="/add-event" element={<AddEvent />} />
+        {/* Fallback route for any unmatched paths */}
+        <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
