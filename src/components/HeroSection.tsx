@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 import { useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { useEvents } from "@/src/hooks/useEvents";
@@ -13,18 +13,10 @@ const image4 = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?aut
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
-
   const { events } = useEvents();
   // Latest events section
   const latestEvents = events.slice(0, 6);
   const [, setHoveredEventId] = useState<string | null>(null);
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const [emblaRef] = useEmblaCarousel(
     { loop: true, align: "start", dragFree: true },
@@ -49,9 +41,9 @@ export default function HeroSection() {
       title: "London, 2025"
     },
     {
-      src: "https://static.wixstatic.com/media/548938_27ecf9ec07494470ad8dc8eafa8506f1~mv2.jpg",
+      src: "https://static.wixstatic.com/media/548938_4cac77e950a84d069f5f29b1cfbbb7b0~mv2.jpg",
       fallback: image4,
-      title: "Dubai, 2023"
+      title: "Mauritius, 2026"
     },
     {
       src: "https://static.wixstatic.com/media/548938_bcfbc37d13e846ebb239ae504fb62d47~mv2.jpg",
@@ -89,11 +81,6 @@ export default function HeroSection() {
       title: "London, 2025"
     },
     {
-      src: "https://static.wixstatic.com/media/548938_f48ad9abc61a4ff1bb526c86dd36123c~mv2.jpg",
-      fallback: image1,
-      title: "Cairo, 2026"
-    },
-    {
       src: "https://static.wixstatic.com/media/548938_c0cfacfe865741be8c013808da91a8b2~mv2.jpg",
       fallback: image2,
       title: "London, 2025"
@@ -117,34 +104,56 @@ export default function HeroSection() {
 
   return (
     <div ref={containerRef} className="relative min-h-screen w-full flex flex-col justify-between bg-[#FAFAFA] pt-[81px] sm:pt-[97px] pb-8 sm:pb-10 px-[3%] overflow-hidden">
-      {/* Ambient Background Elements */}
-      <motion.div style={{ y, opacity }} className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-[#FAFAFA] z-10 bg-opacity-95" />
-        <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_0%,#000_70%,transparent_100%)]" />
-        <div className="absolute top-1/6 left-1/5 w-[500px] h-[500px] bg-red-500/5 rounded-full mix-blend-multiply filter blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/3 right-10 w-[550px] h-[550px] bg-orange-500/8 rounded-full mix-blend-multiply filter blur-[160px] pointer-events-none" />
-      </motion.div>
+      {/* Completely Structured, Balanced Checkered Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+        <svg 
+          className="absolute inset-0 w-full h-full" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <pattern
+              id="hero-structured-grid"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 H 0 V 40"
+                fill="none"
+                stroke="rgba(0, 0, 0, 0.075)"
+                strokeWidth="1"
+                shapeRendering="crispEdges"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hero-structured-grid)" />
+        </svg>
+
+        {/* Ambient atmospheric lighting */}
+        <div className="absolute top-1/6 left-1/5 w-[500px] h-[500px] bg-red-500/5 rounded-full filter blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/3 right-10 w-[550px] h-[550px] bg-orange-500/5 rounded-full filter blur-[140px] pointer-events-none" />
+      </div>
 
       {/* Main Content Container */}
       <div className="relative z-10 w-full flex flex-col justify-between flex-1 h-full">
         
-        {/* Top Header Deck: Masterhead & Description with reduced vertical spacing (-10%) to slider */}
+        {/* Top Header Deck: Masterhead & Description with bottom alignment */}
         <div className="w-full mb-5 sm:mb-7 pt-[4.5%]">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5 lg:gap-12 pb-3.5 sm:pb-4 border-b border-gray-200/80">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 lg:gap-12 pb-2 sm:pb-3">
             
-            {/* Left: Eyebrow + Master Title in 1 line (+12% font size) */}
+            {/* Left: Eyebrow + Master Title in 1 line */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex flex-col justify-center"
+              className="flex flex-col justify-end"
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100 text-red-600 text-[12.5px] font-bold uppercase tracking-[0.2em] mb-3 self-start">
                 <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
                 OUR LANDMARK EVENT IPS
               </div>
 
-              <h1 className="text-[2.07rem] sm:text-[2.55rem] md:text-[3.2rem] lg:text-[3.76rem] xl:text-[4.35rem] font-bold tracking-tight text-[#111111] flex items-center gap-3 sm:gap-4 flex-wrap sm:flex-nowrap">
+              <h1 className="text-[2.07rem] sm:text-[2.55rem] md:text-[3.2rem] lg:text-[3.76rem] xl:text-[4.35rem] font-bold tracking-tight text-[#111111] flex items-center gap-3 sm:gap-4 flex-wrap sm:flex-nowrap leading-none">
                 <div className="relative flex items-center shrink-0">
                   <img 
                     src="/lokmat-logo.png" 
@@ -164,14 +173,14 @@ export default function HeroSection() {
               </h1>
             </motion.div>
 
-            {/* Right: Curated Description matching height of left title block (+12% font size) */}
+            {/* Right: Curated Description aligned at bottom (+10% font size) */}
             <motion.div 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="lg:max-w-md xl:max-w-lg flex flex-col justify-center"
+              className="lg:max-w-md xl:max-w-lg flex flex-col justify-end"
             >
-              <p className="text-gray-600 text-[13.5px] sm:text-[15.5px] lg:text-[16.5px] font-normal leading-relaxed">
+              <p className="text-gray-600 text-[15px] sm:text-[17px] lg:text-[18px] font-normal leading-relaxed">
                 A curated platform for Lokmat’s flagship events and awards, celebrating leadership, culture, talent, enterprise and public impact across India, globe and beyond.
               </p>
             </motion.div>
@@ -202,7 +211,7 @@ export default function HeroSection() {
                     <motion.div 
                       whileHover={{ y: -6 }}
                       transition={{ duration: 0.3 }}
-                      className="relative overflow-hidden rounded-2xl sm:rounded-3xl w-[412px] sm:w-[528px] md:w-[600px] lg:w-[660px] h-[280px] sm:h-[322px] md:h-[360px] lg:h-[390px] shadow-[0_16px_36px_rgba(0,0,0,0.13)] border-[3.5px] border-white group bg-gray-100"
+                      className="relative overflow-hidden rounded-2xl sm:rounded-3xl w-[412px] sm:w-[528px] md:w-[600px] lg:w-[660px] h-[308px] sm:h-[354px] md:h-[396px] lg:h-[429px] shadow-[0_16px_36px_rgba(0,0,0,0.13)] border-[3.5px] border-white group bg-gray-100"
                     >
                       <img 
                         src={imgObj.src} 

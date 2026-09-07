@@ -4,14 +4,14 @@ import { Globe2, TrendingUp, Users } from "lucide-react";
 export default function GlobalEconomicFootprintsSection() {
   const footprintStats = [
     {
-      value: "6",
+      value: "7",
       label: "GLOBAL BUSINESS CITIES",
-      description: "Singapore · Cairo · London · Dubai · Hong Kong · Baku",
+      description: "Singapore · Cairo · London · Dubai · Hong Kong · Baku · Port Louis",
       icon: Globe2,
       gradient: "from-red-500 via-orange-400 to-amber-300",
     },
     {
-      value: "$5.3T+",
+      value: "$5.3 Trillion+",
       label: "COMBINED HOST-ECONOMY GDP",
       description: "Powering International Trade & Investment Partnerships",
       icon: TrendingUp,
@@ -84,7 +84,7 @@ export default function GlobalEconomicFootprintsSection() {
                     </div>
                   </div>
 
-                  <div className={`text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r ${stat.gradient} mb-1`}>
+                  <div className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r ${stat.gradient} mb-1 whitespace-nowrap`}>
                     {stat.value}
                   </div>
 

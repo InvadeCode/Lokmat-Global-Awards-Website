@@ -17,9 +17,8 @@ const partners = [
   { name: "Partner 12", url: "https://static.wixstatic.com/media/548938_809220904ab642b1ad8d691fe1af1006~mv2.png" },
   { name: "Partner 13", url: "https://static.wixstatic.com/media/548938_9bcc7ca48d474849a624a5218ba45f2c~mv2.png" },
   { name: "Partner 14", url: "https://static.wixstatic.com/media/548938_4f50d6a72ebb407586e2f8b7aeb8a60e~mv2.png" },
-  { name: "Partner 15", url: "https://static.wixstatic.com/media/548938_689863b152a74f09846f94d94f8589d0~mv2.png" },
   { name: "Partner 16", url: "https://static.wixstatic.com/media/548938_e7495a8bdde14f54bdd2bc9cc122a855~mv2.png" },
-  { name: "Partner 17", url: "https://static.wixstatic.com/media/548938_a7d44ea6729e4dd38efccf96bf425d56~mv2.png" },
+  { name: "Partner 17", url: "https://static.wixstatic.com/media/548938_8e6c1821f3e9431e97486f6b61e126e5~mv2.png" },
   { name: "Partner 18", url: "https://static.wixstatic.com/media/548938_8a22c7bb4f1e49b383e46bc46038b270~mv2.png" },
 ];
 

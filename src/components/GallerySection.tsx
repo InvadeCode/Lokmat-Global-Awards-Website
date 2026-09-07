@@ -2,7 +2,6 @@ import { motion } from "motion/react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 
-const image1 = "https://static.wixstatic.com/media/548938_f48ad9abc61a4ff1bb526c86dd36123c~mv2.jpg";
 const image2 = "https://static.wixstatic.com/media/548938_01de16ecda2648ee8f744a76a35e1a11~mv2.jpg";
 const image3 = "https://static.wixstatic.com/media/548938_c154eed85ef3434684d993283d8b3f5c~mv2.jpg";
 const image4 = "https://static.wixstatic.com/media/548938_7c6fc72928a346979bc09fc548fb6f2c~mv2.jpg";
@@ -12,7 +11,6 @@ const image7 = "https://static.wixstatic.com/media/548938_b2dd1ed30f5f4454ae182a
 
 export default function GallerySection() {
   const images = [
-    image1,
     image2,
     image3,
     image4,

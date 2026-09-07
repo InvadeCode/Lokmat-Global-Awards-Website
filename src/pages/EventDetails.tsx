@@ -143,9 +143,11 @@ export default function EventDetails() {
                   <img
                     src={getEventLogoImage(event)}
                     alt={`${event.title} Logo`}
-                    className="w-full h-full aspect-square object-contain transition-transform duration-300 hover:scale-105"
+                    className={`w-full h-full aspect-square object-contain transition-transform duration-300 hover:scale-105 ${
+                      event.id === "mauritius-2026" ? "max-h-[240px] max-w-[240px] p-2" : ""
+                    }`}
                     onError={(e) => {
-                      e.currentTarget.src = "https://static.wixstatic.com/media/548938_f3b5076c66b8459ab236b19a2cce9775~mv2.png";
+                      e.currentTarget.src = "https://static.wixstatic.com/media/548938_9e17a561cd3a45d49344c302d18c3e59~mv2.png";
                     }}
                   />
                 </div>

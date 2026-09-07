@@ -21,7 +21,7 @@ export default function GloCon() {
   );
 
   const lowsEvents = events.filter((e) => 
-    e.id === "dubai-2023" || e.id === "baku-2024" || e.id === "hong-kong-macau-2025" || e.id === "cairo-2026"
+    e.id === "mauritius-2026" || e.id === "cairo-2026" || e.id === "hong-kong-macau-2025" || e.id === "baku-2024" || e.id === "dubai-2023" || e.title.toLowerCase().includes("one world")
   );
 
   return (
@@ -99,14 +99,14 @@ export default function GloCon() {
                     <Sparkles className="w-6 h-6" />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-widest text-red-600 bg-red-50 px-3 py-1 rounded-full">
-                    4 Global Editions
+                    5 Global Editions
                   </span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-red-600 transition-colors">
                   LOWS – Lokmat One World Summit & Awards
                 </h2>
                 <p className="text-gray-600 font-light leading-relaxed mb-8 text-base">
-                  Celebrating cross-border leadership, innovation, cultural heritage, and human progress under the "One World" philosophy. Hosted in Dubai, Baku, Hong Kong, and Egypt.
+                  Celebrating cross-border leadership, innovation, cultural heritage, and human progress under the "One World" philosophy. Hosted in Dubai, Baku, Hong Kong, Egypt, and Mauritius.
                 </p>
               </div>
               <Link 

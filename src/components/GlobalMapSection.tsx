@@ -3,7 +3,6 @@ import { Plus, Minus, RotateCcw, Globe, Compass } from "lucide-react";
 import { geoEquirectangular, geoPath, geoGraticule } from "d3-geo";
 import { feature } from "topojson-client";
 import land110m from "world-atlas/land-110m.json";
-import EnquiryModal from "./EnquiryModal";
 
 interface MapNode {
   id: string;
@@ -51,7 +50,6 @@ export default function GlobalMapSection() {
   const [panOffset, setPanOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [zoomScale, setZoomScale] = useState<number>(1);
   const [isDragging, setIsDragging] = useState<boolean>(false);
-  const [isEnquiryOpen, setIsEnquiryOpen] = useState<boolean>(false);
 
   // Drag and Inertia refs
   const dragStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -205,7 +203,6 @@ export default function GlobalMapSection() {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       setHoveredNodeId(node.id);
-      setIsEnquiryOpen(true);
     } else if (e.key === "Escape") {
       setHoveredNodeId(null);
     }
@@ -370,16 +367,9 @@ export default function GlobalMapSection() {
                     <g
                       key={node.id}
                       transform={`translate(${node.x}, ${node.y})`}
-                      className="cursor-pointer transition-transform duration-300"
-                      tabIndex={0}
-                      role="button"
+                      className="cursor-default transition-transform duration-300 pointer-events-auto"
                       aria-label={`${node.name} - ${node.category}`}
-                      onClick={() => {
-                        setHoveredNodeId(node.id);
-                        setIsEnquiryOpen(true);
-                      }}
                       onMouseEnter={() => !isDragging && setHoveredNodeId(node.id)}
-                      onKeyDown={(e) => handleKeyDown(e, node)}
                     >
                       {/* Outer Glow Halo Ring */}
                       <circle
@@ -447,10 +437,7 @@ export default function GlobalMapSection() {
               <div className="flex flex-wrap items-center gap-5">
                 <div 
                   className="flex items-center gap-2 cursor-pointer group"
-                  onClick={() => {
-                    setHoveredNodeId("asia");
-                    setIsEnquiryOpen(true);
-                  }}
+                  onClick={() => setHoveredNodeId("asia")}
                   onMouseEnter={() => setHoveredNodeId("asia")}
                   tabIndex={0}
                   role="button"
@@ -462,10 +449,7 @@ export default function GlobalMapSection() {
                 </div>
                 <div 
                   className="flex items-center gap-2 cursor-pointer group"
-                  onClick={() => {
-                    setHoveredNodeId("africa");
-                    setIsEnquiryOpen(true);
-                  }}
+                  onClick={() => setHoveredNodeId("africa")}
                   onMouseEnter={() => setHoveredNodeId("africa")}
                   tabIndex={0}
                   role="button"
@@ -477,10 +461,7 @@ export default function GlobalMapSection() {
                 </div>
                 <div 
                   className="flex items-center gap-2 cursor-pointer group"
-                  onClick={() => {
-                    setHoveredNodeId("europe");
-                    setIsEnquiryOpen(true);
-                  }}
+                  onClick={() => setHoveredNodeId("europe")}
                   onMouseEnter={() => setHoveredNodeId("europe")}
                   tabIndex={0}
                   role="button"
@@ -497,12 +478,6 @@ export default function GlobalMapSection() {
         </div>
 
       </div>
-
-      {/* Enquiry Form Modal */}
-      <EnquiryModal
-        isOpen={isEnquiryOpen}
-        onClose={() => setIsEnquiryOpen(false)}
-      />
     </section>
   );
 }

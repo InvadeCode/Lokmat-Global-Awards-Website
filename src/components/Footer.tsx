@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { MapPin, Phone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import footerLogo from "../assets/images/regenerated_image_1781776578908.png";
 import { navigationData } from "@/src/config/navigation";
@@ -102,32 +102,31 @@ export default function Footer() {
         </div>
 
         {/* Contact Information */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-6 border-t border-b border-white/10 mb-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-red-800/40 flex items-center justify-center flex-shrink-0">
-              <MapPin className="w-6 h-6 text-red-200" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-t border-b border-white/15 mb-8 items-center">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0 shadow-sm">
+              <MapPin className="w-6 h-6 text-white" />
             </div>
             <div>
-              <p className="text-sm text-red-200 font-medium uppercase tracking-wider mb-1">Corporate Office</p>
-              <p className="font-medium">Lokmat Media Pvt. Ltd.<br/>Mumbai, Maharashtra, India</p>
+              <p className="text-xs text-red-200 font-semibold uppercase tracking-widest mb-1.5">Office Address</p>
+              <p className="font-medium text-white leading-relaxed text-sm md:text-base">
+                Lokmat Media Pvt. Ltd.<br />
+                Law College Rd, Shanti Sheela Society, Erandwane, Pune, Maharashtra 411038
+              </p>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-red-800/40 flex items-center justify-center flex-shrink-0">
-              <Phone className="w-6 h-6 text-red-200" />
+          <div className="flex items-start md:items-center gap-4 md:justify-end">
+            <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0 shadow-sm">
+              <Phone className="w-6 h-6 text-white" />
             </div>
             <div>
-              <p className="text-sm text-red-200 font-medium uppercase tracking-wider mb-1">Phone</p>
-              <p className="font-medium">+91 22 1234 5678</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-red-800/40 flex items-center justify-center flex-shrink-0">
-              <Mail className="w-6 h-6 text-red-200" />
-            </div>
-            <div>
-              <p className="text-sm text-red-200 font-medium uppercase tracking-wider mb-1">Email</p>
-              <a href="mailto:events@lokmat.com" className="font-medium hover:text-red-200 transition-colors">events@lokmat.com</a>
+              <p className="text-xs text-red-200 font-semibold uppercase tracking-widest mb-1.5">Phone</p>
+              <a 
+                href="tel:02066848586" 
+                className="font-bold text-white hover:text-red-200 transition-colors text-lg md:text-xl tracking-wide inline-block"
+              >
+                020 6684 8586
+              </a>
             </div>
           </div>
         </div>

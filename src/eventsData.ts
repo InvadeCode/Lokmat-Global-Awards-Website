@@ -2,22 +2,39 @@ import { LokmatEvent } from "@/src/types";
 
 export const staticEvents: LokmatEvent[] = [
   {
+    id: "mauritius-2026",
+    title: "Lokmat One World Summit and Awards – Mauritius, 2026",
+    date: "2026",
+    location: "Mauritius",
+    description: "The presence of the President of Mauritius, H.E. Shri Dharambeer Gokhool, gave the Mauritius chapter of the Lokmat One World Summit and Awards 2026 distinguished national importance and reinforced its global stature. Set against the Indian Ocean backdrop of Le Méridien Ile Maurice, the summit brought together diplomats, policymakers, business leaders, innovators and changemakers for a powerful exchange of ideas. The edition celebrated global excellence while opening conversations around leadership, entrepreneurship, sustainability, governance and social impact, with the deep India–Mauritius relationship at its centre.",
+    category: "Past Summit & Awards",
+    imageUrl: "https://static.wixstatic.com/media/548938_4cac77e950a84d069f5f29b1cfbbb7b0~mv2.jpg",
+    logoUrl: "https://static.wixstatic.com/media/548938_9e17a561cd3a45d49344c302d18c3e59~mv2.png",
+    videoUrl: "https://video.wixstatic.com/video/548938_52570e309bdb42edac5e01f01a264d5f/1080p/mp4/file.mp4",
+    gallery: [
+      "https://static.wixstatic.com/media/548938_4cac77e950a84d069f5f29b1cfbbb7b0~mv2.jpg",
+      "https://static.wixstatic.com/media/548938_01de16ecda2648ee8f744a76a35e1a11~mv2.jpg",
+      "https://static.wixstatic.com/media/548938_c154eed85ef3434684d993283d8b3f5c~mv2.jpg",
+      "https://static.wixstatic.com/media/548938_7c6fc72928a346979bc09fc548fb6f2c~mv2.jpg",
+      "https://static.wixstatic.com/media/548938_e27482ebd1ef499db675193aa77055e0~mv2.jpg"
+    ],
+    createdAt: Date.now(),
+  },
+  {
     id: "cairo-2026",
     title: "Lokmat One World Summit and Awards – Cairo, 2026",
     date: "2026",
     location: "Cairo",
     description: "Held in Cairo, this edition further strengthened the One World Summit vision, bringing together global leaders, innovators, and industry voices on a shared platform. It emphasized cross-industry dialogue and collaborative thinking, blending recognition with meaningful intellectual exchange. Set against a city rich in civilizational legacy, the summit underscored leadership, innovation, and societal impact, while setting the stage for future editions, including the upcoming Mauritius chapter.",
     category: "Past Summit & Awards",
-    imageUrl: "https://static.wixstatic.com/media/548938_f48ad9abc61a4ff1bb526c86dd36123c~mv2.jpg",
+    imageUrl: "https://static.wixstatic.com/media/548938_e7d3e1979a4744b79da66690874091b9~mv2.jpg",
     logoUrl: "https://static.wixstatic.com/media/548938_f3b5076c66b8459ab236b19a2cce9775~mv2.png",
     videoUrl: "https://video.wixstatic.com/video/548938_52570e309bdb42edac5e01f01a264d5f/1080p/mp4/file.mp4",
     gallery: [
-      "https://static.wixstatic.com/media/548938_f48ad9abc61a4ff1bb526c86dd36123c~mv2.jpg",
       "https://static.wixstatic.com/media/548938_e7d3e1979a4744b79da66690874091b9~mv2.jpg",
       "https://static.wixstatic.com/media/548938_e5cba0d41a6d4055abe0f39a47e999af~mv2.jpg",
       "https://static.wixstatic.com/media/548938_4726a3324014489a9fc72f013ab14bfe~mv2.jpg",
-      "https://static.wixstatic.com/media/548938_fb341ebfdd434a53bb8b88849b274423~mv2.jpg",
-      "https://static.wixstatic.com/media/548938_b0499c9230344b5aa1cba0ac802d8880~mv2.jpg"
+      "https://static.wixstatic.com/media/548938_fb341ebfdd434a53bb8b88849b274423~mv2.jpg"
     ],
     createdAt: Date.now() - 60000,
   },

@@ -236,6 +236,22 @@ const awardDataMap: Record<string, AwardData[]> = {
       trophyImage: "https://static.wixstatic.com/media/548938_9d91ea1bcf164e6aaaa5795885ac6050~mv2.png",
       winners: defaultWinners1
     }
+  ],
+
+  // Mauritius - 2 Awards
+  "mauritius-2026": [
+    {
+      awardName: "Lokmat Global Excellence Award",
+      awardSubtitle: "Lokmat One World Summit & Awards 2026 – Mauritius",
+      trophyImage: "https://static.wixstatic.com/media/548938_2fa722912316444dba5be87e11bd33bf~mv2.png",
+      winners: defaultWinners1
+    },
+    {
+      awardName: "Lokmat Global Icon Award",
+      awardSubtitle: "Lokmat One World Summit & Awards 2026 – Mauritius",
+      trophyImage: "https://static.wixstatic.com/media/548938_9d91ea1bcf164e6aaaa5795885ac6050~mv2.png",
+      winners: defaultWinners2
+    }
   ]
 };
 
@@ -250,7 +266,9 @@ export default function AwardWinnersSection({ event }: AwardWinnersSectionProps)
   // Fallback check by location name
   if (!awardsList) {
     const loc = (event.location || "").toLowerCase();
-    if (loc.includes("dubai")) {
+    if (loc.includes("mauritius")) {
+      awardsList = awardDataMap["mauritius-2026"];
+    } else if (loc.includes("dubai")) {
       awardsList = awardDataMap["dubai-2023"];
     } else if (loc.includes("singapore")) {
       awardsList = awardDataMap["singapore-2024"];

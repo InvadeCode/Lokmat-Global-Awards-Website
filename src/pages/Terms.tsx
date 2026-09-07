@@ -25,10 +25,19 @@ export default function Terms() {
           <p>
             Lokmat reserves the right to alter event schedules, speaker lineups, venues, or access rules for summits and awards. Attendees are expected to maintain professional decorum at all official functions.
           </p>
-          <h2 className="text-xl font-bold text-[#111111] pt-4">3. Governing Law</h2>
+          <h2 className="text-xl font-bold text-[#111111] pt-4">3. Governing Law & Jurisdiction</h2>
           <p>
-            These terms shall be governed by and construed in accordance with the laws of India, with jurisdiction in Mumbai, Maharashtra.
+            These terms shall be governed by and construed in accordance with the laws of India, with jurisdiction in Maharashtra.
           </p>
+          <h2 className="text-xl font-bold text-[#111111] pt-4">4. Office Contact</h2>
+          <p>
+            For official inquiries regarding these terms:
+          </p>
+          <div className="bg-neutral-50 p-6 rounded-xl border border-gray-200 not-prose space-y-2 text-sm text-gray-700">
+            <p className="font-bold text-[#111111]">Lokmat Media Pvt. Ltd.</p>
+            <p>Law College Rd, Shanti Sheela Society, Erandwane, Pune, Maharashtra 411038</p>
+            <p>Phone: <a href="tel:02066848586" className="text-red-600 font-semibold hover:underline">020 6684 8586</a></p>
+          </div>
         </div>
       </main>
       <Footer />

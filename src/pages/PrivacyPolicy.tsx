@@ -31,8 +31,13 @@ export default function PrivacyPolicy() {
           </p>
           <h2 className="text-xl font-bold text-[#111111] pt-4">4. Contact Us</h2>
           <p>
-            For any questions or concerns regarding this Privacy Policy, please contact us at <a href="mailto:events@lokmat.com" className="text-red-600 font-semibold hover:underline">events@lokmat.com</a>.
+            For any questions or concerns regarding this Privacy Policy, please contact us at our office:
           </p>
+          <div className="bg-neutral-50 p-6 rounded-xl border border-gray-200 not-prose space-y-2 text-sm text-gray-700">
+            <p className="font-bold text-[#111111]">Lokmat Media Pvt. Ltd.</p>
+            <p>Law College Rd, Shanti Sheela Society, Erandwane, Pune, Maharashtra 411038</p>
+            <p>Phone: <a href="tel:02066848586" className="text-red-600 font-semibold hover:underline">020 6684 8586</a></p>
+          </div>
         </div>
       </main>
       <Footer />

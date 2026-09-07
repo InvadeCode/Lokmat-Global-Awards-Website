@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
 import { motion, AnimatePresence } from "motion/react";
-import { Mail, Phone, MapPin, ArrowUpRight, HelpCircle, ChevronDown, ChevronUp, Send, CheckCircle, Globe, Users } from "lucide-react";
+import { Phone, MapPin, ArrowUpRight, HelpCircle, ChevronDown, ChevronUp, Send, CheckCircle } from "lucide-react";
 
 export default function Contact() {
   // AIO, GEO, and SEO Best Practices: Dynamic Title and Description Updates
   useEffect(() => {
-    document.title = "Contact Our Global Offices & Press Bureau | Lokmat Events";
+    document.title = "Contact Our Offices & Bureau | Lokmat Events";
     
     // Update Meta Description dynamically for SEO/AIO scrapers
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute("content", "Get in touch with Lokmat Premium Events. Access department contacts for sponsorships, press accreditation, speaker nominations, or locate regional offices in Maharashtra & India.");
+      metaDesc.setAttribute("content", "Get in touch with Lokmat Media Pvt. Ltd. Office Address: Law College Rd, Shanti Sheela Society, Erandwane, Pune, Maharashtra 411038. Phone: 020 6684 8586.");
     }
   }, []);
 
@@ -20,21 +20,18 @@ export default function Contact() {
   const departments = [
     {
       title: "Corporate Sponsorships",
-      email: "sponsor@lokmat.com",
-      phone: "+91-22-6635-5555 (Ext. 204)",
-      desc: "For corporate integrations, brand activations, and premium delegates."
+      phone: "020 6684 8586",
+      desc: "For corporate integrations, brand activations, and premium delegate partnerships."
     },
     {
       title: "Press & PR Bureau",
-      email: "press@lokmat.com",
-      phone: "+91-22-6635-5555 (Ext. 112)",
-      desc: "For media credentials, press releases, interview bookings, and photos."
+      phone: "020 6684 8586",
+      desc: "For media credentials, press releases, interview bookings, and editorial inquiries."
     },
     {
       title: "Speaker Bureau & Jury",
-      email: "speakers@lokmat.com",
-      phone: "+91-22-6635-5555 (Ext. 301)",
-      desc: "To nominate industry figures or inquire about panel agendas."
+      phone: "020 6684 8586",
+      desc: "To nominate industry figures, submit proposals, or inquire about conclave agendas."
     }
   ];
 
@@ -46,19 +43,19 @@ export default function Contact() {
     },
     {
       question: "Can I nominate my own company or brand for an award?",
-      answer: "Yes, our nomination windows typically open 4-5 months prior to the respective award ceremony. You can submit your candidacy through the official category nomination links published on our website or by contacting our Speaker Bureau directly with your corporate portfolio."
+      answer: "Yes, our nomination windows typically open 4-5 months prior to the respective award ceremony. You can submit your candidacy through the official category nomination links published on our website or by contacting our desk at 020 6684 8586 with your corporate portfolio."
     },
     {
       question: "Are global conventions (e.g. London, Singapore) open to general attendees?",
-      answer: "Global chapters are invite-only curated forums targeting trade delegates, policymakers, and corporate sponsors. However, a limited number of premium delegate passes are allocated for external executives. You can request a delegate pass by filling out our partnership or contact form."
+      answer: "Global chapters are invite-only curated forums targeting trade delegates, policymakers, and corporate sponsors. However, a limited number of premium delegate passes are allocated for external executives. You can request a delegate pass by calling our office or filling out our contact form."
     },
     {
       question: "How can I obtain press credentials for a Lokmat Event?",
-      answer: "Members of registered news outlets and trade journals can apply for press accreditation. Please email press@lokmat.com at least 14 working days before the scheduled event with your credentials and coverage outline. Late applications are not entertained."
+      answer: "Members of registered news outlets and trade journals can apply for press accreditation. Please contact our communications desk at 020 6684 8586 or submit an inquiry through our contact form at least 14 working days before the scheduled event with your credentials and coverage outline."
     },
     {
       question: "Where are your main administrative offices located?",
-      answer: "Our primary corporate office is Lokmat Media Pvt. Ltd., located in Mumbai, Maharashtra, India. We also have key regional headquarters in Nagpur, Pune, Aurangabad, and New Delhi, as well as coordinating teams in London and Dubai."
+      answer: "Our primary corporate office is Lokmat Media Pvt. Ltd., located at Law College Rd, Shanti Sheela Society, Erandwane, Pune, Maharashtra 411038."
     }
   ];
 
@@ -66,7 +63,7 @@ export default function Contact() {
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    phone: "",
     subject: "General Inquiry",
     message: ""
   });
@@ -78,7 +75,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.phone || !formData.message) {
       alert("Please fill in all required fields.");
       return;
     }
@@ -93,7 +90,7 @@ export default function Contact() {
   const handleReset = () => {
     setFormData({
       name: "",
-      email: "",
+      phone: "",
       subject: "General Inquiry",
       message: ""
     });
@@ -123,53 +120,61 @@ export default function Contact() {
               </p>
             </motion.div>
             
-            {/* Location Cards */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left mb-16 md:mb-20">
-              <div className="bg-white p-10 border border-gray-200 rounded-2xl shadow-sm flex flex-col justify-between group hover:border-red-200 transition-colors duration-300">
+            {/* Location Cards: Balanced 2-Column Layout */}
+            <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-16 md:mb-20">
+              <div className="bg-white p-8 md:p-10 border border-gray-200 rounded-2xl shadow-sm flex flex-col justify-between group hover:border-red-200 hover:shadow-md transition-all duration-300">
                 <div>
-                  <MapPin className="w-8 h-8 text-red-600 mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Headquarters</h3>
-                  <p className="text-gray-500 leading-relaxed font-light text-sm">
-                    Lokmat Media Pvt. Ltd.<br />
-                    Lokmat Bhawan, Mumbai,<br />
-                    Maharashtra, 400011, India
+                  <div className="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
+                    <MapPin className="w-7 h-7" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-red-600 mb-2 block">Corporate Headquarters</span>
+                  <h3 className="text-2xl font-bold mb-4 text-[#111111]">Office Address</h3>
+                  <p className="text-gray-600 leading-relaxed font-normal text-base">
+                    <strong className="text-[#111111] font-bold block mb-1">Lokmat Media Pvt. Ltd.</strong>
+                    Law College Rd, Shanti Sheela Society,<br />
+                    Erandwane, Pune, Maharashtra 411038
                   </p>
                 </div>
-                <div className="pt-6 border-t border-gray-200 mt-6 flex items-center justify-between text-xs text-gray-400 group-hover:text-red-600 transition-colors">
-                  <span>Get Driving Directions</span>
+                <a 
+                  href="https://maps.google.com/?q=Lokmat+Media+Pvt.+Ltd.+Law+College+Rd+Pune+411038"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pt-6 border-t border-gray-100 mt-8 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-500 group-hover:text-red-600 transition-colors"
+                >
+                  <span>View on Google Maps</span>
                   <ArrowUpRight className="w-4 h-4" />
-                </div>
+                </a>
               </div>
 
-              <div className="bg-white p-10 border border-gray-200 rounded-2xl shadow-sm flex flex-col justify-between group hover:border-red-200 transition-colors duration-300">
+              <div className="bg-white p-8 md:p-10 border border-gray-200 rounded-2xl shadow-sm flex flex-col justify-between group hover:border-red-200 hover:shadow-md transition-all duration-300">
                 <div>
-                  <Mail className="w-8 h-8 text-red-600 mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Electronic Mail</h3>
-                  <p className="text-gray-500 leading-relaxed font-light text-sm">
-                    For events: <a href="mailto:events@lokmat.com" className="font-medium text-[#111111] hover:text-red-600 transition-colors">events@lokmat.com</a><br />
-                    For general press: <a href="mailto:press@lokmat.com" className="font-medium text-[#111111] hover:text-red-600 transition-colors">press@lokmat.com</a>
-                  </p>
+                  <div className="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
+                    <Phone className="w-7 h-7" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-red-600 mb-2 block">Direct Communication</span>
+                  <h3 className="text-2xl font-bold mb-4 text-[#111111]">Phone Number</h3>
+                  <div className="text-gray-600 leading-relaxed text-base space-y-2">
+                    <a 
+                      href="tel:02066848586"
+                      className="text-2xl sm:text-3xl font-bold text-[#111111] hover:text-red-600 transition-colors block tracking-tight mb-2"
+                    >
+                      020 6684 8586
+                    </a>
+                    <p className="text-sm text-gray-500 font-light">
+                      Office Hours: Monday – Friday, 9:30 AM – 6:00 PM IST
+                    </p>
+                    <p className="text-xs text-gray-400 font-mono">
+                      Central Switchboard Desk • Pune
+                    </p>
+                  </div>
                 </div>
-                <div className="pt-6 border-t border-gray-200 mt-6 flex items-center justify-between text-xs text-gray-400 group-hover:text-red-600 transition-colors">
-                  <span>Open Mail Application</span>
+                <a 
+                  href="tel:02066848586"
+                  className="pt-6 border-t border-gray-100 mt-8 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-500 group-hover:text-red-600 transition-colors"
+                >
+                  <span>Call 020 6684 8586</span>
                   <ArrowUpRight className="w-4 h-4" />
-                </div>
-              </div>
-
-              <div className="bg-white p-10 border border-gray-200 rounded-2xl shadow-sm flex flex-col justify-between group hover:border-red-200 transition-colors duration-300">
-                <div>
-                  <Phone className="w-8 h-8 text-red-600 mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Direct Support</h3>
-                  <p className="text-gray-500 leading-relaxed font-light text-sm">
-                    Switchboard: +91-22-6635-5555<br />
-                    Office Hours: Mon-Fri, 9am - 6pm IST<br />
-                    Coordinating desk: Mumbai
-                  </p>
-                </div>
-                <div className="pt-6 border-t border-gray-200 mt-6 flex items-center justify-between text-xs text-gray-400 group-hover:text-red-600 transition-colors">
-                  <span>Call Reception Desk</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </div>
+                </a>
               </div>
             </div>
 
@@ -186,12 +191,17 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {departments.map((dept, i) => (
-                    <div key={i} className="border border-gray-200 p-8 rounded-2xl bg-[#FAFAFA] hover:border-red-100 transition-all duration-300">
-                      <h3 className="text-lg font-bold text-[#111111] mb-2">{dept.title}</h3>
-                      <p className="text-gray-500 font-light text-sm leading-relaxed mb-6">{dept.desc}</p>
-                      <div className="space-y-2 text-xs font-mono">
-                        <p className="text-gray-400">Email: <a href={`mailto:${dept.email}`} className="text-red-600 hover:underline">{dept.email}</a></p>
-                        <p className="text-gray-400 font-sans">Tel: <span className="text-[#111111] font-medium">{dept.phone}</span></p>
+                    <div key={i} className="border border-gray-200 p-8 rounded-2xl bg-[#FAFAFA] hover:border-red-200 transition-all duration-300 flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-lg font-bold text-[#111111] mb-2">{dept.title}</h3>
+                        <p className="text-gray-500 font-light text-sm leading-relaxed mb-6">{dept.desc}</p>
+                      </div>
+                      <div className="pt-4 border-t border-gray-200/60 flex items-center justify-between">
+                        <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Phone</span>
+                        <a href="tel:02066848586" className="text-sm font-semibold text-[#111111] hover:text-red-600 transition-colors flex items-center gap-1.5">
+                          <Phone className="w-3.5 h-3.5 text-red-600" />
+                          {dept.phone}
+                        </a>
                       </div>
                     </div>
                   ))}
@@ -231,14 +241,14 @@ export default function Contact() {
                           />
                         </div>
                         <div className="flex flex-col gap-2">
-                          <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Email Address *</label>
+                          <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Phone Number *</label>
                           <input 
-                            type="email" 
+                            type="tel" 
                             required
-                            value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            value={formData.phone}
+                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                             className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-red-600 focus:bg-white transition-all" 
-                            placeholder="e.g. aditi@example.com" 
+                            placeholder="e.g. 020 6684 8586" 
                           />
                         </div>
                       </div>

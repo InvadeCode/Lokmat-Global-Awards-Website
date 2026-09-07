@@ -1,4 +1,5 @@
 export const LOCATION_LOGOS: Record<string, string> = {
+  mauritius: "https://static.wixstatic.com/media/548938_9e17a561cd3a45d49344c302d18c3e59~mv2.png",
   baku: "https://static.wixstatic.com/media/548938_1ab989b4e53944148b356acca3d590bd~mv2.png",
   dubai: "https://static.wixstatic.com/media/548938_a197a9bae5b84d93920a8f6feeb15841~mv2.png",
   "hong kong": "https://static.wixstatic.com/media/548938_ffe099d2f4ed4e8eb57c90cabf19628f~mv2.png",
@@ -11,11 +12,12 @@ export const LOCATION_LOGOS: Record<string, string> = {
 
 export function getLocationLogo(locationOrTitle: string): string {
   const str = (locationOrTitle || "").toLowerCase();
+  if (str.includes("mauritius")) return LOCATION_LOGOS["mauritius"];
   if (str.includes("cairo") || str.includes("egypt")) return LOCATION_LOGOS["cairo"];
   if (str.includes("dubai")) return LOCATION_LOGOS["dubai"];
   if (str.includes("hong kong") || str.includes("macau")) return LOCATION_LOGOS["hong kong"];
   if (str.includes("london")) return LOCATION_LOGOS["london"];
   if (str.includes("singapore")) return LOCATION_LOGOS["singapore"];
   if (str.includes("baku")) return LOCATION_LOGOS["baku"];
-  return LOCATION_LOGOS["cairo"];
+  return LOCATION_LOGOS["mauritius"];
 }

@@ -51,8 +51,8 @@ export default function About() {
 
   const leaders = [
     {
-      name: "Vijay Darda",
-      role: "Chairman",
+      name: "Dr. Vijay Darda",
+      role: "Member of Parliament, Rajya Sabha (1998-2016)\nChairman, Editorial Board, Lokmat Media Group",
       image: "https://static.wixstatic.com/media/548938_ef75f912b1584b51abead72fa116b3d8~mv2.png",
       linkedin: "https://www.linkedin.com",
     },
@@ -96,12 +96,9 @@ export default function About() {
             className="max-w-4xl mx-auto"
           >
             <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Who We Are</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
               Our Vision & Legacy
             </h1>
-            <p className="text-lg md:text-xl text-gray-500 font-light leading-relaxed max-w-3xl mx-auto">
-              Connecting visionaries, celebrating exceptional leaders, and bringing regional pride to the world stage since 1971.
-            </p>
           </motion.div>
         </div>
 
@@ -192,9 +189,11 @@ export default function About() {
                     <h3 className="text-base sm:text-lg font-bold text-[#111111] mb-0.5 leading-snug">
                       {leader.name}
                     </h3>
-                    <p className="text-red-600 text-[11px] font-bold uppercase tracking-wider leading-snug">
-                      {leader.role}
-                    </p>
+                    <div className="text-red-600 text-[11px] font-bold uppercase tracking-wider leading-snug space-y-1">
+                      {leader.role.split("\n").map((line, idx) => (
+                        <p key={idx}>{line}</p>
+                      ))}
+                    </div>
                   </div>
 
                   {/* LinkedIn Icon Action */}

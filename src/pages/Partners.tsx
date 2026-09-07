@@ -36,26 +36,23 @@ export default function Partners() {
       { id: 12, logoUrl: "https://static.wixstatic.com/media/548938_daac95562a664c70806356d98de4706d~mv2.png" },
       { id: 13, logoUrl: "https://static.wixstatic.com/media/548938_1855926bd974441699a371c893aa674b~mv2.png" },
       { id: 14, logoUrl: "https://static.wixstatic.com/media/548938_d0167cb40e5e41e7aa72dc5ee6c21446~mv2.png" },
-      { id: 15, logoUrl: "https://static.wixstatic.com/media/548938_5b8cef233cd54cd781f5a91a1ea1539d~mv2.png" },
       { id: 16, logoUrl: "https://static.wixstatic.com/media/548938_c1dbcb7fd9cd467e8c753a0d050330a8~mv2.png" },
-      { id: 17, logoUrl: "https://static.wixstatic.com/media/548938_45b1fc39625d43fe8564823b3e736693~mv2.png" },
       { id: 18, logoUrl: "https://static.wixstatic.com/media/548938_53bba9e61e714df2914fa032f50cb7d7~mv2.png" }
     ],
     // Row 3: Left to Right
     [
       { id: 19, logoUrl: "https://static.wixstatic.com/media/548938_7431ab3eafec4e5495559925affbb0bf~mv2.png" },
-      { id: 20, logoUrl: "https://static.wixstatic.com/media/548938_f5527f7adc7c449eba21ba517bf280ca~mv2.png" },
+      { id: 20, logoUrl: "https://static.wixstatic.com/media/548938_8e6c1821f3e9431e97486f6b61e126e5~mv2.png" },
       { id: 21, logoUrl: "https://static.wixstatic.com/media/548938_cf4b4a2b7bc047bb8c4c9bcae8d87ac4~mv2.png" },
       { id: 22, logoUrl: "https://static.wixstatic.com/media/548938_e7e4285de95f4934bd93de609beeb489~mv2.png" },
-      { id: 23, logoUrl: "https://static.wixstatic.com/media/548938_27b5df27132742c5b21b3432f94dc596~mv2.png" },
       { id: 24, logoUrl: "https://static.wixstatic.com/media/548938_be1dd259880d4f4bbf933642df723212~mv2.png" },
       { id: 25, logoUrl: "https://static.wixstatic.com/media/548938_f55f51e524dd47e5980b09c2096cb21e~mv2.png" },
-      { id: 26, logoUrl: "https://static.wixstatic.com/media/548938_6e724a7f91bd4959886415cc9580fca1~mv2.png" },
+      { id: 26, logoUrl: "https://static.wixstatic.com/media/548938_db9c122f70084373adf1c2fc5d22ec6b~mv2.jpg" },
       { id: 27, logoUrl: "https://static.wixstatic.com/media/548938_a6ebe3ea618b415db60f9054b9b6f4b1~mv2.png" }
     ],
     // Row 4: Right to Left
     [
-      { id: 28, logoUrl: "https://static.wixstatic.com/media/548938_c4be23b9b6514c23901b4d74c5653d34~mv2.png" },
+      { id: 28, logoUrl: "https://static.wixstatic.com/media/548938_2ac54ad5eb724f4eaa5327674d372e89~mv2.png" },
       { id: 29, logoUrl: "https://static.wixstatic.com/media/548938_f6d1731ab80042139b041bfd39f34d13~mv2.png" },
       { id: 30, logoUrl: "https://static.wixstatic.com/media/548938_eeae537d5c474c4d94abd4f2dc932875~mv2.png" },
       { id: 31, logoUrl: "https://static.wixstatic.com/media/548938_7fa4c84f5adc4938a9add3b390b4a311~mv2.png" },
@@ -88,14 +85,11 @@ export default function Partners() {
         {/* Past Sponsors Showcase */}
         <section className="pt-8 pb-20 bg-[#FAFAFA]">
           <div className="w-[100vw] px-[3%]">
-            <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="text-center max-w-3xl mx-auto mb-10">
               <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Proven Trust</span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
                 Our Past <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Aligned Brands</span>
               </h2>
-              <p className="text-gray-500 font-light mt-4 text-base md:text-lg">
-                India's top corporate companies, public sector undertakings, and global luxury giants trust Lokmat to host their elite brand narratives.
-              </p>
             </div>
 
             <div 

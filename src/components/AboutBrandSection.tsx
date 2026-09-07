@@ -2,56 +2,40 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import {
   Sparkles,
-  Globe,
+  Building2,
   Award,
-  ShieldCheck,
-  TrendingUp
+  Users,
+  Globe
 } from "lucide-react";
 
 export default function AboutBrandSection() {
-  const [hoveredFacet, setHoveredFacet] = useState<number | null>(0);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  const facets = [
+  const numericalCards = [
     {
-      id: 0,
-      title: "Journalistic Legacy",
-      badge: "50+ YEARS OF TRUST",
-      icon: ShieldCheck,
-      description:
-        "Rooted in Lokmat Media Group's 5 decades of news credibility, standing as a beacon of uncompromised editorial integrity.",
-      stats: "25M+ Readers",
-      highlights: ["50+ Yrs Unbroken Trust", "Deep Grassroots Reach"]
+      id: "hubs",
+      number: "7",
+      title: "Business Hubs",
+      icon: Building2
     },
     {
-      id: 1,
-      title: "Global Conclaves",
-      badge: "WORLD-CLASS PLATFORMS",
-      icon: Globe,
-      description:
-        "Hosting flagship summits in London, Baku, Dubai, and Singapore—connecting Indian leadership with global trade bodies.",
-      stats: "20+ Capitals",
-      highlights: ["London Savoy Summits", "Bilateral Trade Networks"]
+      id: "awardees",
+      number: "400+",
+      title: "Awardees",
+      icon: Award
     },
     {
-      id: 2,
-      title: "Celebrating Leaders",
-      badge: "PRESTIGIOUS HONORS",
-      icon: Award,
-      description:
-        "Honoring grassroots champions, women icons, corporate titans, and youth pioneers through rigorous independent jury audits.",
-      stats: "5,000+ Honorees",
-      highlights: ["Maharashtrian of Year", "Lokmat Sakhi Sanman"]
+      id: "attendees",
+      number: "2000+",
+      title: "Global Attendees",
+      icon: Users
     },
     {
-      id: 3,
-      title: "Socio-Economic Impact",
-      badge: "FUTURE INNOVATION",
-      icon: TrendingUp,
-      description:
-        "Transforming regional success into policy dialogue, cross-border investments, and youth empowerment summits.",
-      stats: "10M+ Digital Reach",
-      highlights: ["Policy & Governance", "Youth & Tech Conclaves"]
+      id: "continents",
+      number: "3",
+      title: "Continents",
+      icon: Globe
     }
   ];
 
@@ -138,18 +122,18 @@ export default function AboutBrandSection() {
           </p>
         </div>
 
-        {/* Hover-Interactive Pillar Cards Grid */}
+        {/* Numerical Cards Grid */}
         <div className="relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {facets.map((facet, idx) => {
-              const Icon = facet.icon;
-              const isHovered = hoveredFacet === idx;
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {numericalCards.map((card, idx) => {
+              const Icon = card.icon;
+              const isHovered = hoveredCard === idx;
 
               return (
                 <div
-                  key={facet.id}
-                  onMouseEnter={() => setHoveredFacet(idx)}
-                  className={`relative p-4 sm:p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-default group/card ${
+                  key={card.id}
+                  onMouseEnter={() => setHoveredCard(idx)}
+                  className={`relative p-6 sm:p-7 rounded-2xl border transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-default group/card ${
                     isHovered
                       ? "bg-gradient-to-b from-white/15 to-white/5 border-red-500/80 shadow-xl shadow-red-600/20 -translate-y-1"
                       : "bg-white/[0.03] border-white/10 hover:bg-white/[0.08] hover:border-white/20"
@@ -162,36 +146,26 @@ export default function AboutBrandSection() {
                     }`}
                   />
 
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-3">
-                      <div
-                        className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                          isHovered
-                            ? "bg-gradient-to-br from-red-600 to-orange-500 text-white shadow-lg shadow-red-600/40 scale-105"
-                            : "bg-white/10 text-gray-300"
-                        }`}
-                      >
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <span className="text-sm font-mono font-extrabold text-gray-500 tracking-wider">
-                        0{idx + 1}
-                      </span>
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 mb-6 ${
+                        isHovered
+                          ? "bg-gradient-to-br from-red-600 to-orange-500 text-white shadow-lg shadow-red-600/40 scale-105"
+                          : "bg-red-500/10 border border-red-500/20 text-red-500"
+                      }`}
+                    >
+                      <Icon className="w-6 h-6" />
                     </div>
 
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-red-400 block mb-1">
-                      {facet.badge}
-                    </span>
+                    <div>
+                      <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-2">
+                        {card.number}
+                      </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-white leading-snug">
-                      {facet.title}
-                    </h3>
-                  </div>
-
-                  <div className="relative z-10 pt-3 mt-4 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-xs font-semibold text-gray-400">Impact</span>
-                    <span className="text-sm font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-amber-300">
-                      {facet.stats}
-                    </span>
+                      <h3 className="text-base sm:text-lg font-bold text-red-500 tracking-wide">
+                        {card.title}
+                      </h3>
+                    </div>
                   </div>
                 </div>
               );

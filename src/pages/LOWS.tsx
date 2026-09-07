@@ -14,12 +14,13 @@ export default function LOWS() {
     window.scrollTo(0, 0);
   }, []);
 
-  // Filter events corresponding to LOWS (Dubai, Baku, Hong Kong & Macau, Cairo/Egypt)
+  // Filter events corresponding to LOWS (Dubai, Baku, Hong Kong & Macau, Cairo/Egypt, Mauritius)
   const lowsEvents = events.filter((e) => 
-    e.id === "dubai-2023" || 
-    e.id === "baku-2024" || 
-    e.id === "hong-kong-macau-2025" || 
+    e.id === "mauritius-2026" ||
     e.id === "cairo-2026" ||
+    e.id === "hong-kong-macau-2025" || 
+    e.id === "baku-2024" || 
+    e.id === "dubai-2023" || 
     e.title.toLowerCase().includes("one world") ||
     e.category.toLowerCase().includes("summit")
   );
@@ -75,7 +76,7 @@ export default function LOWS() {
                   Each edition explores business, innovation, leadership, economics, social impact and culture through summit sessions, panels, networking and cultural exchange. The awards recognise individuals whose influence extends beyond their organisations or industries.
                 </p>
                 <p>
-                  Across Dubai, Hong Kong, Baku and Cairo, the core idea remains unchanged - different countries, industries and perspectives united on one platform for people creating change.
+                  Across Dubai, Hong Kong, Baku, Cairo, and Mauritius, the core idea remains unchanged - different countries, industries and perspectives united on one platform for people creating change.
                 </p>
               </div>
             </motion.div>

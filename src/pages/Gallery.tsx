@@ -6,12 +6,10 @@ import { ArrowDown, X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react
 
 const GALLERY_IMAGES = [
   // Cairo 2026
-  "https://static.wixstatic.com/media/548938_f48ad9abc61a4ff1bb526c86dd36123c~mv2.jpg",
   "https://static.wixstatic.com/media/548938_e7d3e1979a4744b79da66690874091b9~mv2.jpg",
   "https://static.wixstatic.com/media/548938_e5cba0d41a6d4055abe0f39a47e999af~mv2.jpg",
   "https://static.wixstatic.com/media/548938_4726a3324014489a9fc72f013ab14bfe~mv2.jpg",
   "https://static.wixstatic.com/media/548938_fb341ebfdd434a53bb8b88849b274423~mv2.jpg",
-  "https://static.wixstatic.com/media/548938_b0499c9230344b5aa1cba0ac802d8880~mv2.jpg",
 
   // London 2025
   "https://static.wixstatic.com/media/548938_01de16ecda2648ee8f744a76a35e1a11~mv2.jpg",
@@ -109,14 +107,11 @@ export default function Gallery() {
       <Navbar />
 
       <main className="flex-1 w-[100vw] pt-[159px] pb-24 md:pt-[195px] md:pb-32 px-[3%] relative">
-        <div className="w-full flex flex-col items-center animate-in fade-in zoom-in-95 duration-700 text-center mb-16">
+        <div className="w-full flex flex-col items-center animate-in fade-in zoom-in-95 duration-700 text-center mb-12 md:mb-14">
             <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs mb-3 block">Visual Portfolio</span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111] mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
               Curated <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Gallery</span>
             </h1>
-            <p className="text-base md:text-lg text-gray-500 font-light leading-relaxed max-w-3xl mx-auto">
-              Explore moments from Lokmat’s landmark events, award ceremonies, <br className="hidden md:block" /> leadership forums and cultural celebrations.
-            </p>
         </div>
         
         <div className="w-full mx-auto">
