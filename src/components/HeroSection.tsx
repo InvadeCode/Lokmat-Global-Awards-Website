@@ -41,7 +41,7 @@ export default function HeroSection() {
       title: "London, 2025"
     },
     {
-      src: "https://static.wixstatic.com/media/548938_4cac77e950a84d069f5f29b1cfbbb7b0~mv2.jpg",
+      src: "https://static.wixstatic.com/media/548938_8a8b58b24b154fc79c713dd1158851b4~mv2.jpeg",
       fallback: image4,
       title: "Mauritius, 2026"
     },

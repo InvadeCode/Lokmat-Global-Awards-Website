@@ -106,6 +106,25 @@ let events: LokmatEvent[] = [
     createdAt: Date.now() - 68000,
   },
   {
+    id: "mauritius-2026",
+    title: "Lokmat One World Summit and Awards – Mauritius, 2026",
+    date: "2026",
+    location: "Mauritius",
+    description: "The presence of the President of Mauritius, H.E. Shri Dharambeer Gokhool, gave the Mauritius chapter of the Lokmat One World Summit and Awards 2026 distinguished national importance and reinforced its global stature. Set against the Indian Ocean backdrop of Le Méridien Ile Maurice, the summit brought together diplomats, policymakers, business leaders, innovators and changemakers for a powerful exchange of ideas. The edition celebrated global excellence while opening conversations around leadership, entrepreneurship, sustainability, governance and social impact, with the deep India–Mauritius relationship at its centre.",
+    category: "Past Summit & Awards",
+    imageUrl: "https://static.wixstatic.com/media/548938_8a8b58b24b154fc79c713dd1158851b4~mv2.jpeg",
+    videoUrl: "https://video.wixstatic.com/video/548938_52570e309bdb42edac5e01f01a264d5f/1080p/mp4/file.mp4",
+    gallery: [
+      "https://static.wixstatic.com/media/548938_8a8b58b24b154fc79c713dd1158851b4~mv2.jpeg",
+      "https://static.wixstatic.com/media/548938_47996f2b5c7c4322a9370207163f6ae9~mv2.jpg",
+      "https://static.wixstatic.com/media/548938_d15934ba524141deb0779fc8cbd64bb7~mv2.jpg",
+      "https://static.wixstatic.com/media/548938_36487db666ce4772b122191bf4705bd4~mv2.jpeg",
+      "https://static.wixstatic.com/media/548938_f8722bcc71334f99ab0c8ba71131ad04~mv2.jpeg",
+      "https://static.wixstatic.com/media/548938_ce25e5bac0fd4e2a9a1b872ea78a0c99~mv2.jpg"
+    ],
+    createdAt: Date.now() - 68500,
+  },
+  {
     id: "cairo-2026",
     title: "Lokmat One World Summit and Awards – Cairo, 2026",
     date: "2026",
