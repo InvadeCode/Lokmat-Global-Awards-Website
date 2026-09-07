@@ -122,7 +122,7 @@ export default function Navbar() {
                 )}
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                 
-                <div className="absolute top-full left-0 pt-2 min-w-[280px] transition-all origin-top opacity-0 scale-y-0 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible">
+                <div className="absolute top-full left-0 pt-2 min-w-[340px] transition-all origin-top opacity-0 scale-y-0 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible">
                   <div className="flex flex-col bg-white border border-gray-100 shadow-xl rounded-xl overflow-hidden">
                     {item.items.map((subItem) => (
                       subItem.isExternal || subItem.href.startsWith("http") ? (

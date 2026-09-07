@@ -24,7 +24,7 @@ export const navigationData: NavMenu[] = [
     label: "GloCon",
     items: [
       { label: "Global Economic Convention", href: "/lgec" },
-      { label: "One World Summit", href: "/lows" }
+      { label: "One World Summit & Awards", href: "/lows" }
     ]
   },
   {

@@ -134,7 +134,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 text-red-200 text-sm font-medium">
-          <p>© 2026 Lokmat Events & Awards. All Rights Reserved.</p>
+          <p>© 2026 Lokmat GLOCON. All Rights Reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>

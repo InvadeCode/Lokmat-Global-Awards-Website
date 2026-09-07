@@ -11,7 +11,7 @@ import { Award, Shield, Target, Globe, Users, Star, ArrowUpRight, Sparkles, Link
 export default function About() {
   // AIO, GEO, and SEO Best Practices: Dynamic Title and Description Updates
   useEffect(() => {
-    document.title = "About Our Legacy | Lokmat Premium Events & Awards";
+    document.title = "About Our Legacy | Lokmat GLOCON";
     
     // Update Meta Description dynamically for SEO/AIO scrapers
     const metaDesc = document.querySelector('meta[name="description"]');

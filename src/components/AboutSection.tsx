@@ -56,16 +56,16 @@ export default function AboutSection({ showButton = true }: AboutSectionProps) {
               <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-sm mb-3 block">The Legacy</span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#111111]">
                 <span className="block">Shaping <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 pr-2">Narratives</span></span>
-                <span className="block">That Inspire India</span>
+                <span className="block">That Inspire the World</span>
               </h2>
             </div>
             
             <p className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed font-light">
-              Lokmat Events & Awards brings together influential leaders, creators, entrepreneurs, artists, policymakers, industry voices and changemakers through high-impact events, awards, summits and cultural platforms.
+              Lokmat GLOCON brings together influential leaders, creators, entrepreneurs, artists, policymakers, industry voices and changemakers through high-impact events, awards, summits and cultural platforms.
             </p>
 
             <p className="text-base sm:text-lg xl:text-xl text-gray-600 leading-relaxed font-light">
-              Built on Lokmat’s trusted media legacy, every experience is designed to celebrate excellence, spark meaningful conversations, create national visibility and recognise the people and ideas shaping India’s future.
+              Built on Lokmat’s trusted media legacy, every experience is designed to celebrate excellence, spark meaningful conversations, create national and international visibility and recognise the people and ideas shaping India’s future.
             </p>
 
             {showButton && (

@@ -5,8 +5,6 @@ import {
   Globe,
   Award,
   ShieldCheck,
-  Building2,
-  Users,
   TrendingUp
 } from "lucide-react";
 
@@ -110,26 +108,17 @@ export default function AboutBrandSection() {
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-orange-500 to-amber-400" />
 
         {/* Header Badge & Brand Title */}
-        <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 pb-8 border-b border-white/10">
+        <div className="relative z-10 mb-8 pb-8 border-b border-white/10">
           <div>
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 font-bold text-xs uppercase tracking-[0.25em] mb-3 backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-red-400 animate-pulse" /> About The Brand
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-white">
-              Lokmat <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-amber-300 pr-2">Experiences</span>
+              Lokmat <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-amber-300 pr-2">Media Group</span>
             </h2>
             <p className="text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-red-400 mt-2">
               Legacy of Excellence & Impact
             </p>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="px-4 py-2 rounded-2xl bg-white/5 border border-white/10 text-xs font-semibold text-gray-300 flex items-center gap-2 backdrop-blur-md">
-              <Building2 className="w-4 h-4 text-orange-400" /> Lokmat Media Group
-            </div>
-            <div className="px-4 py-2 rounded-2xl bg-red-500/10 border border-red-500/20 text-xs font-bold text-red-300 flex items-center gap-2">
-              <Users className="w-4 h-4 text-red-400" /> Est. 1971
-            </div>
           </div>
         </div>
 

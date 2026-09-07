@@ -23,12 +23,12 @@ export default function HeroSection() {
   const latestEvents = events.slice(0, 6);
   const [, setHoveredEventId] = useState<string | null>(null);
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const [emblaRef] = useEmblaCarousel(
     { loop: true, align: "start", dragFree: true },
-    [AutoScroll({ playOnInit: true, speed: 1.2, stopOnInteraction: false })]
+    [AutoScroll({ playOnInit: true, speed: 1.1, stopOnInteraction: false, stopOnMouseEnter: true })]
   );
 
   // Authentic Event Images for Hero Slider
@@ -116,110 +116,121 @@ export default function HeroSection() {
   ];
 
   return (
-    <div ref={containerRef} className="relative min-h-screen w-[100vw] flex flex-col bg-[#FAFAFA] pt-20 pb-12 px-[3%]">
-      {/* Abstract Background Elements */}
+    <div ref={containerRef} className="relative min-h-screen w-full flex flex-col justify-between bg-[#FAFAFA] pt-[81px] sm:pt-[97px] pb-8 sm:pb-10 px-[3%] overflow-hidden">
+      {/* Ambient Background Elements */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-[#FAFAFA] z-10 bg-opacity-90" />
-        <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_100%)]" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-lokmat-red rounded-full mix-blend-multiply filter blur-[120px] opacity-5 text-red-500 animate-pulse z-0" />
-        <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-orange-500 rounded-full mix-blend-multiply filter blur-[150px] opacity-10 z-0" />
+        <div className="absolute inset-0 bg-[#FAFAFA] z-10 bg-opacity-95" />
+        <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_0%,#000_70%,transparent_100%)]" />
+        <div className="absolute top-1/6 left-1/5 w-[500px] h-[500px] bg-red-500/5 rounded-full mix-blend-multiply filter blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 right-10 w-[550px] h-[550px] bg-orange-500/8 rounded-full mix-blend-multiply filter blur-[160px] pointer-events-none" />
       </motion.div>
 
-      {/* Content */}
-      <div className="relative z-10 w-full flex flex-col h-full justify-between mt-2 md:mt-4">
+      {/* Main Content Container */}
+      <div className="relative z-10 w-full flex flex-col justify-between flex-1 h-full">
         
-        <div className="flex flex-col lg:flex-row items-center lg:items-center gap-4 lg:gap-2 w-full mt-auto mb-auto translate-y-[15px]">
-          {/* Left Side: Text */}
-          <div className="w-full lg:w-[38%] xl:w-[38%] flex flex-col text-left pr-2">
+        {/* Top Header Deck: Masterhead & Description with reduced vertical spacing (-10%) to slider */}
+        <div className="w-full mb-5 sm:mb-7 pt-[4.5%]">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5 lg:gap-12 pb-3.5 sm:pb-4 border-b border-gray-200/80">
+            
+            {/* Left: Eyebrow + Master Title in 1 line (+12% font size) */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: "easeOut" }}
-              className="space-y-4"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex flex-col justify-center"
             >
-              <motion.p 
-                initial={{ opacity: 0, tracking: "0em" }}
-                animate={{ opacity: 1, tracking: "0.2em" }}
-                transition={{ duration: 1.1, delay: 0.2 }}
-                className="text-red-600 text-xs md:text-sm font-bold uppercase tracking-[0.2em] mb-2 z-10"
-              >
-                A Legacy of Excellence
-              </motion.p>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-[4.4rem] xl:text-[5.3rem] font-bold leading-none tracking-tight mt-3 mb-2 z-10 relative flex flex-col gap-2">
-                <div className="relative flex items-end">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100 text-red-600 text-[12.5px] font-bold uppercase tracking-[0.2em] mb-3 self-start">
+                <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+                OUR LANDMARK EVENT IPS
+              </div>
+
+              <h1 className="text-[2.07rem] sm:text-[2.55rem] md:text-[3.2rem] lg:text-[3.76rem] xl:text-[4.35rem] font-bold tracking-tight text-[#111111] flex items-center gap-3 sm:gap-4 flex-wrap sm:flex-nowrap">
+                <div className="relative flex items-center shrink-0">
                   <img 
                     src="/lokmat-logo.png" 
                     alt="LOKMAT" 
-                    className="h-11 md:h-15 lg:h-[4.4rem] xl:h-[5.2rem] w-auto object-contain object-left -mb-3 -ml-2 translate-y-[4px]"
+                    className="h-11 sm:h-[48px] md:h-[55px] lg:h-[61px] xl:h-[70px] w-auto object-contain object-left"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
                       const fallback = document.getElementById('lokmat-fallback-text');
                       if (fallback) fallback.style.display = 'block';
                     }}
                   />
-                  <span id="lokmat-fallback-text" className="text-[#111111] hidden -mb-2 translate-y-[4px]">LOKMAT</span>
+                  <span id="lokmat-fallback-text" className="text-[#111111] hidden font-bold">LOKMAT</span>
                 </div>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 block pb-3 pr-4 -mr-4 text-[calc(100%+4px)]">Experiences</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 pb-0.5 whitespace-nowrap">
+                  Global Convention
+                </span>
               </h1>
-              
-              <motion.p 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.9, delay: 0.5 }}
-                className="text-gray-600 max-w-xl text-base md:text-xl font-light mt-4 leading-relaxed"
-              >
-                A curated platform for Lokmat’s flagship events and awards, celebrating leadership, culture, talent, enterprise and public impact across India, globe and beyond.
-              </motion.p>
             </motion.div>
+
+            {/* Right: Curated Description matching height of left title block (+12% font size) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="lg:max-w-md xl:max-w-lg flex flex-col justify-center"
+            >
+              <p className="text-gray-600 text-[13.5px] sm:text-[15.5px] lg:text-[16.5px] font-normal leading-relaxed">
+                A curated platform for Lokmat’s flagship events and awards, celebrating leadership, culture, talent, enterprise and public impact across India, globe and beyond.
+              </p>
+            </motion.div>
+
           </div>
+        </div>
 
-          {/* Right Side: Gallery Slider (Width increased to reduce horizontal gap) */}
-          <div className="w-full lg:w-[62%] xl:w-[62%] relative mt-8 md:mt-0 items-center justify-center hidden md:flex">
-            
-            {/* Abstract background shapes behind slider */}
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] xl:w-[95%] aspect-square border-[1px] border-dashed border-red-600/30 rounded-full z-0 pointer-events-none"
-            />
-            <motion.div 
-              animate={{ rotate: -360 }}
-              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] xl:w-[70%] aspect-square border-[1px] border-red-600/10 rounded-full z-0 pointer-events-none"
-            />
-
-            {/* Slider Container with Mask */}
+        {/* Centerpiece: Full-Width Horizontal Visual Gallery with negative space above and unclipped bottom shadow */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative w-full my-auto py-0"
+        >
+          {/* Panoramic Edge-to-Edge Embla Carousel respecting 3% margin */}
+          <div className="relative w-full">
             <div 
-              className="w-full overflow-hidden z-10 py-6 [mask-image:linear-gradient(to_right,transparent_0%,black_12%,black_88%,transparent_100%)]" 
+              className="w-full overflow-hidden cursor-grab active:cursor-grabbing" 
               ref={emblaRef}
             >
-              <div className="flex touch-pan-y flex-row items-center py-6">
+              {/* Added generous bottom padding (pb-8 sm:pb-10) so the drop shadow is fully visible and not cut off */}
+              <div className="flex touch-pan-y flex-row items-center pt-2 pb-8 sm:pb-10">
                 {carouselImages.map((imgObj, index) => (
                   <div 
                     key={index} 
-                    className="flex-[0_0_auto] min-w-0 px-3 xl:px-5 py-4"
+                    className="flex-[0_0_auto] min-w-0 px-2.5 sm:px-3.5"
                   >
                     <motion.div 
-                      whileHover={{ scale: 1.02, rotate: index % 2 === 0 ? 1.5 : -1.5 }}
-                      className="relative overflow-hidden rounded-3xl w-[660px] h-[410px] shadow-[0_22px_45px_rgba(0,0,0,0.18)] border-[5px] border-white group"
+                      whileHover={{ y: -6 }}
+                      transition={{ duration: 0.3 }}
+                      className="relative overflow-hidden rounded-2xl sm:rounded-3xl w-[412px] sm:w-[528px] md:w-[600px] lg:w-[660px] h-[280px] sm:h-[322px] md:h-[360px] lg:h-[390px] shadow-[0_16px_36px_rgba(0,0,0,0.13)] border-[3.5px] border-white group bg-gray-100"
                     >
                       <img 
                         src={imgObj.src} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                        className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" 
                         alt={imgObj.title} 
                         loading="eager"
                         fetchPriority="high"
                         decoding="async"
                         referrerPolicy="no-referrer"
                         onError={(e) => {
-                          // Gracefully fall back if network blocks external URL
                           (e.target as HTMLImageElement).src = imgObj.fallback;
                         }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                      <div className="absolute bottom-4 left-6 z-10 text-white opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-xs font-bold uppercase tracking-widest bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">
+                      
+                      {/* Gradient scrim for text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
+
+                      {/* Top Brand Pill */}
+                      <div className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="text-[9.5px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white px-2 py-0.5 rounded-full border border-white/20">
+                          Lokmat GLOCON
+                        </span>
+                      </div>
+                      
+                      {/* Bottom Location & Edition Badge */}
+                      <div className="absolute bottom-3.5 left-4 z-10 text-white">
+                        <span className="text-[11px] font-bold uppercase tracking-wider bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/25 shadow-md flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
                           {imgObj.title}
                         </span>
                       </div>
@@ -229,38 +240,52 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Full Width Latest Events Below the Text and Slider */}
+        {/* Full-Width Latest Events Deck shifted below by 15-20px with reduced spacing from slider */}
         {latestEvents.length > 0 && (
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative z-10 w-full border-t border-gray-200 mt-6 pt-6 pb-6"
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="w-full border-t border-gray-200 mt-4 sm:mt-5 pt-4 sm:pt-5 pb-2"
           >
-            <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-4">Latest Events</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 p-1">
+            <div className="flex items-center justify-between mb-2 sm:mb-2.5">
+              <h3 className="text-[11px] uppercase tracking-[0.2em] font-bold text-gray-500">
+                Latest Events & Flagship Conclaves
+              </h3>
+              <Link 
+                to="/upcoming"
+                className="text-[11px] text-red-600 hover:text-red-700 font-bold tracking-wider uppercase flex items-center gap-1 group transition-colors"
+              >
+                <span>View All</span>
+                <ArrowUpRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3">
               {latestEvents.map((event) => (
                 <Link 
                   key={event.id}
                   to={`/event/${event.id}`}
-                  className="group bg-white border border-gray-100 rounded-2xl p-4 flex flex-col justify-between shadow-[0_12px_32px_rgba(0,0,0,0.03)] hover:shadow-[0_22px_45px_rgba(0,0,0,0.07)] transition-all duration-300 hover:border-red-500/40 hover:-translate-y-1 min-h-[165px] h-full"
+                  className="group bg-white border border-gray-100 rounded-xl p-3 flex flex-col justify-between shadow-[0_4px_16px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:border-red-500/40 hover:-translate-y-0.5 min-h-[118px] sm:min-h-[125px] h-full"
                   onMouseEnter={() => setHoveredEventId(event.id)}
                   onMouseLeave={() => setHoveredEventId(null)}
                 >
-                  <div className="flex flex-col gap-1 w-full">
-                    <span className={`text-[9px] font-mono uppercase tracking-widest ${event.category.includes('Upcoming') ? 'text-red-600 font-bold animate-pulse' : 'text-gray-500'}`}>
+                  <div className="flex flex-col gap-0.5 w-full">
+                    <span className={`text-[8.5px] font-mono uppercase tracking-widest ${event.category.includes('Upcoming') ? 'text-red-600 font-bold animate-pulse' : 'text-gray-500'}`}>
                       {event.category}
                     </span>
-                    <h4 className="text-xs sm:text-sm font-semibold text-[#111111] group-hover:text-red-600 transition-colors duration-300 line-clamp-3 leading-snug">
+                    <h4 className="text-xs font-semibold text-[#111111] group-hover:text-red-600 transition-colors duration-300 line-clamp-2 leading-snug">
                       {event.title}
                     </h4>
                   </div>
-                  <div className="flex items-center justify-between w-full mt-3 pt-2.5 border-t border-gray-100">
-                    <span className="text-[10px] text-gray-400 font-medium">{formatDate(event.date)} | {event.location.split(',')[0]}</span>
-                    <div className="w-6 h-6 flex-shrink-0 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-red-600 group-hover:bg-red-50 text-gray-400 group-hover:text-red-600 transition-all transform group-hover:scale-110">
-                      <ArrowUpRight className="w-3 h-3" />
+                  <div className="flex items-center justify-between w-full mt-2 pt-1.5 border-t border-gray-100">
+                    <span className="text-[9.5px] text-gray-400 font-medium truncate pr-1">
+                      {formatDate(event.date)} | {event.location.split(',')[0]}
+                    </span>
+                    <div className="w-5 h-5 flex-shrink-0 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-red-600 group-hover:bg-red-50 text-gray-400 group-hover:text-red-600 transition-all transform group-hover:scale-105">
+                      <ArrowUpRight className="w-2.5 h-2.5" />
                     </div>
                   </div>
                 </Link>
@@ -273,4 +298,5 @@ export default function HeroSection() {
     </div>
   );
 }
+
 
