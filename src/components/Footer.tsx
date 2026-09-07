@@ -1,9 +1,46 @@
-import { MapPin, Phone, ArrowRight } from "lucide-react";
+import { useState, type FormEvent } from "react";
+import { MapPin, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "motion/react";
 import footerLogo from "../assets/images/regenerated_image_1781776578908.png";
 import { navigationData } from "@/src/config/navigation";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubscribe = async (e: FormEvent) => {
+    e.preventDefault();
+    const cleanEmail = email.trim();
+    if (!cleanEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Store in localStorage
+      const existing = localStorage.getItem("lokmat_newsletter_subscribers");
+      const list = existing ? JSON.parse(existing) : [];
+      list.push({ email: cleanEmail, date: new Date().toISOString() });
+      localStorage.setItem("lokmat_newsletter_subscribers", JSON.stringify(list));
+
+      // Call API
+      await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: cleanEmail })
+      });
+    } catch (err) {
+      console.error("Subscription error:", err);
+    } finally {
+      setIsSubmitting(false);
+      setIsSubscribed(true);
+      setEmail("");
+    }
+  };
+
   return (
     <footer className="bg-[#e40009] text-white pt-10 md:pt-14 pb-6 relative overflow-hidden">
       {/* Subtle background decoration */}
@@ -21,20 +58,43 @@ export default function Footer() {
             </p>
           </div>
           <div className="md:w-1/2 w-full">
-            <form className="flex flex-col sm:flex-row gap-3" onSubmit={(e) => e.preventDefault()}>
-              <input 
-                type="email" 
-                placeholder="Enter your email address" 
-                className="w-full px-5 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-red-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white/20 transition-all font-medium text-sm"
-                required
-              />
-              <button 
-                type="submit" 
-                className="px-6 py-3 bg-white text-[#e40009] font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap shadow-md"
-              >
-                Subscribe
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            <form className="flex flex-col gap-2.5" onSubmit={handleSubscribe}>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input 
+                  type="email" 
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (isSubscribed) setIsSubscribed(false);
+                  }}
+                  placeholder="Enter your email address" 
+                  className="w-full px-5 py-3 rounded-xl bg-white text-[#111111] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white/80 transition-all font-medium text-sm shadow-inner"
+                  required
+                />
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="px-6 py-3 bg-white text-[#e40009] font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap shadow-md cursor-pointer disabled:opacity-70"
+                >
+                  <span>{isSubmitting ? "Subscribing..." : "Subscribe"}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              <AnimatePresence>
+                {isSubscribed && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -4, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -4, scale: 0.98 }}
+                    transition={{ duration: 0.25 }}
+                    className="flex items-center gap-2.5 text-white bg-black/25 border border-white/20 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium backdrop-blur-sm"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-emerald-300 shrink-0" />
+                    <span>Thank you for subscribing! You've been successfully added to our mailing list.</span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </form>
           </div>
         </div>

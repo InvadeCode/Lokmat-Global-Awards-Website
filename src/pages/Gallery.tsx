@@ -5,6 +5,14 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowDown, X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 
 const GALLERY_IMAGES = [
+  // Mauritius 2026
+  "https://static.wixstatic.com/media/548938_8a8b58b24b154fc79c713dd1158851b4~mv2.jpeg",
+  "https://static.wixstatic.com/media/548938_47996f2b5c7c4322a9370207163f6ae9~mv2.jpg",
+  "https://static.wixstatic.com/media/548938_d15934ba524141deb0779fc8cbd64bb7~mv2.jpg",
+  "https://static.wixstatic.com/media/548938_36487db666ce4772b122191bf4705bd4~mv2.jpeg",
+  "https://static.wixstatic.com/media/548938_f8722bcc71334f99ab0c8ba71131ad04~mv2.jpeg",
+  "https://static.wixstatic.com/media/548938_ce25e5bac0fd4e2a9a1b872ea78a0c99~mv2.jpg",
+
   // Cairo 2026
   "https://static.wixstatic.com/media/548938_e7d3e1979a4744b79da66690874091b9~mv2.jpg",
   "https://static.wixstatic.com/media/548938_e5cba0d41a6d4055abe0f39a47e999af~mv2.jpg",

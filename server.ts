@@ -137,7 +137,9 @@ let events: LokmatEvent[] = [
       "https://static.wixstatic.com/media/548938_e7d3e1979a4744b79da66690874091b9~mv2.jpg",
       "https://static.wixstatic.com/media/548938_e5cba0d41a6d4055abe0f39a47e999af~mv2.jpg",
       "https://static.wixstatic.com/media/548938_4726a3324014489a9fc72f013ab14bfe~mv2.jpg",
-      "https://static.wixstatic.com/media/548938_fb341ebfdd434a53bb8b88849b274423~mv2.jpg"
+      "https://static.wixstatic.com/media/548938_fb341ebfdd434a53bb8b88849b274423~mv2.jpg",
+      "https://static.wixstatic.com/media/548938_81bedd4917ff4b0ba80bc7792410c7ff~mv2.jpeg",
+      "https://static.wixstatic.com/media/548938_f9ebcf54aed4463aa32d1f48d261d109~mv2.jpeg"
     ],
     createdAt: Date.now() - 69000,
   },
@@ -184,6 +186,17 @@ async function startServer() {
     };
     events.push(newEvent);
     res.status(201).json(newEvent);
+  });
+
+  const subscribers: Array<{ email: string; date: number }> = [];
+
+  app.post("/api/subscribe", (req, res) => {
+    const { email } = req.body || {};
+    if (!email || typeof email !== "string" || !email.includes("@")) {
+      return res.status(400).json({ error: "Valid email is required" });
+    }
+    subscribers.push({ email: email.trim(), date: Date.now() });
+    res.status(200).json({ success: true, message: "Subscribed successfully" });
   });
 
   const isProduction = process.env.NODE_ENV === "production" || process.argv.some(arg => arg.includes("server.cjs"));
